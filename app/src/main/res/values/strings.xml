@@ -1,0 +1,194 @@
+<resources>
+    <!--App Essentials-->
+    <string name="app_name">Boiler Plate - Main</string>
+    <string name="file_provider_authority" translatable="false">com.lusosmile.fileprovider</string>
+    <string name="intent_type_image" translatable="false">image/*</string>
+    <string name="intent_extra_return_data" translatable="false">return-data</string>
+    <string name="please_wait">Please Wait</string>
+    <string name="loading">Loading…</string>
+
+    <!--API-->
+    <string name="api_base_url" translatable="false">https://lusosmile.dev01.squaredbyte.com/api/</string>
+
+    <!--Error-->
+    <string name="error_could_not_create_bitmap">Could not create bitmap from the view</string>
+    <string name="error_dao_is_null">Dao is null</string>
+    <string name="error_adapter_size_is_null">Adapter size is null</string>
+    <string name="error_image_picking_intent_is_null">Image picking intent is null</string>
+    <string name="error_fragment_context_is_null">Fragment context is null</string>
+    <string name="error_selected_image_uri_is_null">Selected image uri is null</string>
+    <string name="error_could_not_crop_image">Could not crop image</string>
+    <string name="error_context_is_null">Context is null</string>
+    <string name="error_image_uri_is_null">Image Uri is null</string>
+    <string name="error_internet_connection">Please check your internet connection</string>
+    <string name="error_unauthenticated">Unauthenticated.</string>
+
+    <!--Warning-->
+    <string name="warning_permissions_are_required">Permissions are required</string>
+
+    <!--Registration page-->
+    <string name="registration_toolbar_title">User registration</string>
+    <string name="registration_name">Name</string>
+    <string name="registration_mobile_phone">Mobile phone</string>
+    <string name="registration_email">E-mail</string>
+    <string name="registration_password">Password</string>
+    <string name="registration_confirm_password">Confirm password</string>
+    <string name="registration_register">Register</string>
+    <string name="registration_already_have_an_account">Already have an account?</string>
+    <string name="registration_ok">OK</string>
+    <string name="registration_error_valid_fields">Please fill up all the fields</string>
+    <string name="registration_error_valid_email">Please enter valid email</string>
+    <string name="registration_error_valid_mobile_phone">Please enter valid phone number</string>
+    <string name="registration_error_user_name_char_limit">Name can not be more than 50 characters</string>
+    <string name="registration_error_valid_password">Password can not be less than 6 characters and more than 12 characters</string>
+    <string name="registration_error_not_same_password">Both passwords are not the same</string>
+    <string name="registration_confirmation_of_registration">A confirmation email was sent to %s. Please go to your email and confirm the registration</string>
+    <string name="registration_error_of_registration">Could not register. Try again please</string>
+
+    <!--Login page-->
+    <string name="login_toolbar_title">Welcome</string>
+    <string name="login_email">E-mail</string>
+    <string name="login_password">Password</string>
+    <string name="login_login">Log In</string>
+    <string name="login_forgot_password">Forgot password?</string>
+    <string name="login_dont_have_account_yet">Don\'t have account yet?</string>
+    <string name="login_error_valid_fields">Please fill up all the fields</string>
+    <string name="login_error_valid_email">Please enter valid email</string>
+    <string name="login_error_valid_password">Password can not be less than 6 characters and more than 12 characters</string>
+    <string name="login_error_login_failed">Could not login. Try again please</string>
+
+    <!--Forgot password page-->
+    <string name="forgot_password_toolbar_title">Password recovery</string>
+    <string name="forgot_password_email">E-mail</string>
+    <string name="forgot_password_request_password">Request new password</string>
+    <string name="forgot_password_error_valid_field">Please fill up the field</string>
+    <string name="forgot_password_error_valid_email">Please enter valid email</string>
+    <string name="forgot_password_confirmation">Please visit your email to complete the password recovery</string>
+    <string name="forgot_password_error_of_process">Could not reset password. Try again please</string>
+
+    <!--Welcome page-->
+    <string name="welcome_login">Log In</string>
+    <string name="welcome_register">Register</string>
+
+    <!--Dashboard page-->
+    <string name="dashboard_toolbar_title">Hi, %s</string>
+    <string name="dashboard_home">Home</string>
+    <string name="dashboard_book_an_appointment">Book An Appointment</string>
+    <string name="dashboard_my_appointments">My Appointments</string>
+    <string name="dashboard_about_us">About us</string>
+    <string name="dashboard_services">Services</string>
+    <string name="dashboard_availability">Availability</string>
+    <string name="dashboard_reach_us">Reach us</string>
+    <string name="dashboard_contact_us">Contact us</string>
+    <string name="dashboard_drawer_our_services">Services</string>
+    <string name="dashboard_drawer_about_us">About Us</string>
+    <string name="dashboard_drawer_reach_us">Reach Us</string>
+    <string name="dashboard_drawer_contact_us">Contact Us</string>
+    <string name="dashboard_drawer_log_out">Log Out</string>
+
+    <!--Select clinic page-->
+    <string name="select_clinic_toolbar_title">Book an appointment</string>
+    <string name="select_clinic_subtitle">Choose the clinic</string>
+    <string name="select_clinic_next_steps">Next</string>
+    <string name="select_clinic_error_of_process">Could not load clinic list. Try again</string>
+
+    <!--Select appointment type page-->
+    <string name="select_appointment_type_toolbar_title">Book an appointment</string>
+    <string name="select_appointment_type_subtitle">Choose the type</string>
+    <string name="select_appointment_type_next_steps">Next</string>
+    <string name="select_appointment_type_error_of_process">Could not load types. Try again</string>
+
+    <!--Select date session page-->
+    <string name="select_date_session_toolbar_title">Book an appointment</string>
+    <string name="select_date_session_subtitle">Choose the best date</string>
+    <string name="select_date_session_select_time">Select the day time</string>
+    <string name="select_date_session_morning">Morning</string>
+    <string name="select_date_session_afternoon">Afternoon</string>
+    <string name="select_date_session_anytime">Anytime</string>
+    <string name="select_date_session_book_appointment">Book appointment</string>
+    <string name="select_date_session_error_of_process">Could not book appointment. Try again</string>
+
+    <!--Services page-->
+    <string name="services_toolbar_title">Our Services</string>
+    <string name="services_error_of_process">Could not load services. Try again</string>
+    <string name="services_skip_idk">I don\'t know</string>
+
+    <!--Availability page-->
+    <string name="availability_toolbar_title">Availability</string>
+    <string name="availability_subtitle">We Are Available On</string>
+    <string name="availability_book_appointment">Book Appointment</string>
+    <string name="availability_error_of_process">Could not load availabilities. Try again</string>
+    <string name="availability_session">%s - %s</string>
+    <string name="availability_holiday">Holiday</string>
+
+    <!--Contact us page-->
+    <string name="contact_us_toolbar_title">Contact Us</string>
+    <string name="contact_us_subtitle">Call Us Here</string>
+    <string name="contact_us_send_your_message">Send Your Message</string>
+    <string name="contact_us_your_name">Your Name</string>
+    <string name="contact_us_your_email">Your Email</string>
+    <string name="contact_us_your_message">Your Message</string>
+    <string name="contact_us_send_message">Send Message</string>
+    <string name="contact_us_error_valid_fields">Please fill up all the fields</string>
+    <string name="contact_us_error_valid_email">Please enter valid email</string>
+    <string name="contact_us_error_user_name_char_limit">Name can not be more than 50 characters</string>
+    <string name="contact_us_error_of_process">Could not send the message. Try again</string>
+    <string name="contact_us_successful_process">The message has been successfully sent</string>
+    <string name="contact_us_calling_phone_number">+351262145549</string>
+
+    <!--About page-->
+    <string name="about_toolbar_title">About LusoSmile</string>
+    <string name="about_error_of_process">Could not load about page content. Try again</string>
+
+    <!--Reach us page-->
+    <string name="reach_us_toolbar_title">Reach Us</string>
+    <string name="reach_us_address">%s, %s, %s</string>
+    <string name="reach_us_book_appointment">Book Appointment</string>
+    <string name="reach_us_error_loading">Reach us page needs your permissions</string>
+    <string name="reach_us_error_of_process">Could not load clinic list. Try again</string>
+
+    <!--My appointments page-->
+    <string name="my_appointments_toolbar_title">My Appointments</string>
+    <string name="my_appointments_upcoming">Upcoming</string>
+    <string name="my_appointments_pending_cancellation_state" translatable="false">PENDING CANCELLATION</string>
+    <string name="my_appointments_past">Past</string>
+    <string name="my_appointments_date">Date</string>
+    <string name="my_appointments_hour">Hour</string>
+    <string name="my_appointments_type">Type</string>
+    <string name="my_appointments_status">Status</string>
+    <string name="my_appointments_cancel">Cancel</string>
+    <string name="my_appointments_pending">Pending</string>
+    <string name="my_appointments_confirmed">Confirmed</string>
+    <string name="my_appointments_placeholder">You don\'t have any active appointment here</string>
+    <string name="my_appointments_error_of_process">Could not load appointment list. Try again</string>
+    <string name="my_appointments_error_of_cancelling_appointment">Could not cancel appointment. Try again</string>
+    <string name="my_appointments_are_you_sure">Are you sure?</string>
+    <string name="my_appointments_yes">Yes</string>
+    <string name="my_appointments_no">No</string>
+
+    <!--Profile page-->
+    <string name="profile_toolbar_title">My Account</string>
+    <string name="profile_profile">Profile</string>
+    <string name="profile_change_password">Change Password</string>
+    <string name="profile_current_password">Current Password</string>
+    <string name="profile_new_password">New Password</string>
+    <string name="profile_confirm_new_password">Confirm New Password</string>
+    <string name="profile_update_password">Update Password</string>
+    <string name="profile_hint_password_field">***********</string>
+    <string name="profile_edit">Edit</string>
+    <string name="profile_name">Name</string>
+    <string name="profile_email">E-mail</string>
+    <string name="profile_mobile_number">Mobile Phone</string>
+    <string name="profile_update_profile">Update Profile</string>
+    <string name="profile_error_valid_fields">Please fill up all the fields</string>
+    <string name="profile_error_valid_email">Please enter valid email</string>
+    <string name="profile_error_valid_mobile">Please enter valid mobile number</string>
+    <string name="profile_error_valid_password">Password can not be less than 6 characters and more than 12 characters</string>
+    <string name="profile_error_confirm_passwords_dont_match">Confirm passwords don\'t match</string>
+    <string name="profile_error_of_getting_profile">Could not load user\'s profile. Try again</string>
+    <string name="profile_error_of_updating_profile">Could not update user\'s profile. Try again</string>
+    <string name="profile_error_of_updating_password">Could not update user\'s password. Try again</string>
+
+    <!--Global-->
+    <string name="session_expired">Session Expired</string>
+</resources>

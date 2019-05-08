@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="@dimen/elevation_2"
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_list_item"
+            android:paddingStart="@dimen/padding_8"
+            android:paddingTop="@dimen/padding_16"
+            android:paddingEnd="@dimen/padding_8"
+            android:paddingBottom="@dimen/padding_8">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_view_appointment_type"
+                android:layout_width="@dimen/width_50"
+                android:layout_height="@dimen/height_50"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/firework" />
+
+            <TextView
+                android:id="@+id/text_view_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="0dp"
+                android:gravity="center"
+                android:textColor="@color/text_color_list_item"
+                android:textSize="@dimen/text_body"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_view_appointment_type"
+                tools:text="Clinic Name 1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

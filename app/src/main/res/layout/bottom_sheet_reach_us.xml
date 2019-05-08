@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_16"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="@dimen/elevation_2"
+        app:cardPreventCornerOverlap="false"
+        app:layout_behavior="@string/bottom_sheet_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_list_item">
+
+            <TextView
+                android:id="@+id/text_view_clinic_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_16"
+                android:gravity="center"
+                android:textColor="@color/text_color_list_item"
+                android:textSize="@dimen/text_body"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/view_shadow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="LusoSmile" />
+
+            <View
+                android:id="@+id/view_shadow"
+                android:layout_width="0dp"
+                android:layout_height="4dp"
+                android:background="@drawable/drop_shadow"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_address"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_clinic_name" />
+
+            <TextView
+                android:id="@+id/text_view_address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_16"
+                android:gravity="center"
+                android:maxLines="4"
+                android:padding="@dimen/padding_16"
+                android:textColor="@color/textRegular"
+                android:textSize="@dimen/text_body"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_book_appointment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_shadow"
+                tools:text="Random Address, Random Zip Code, Random City" />
+
+            <TextView
+                android:id="@+id/text_view_book_appointment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_24"
+                android:background="@drawable/background_button"
+                android:gravity="center"
+                android:padding="@dimen/padding_12"
+                android:text="@string/reach_us_book_appointment"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_large_body"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_address" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

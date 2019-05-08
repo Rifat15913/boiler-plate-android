@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_view_icon"
+            android:layout_width="@dimen/width_25"
+            android:layout_height="@dimen/height_25"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/text_view_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/colorPrimary"
+            tools:ignore="ContentDescription,MissingConstraints"
+            tools:src="@drawable/doctor_small" />
+
+        <TextView
+            android:id="@+id/text_view_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:gravity="center_vertical"
+            android:textColor="@color/textRegular"
+            android:textSize="@dimen/text_body"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/view_dotted_line"
+            app:layout_constraintStart_toEndOf="@+id/image_view_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="About Us" />
+
+        <com.lusosmile.main.ui.base.widget.DottedLineView
+            android:id="@+id/view_dotted_line"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height_4"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginEnd="@dimen/margin_8"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_title"
+            app:layout_constraintEnd_toStartOf="@+id/image_view_arrow"
+            app:layout_constraintStart_toEndOf="@+id/text_view_title"
+            app:layout_constraintTop_toTopOf="@+id/text_view_title" />
+
+        <ImageView
+            android:id="@+id/image_view_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_black"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/view_dotted_line"
+            app:layout_constraintTop_toTopOf="@+id/text_view_title"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

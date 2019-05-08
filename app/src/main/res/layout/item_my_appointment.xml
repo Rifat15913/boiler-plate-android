@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="@dimen/elevation_2"
+        app:cardPreventCornerOverlap="false">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background_list_item">
+
+            <TextView
+                android:id="@+id/text_view_title_date"
+                style="@style/MyAppointments.ItemMyAppointment.TextView.Title"
+                android:text="@string/my_appointments_date"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_content_date"
+                app:layout_constraintEnd_toStartOf="@+id/text_view_title_hour"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Date" />
+
+            <TextView
+                android:id="@+id/text_view_content_date"
+                style="@style/MyAppointments.ItemMyAppointment.TextView.Content"
+                app:layout_constraintBottom_toTopOf="@+id/view_dotted_line"
+                app:layout_constraintEnd_toStartOf="@+id/text_view_content_hour"
+                app:layout_constraintHorizontal_weight="4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_title_date"
+                tools:text="27 January 2018" />
+
+            <TextView
+                android:id="@+id/text_view_title_hour"
+                style="@style/MyAppointments.ItemMyAppointment.TextView.Title"
+                android:text="@string/my_appointments_hour"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_content_hour"
+                app:layout_constraintEnd_toStartOf="@+id/text_view_title_status"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@+id/text_view_title_date"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Hour" />
+
+            <TextView
+                android:id="@+id/text_view_content_hour"
+                style="@style/MyAppointments.ItemMyAppointment.TextView.Content"
+                app:layout_constraintBottom_toBottomOf="@+id/text_view_content_date"
+                app:layout_constraintEnd_toStartOf="@+id/text_view_content_status"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@+id/text_view_content_date"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_title_hour"
+                tools:text="Morning" />
+
+            <TextView
+                android:id="@+id/text_view_title_status"
+                style="@style/MyAppointments.ItemMyAppointment.TextView.Title"
+                android:text="@string/my_appointments_status"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_content_status"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@+id/text_view_title_hour"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Status" />
+
+            <TextView
+                android:id="@+id/text_view_content_status"
+                style="@style/MyAppointments.ItemMyAppointment.TextView.Content"
+                app:layout_constraintBottom_toBottomOf="@+id/text_view_content_date"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="3"
+                app:layout_constraintStart_toEndOf="@+id/text_view_content_hour"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_title_status"
+                tools:text="Confirmed" />
+
+            <com.lusosmile.main.ui.base.widget.DottedLineView
+                android:id="@+id/view_dotted_line"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_4"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_title_type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_content_date" />
+
+            <TextView
+                android:id="@+id/text_view_title_type"
+                style="@style/MyAppointments.ItemMyAppointment.TextView.Title"
+                android:text="@string/my_appointments_type"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_content_type"
+                app:layout_constraintEnd_toStartOf="@+id/text_view_cancel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/view_dotted_line"
+                tools:text="Type" />
+
+            <TextView
+                android:id="@+id/text_view_content_type"
+                style="@style/MyAppointments.ItemMyAppointment.TextView.Content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/text_view_cancel"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_title_type"
+                tools:text="I don't know" />
+
+            <TextView
+                android:id="@+id/text_view_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:background="@drawable/rectangle_with_corner_color_cancel"
+                android:paddingStart="@dimen/padding_24"
+                android:paddingTop="@dimen/padding_8"
+                android:paddingEnd="@dimen/padding_24"
+                android:paddingBottom="@dimen/padding_8"
+                android:text="@string/my_appointments_cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_small_body"
+                app:layout_constraintBottom_toBottomOf="@+id/text_view_content_type"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/text_view_content_type"
+                app:layout_constraintTop_toTopOf="@+id/text_view_title_type" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

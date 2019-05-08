@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:id="@+id/scroll_view_button_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image_view_banner"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/height_200"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dashboard_banner"
+                app:layout_constraintBottom_toTopOf="@+id/layout_about_us"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
+
+            <include
+                android:id="@+id/layout_about_us"
+                style="@style/DashboardPageButton.Left"
+                layout="@layout/item_dashboard"
+                app:layout_constraintBottom_toTopOf="@+id/layout_availability"
+                app:layout_constraintEnd_toStartOf="@+id/layout_services"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_view_banner" />
+
+            <include
+                android:id="@+id/layout_services"
+                style="@style/DashboardPageButton.Right"
+                layout="@layout/item_dashboard"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_about_us"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layout_about_us"
+                app:layout_constraintTop_toTopOf="@+id/layout_about_us" />
+
+            <include
+                android:id="@+id/layout_availability"
+                style="@style/DashboardPageButton.Left"
+                layout="@layout/item_dashboard"
+                app:layout_constraintBottom_toTopOf="@+id/layout_contact_us"
+                app:layout_constraintEnd_toStartOf="@+id/layout_reach_us"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_about_us" />
+
+            <include
+                android:id="@+id/layout_reach_us"
+                style="@style/DashboardPageButton.Right"
+                layout="@layout/item_dashboard"
+                app:layout_constraintBottom_toBottomOf="@+id/layout_availability"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/layout_availability"
+                app:layout_constraintTop_toTopOf="@+id/layout_availability" />
+
+            <include
+                android:id="@+id/layout_contact_us"
+                style="@style/DashboardPageButton.Left"
+                layout="@layout/item_dashboard"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/layout_availability"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layout_availability" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</layout>
