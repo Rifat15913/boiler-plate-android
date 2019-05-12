@@ -10,6 +10,7 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.ItemAppointmentTypeBinding
 import com.lusosmile.main.data.remote.model.AppointmentType
 import com.lusosmile.main.ui.base.component.BaseSelectableAdapter
 import com.lusosmile.main.ui.base.component.BaseSelectableViewHolder

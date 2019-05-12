@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.util.Patterns
 import android.view.View
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.ActivityForgotPasswordBinding
 import com.lusosmile.main.ui.base.component.BaseActivity
 import com.lusosmile.main.ui.base.helper.ProgressDialogUtils
 import com.lusosmile.utils.helper.KeyboardUtils

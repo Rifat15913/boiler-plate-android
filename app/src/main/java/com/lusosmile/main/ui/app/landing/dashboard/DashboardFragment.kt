@@ -1,6 +1,7 @@
 package com.lusosmile.main.ui.app.landing.dashboard
 
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.FragmentDashboardBinding
 import com.lusosmile.main.ui.app.landing.container.ContainerActivity
 import com.lusosmile.main.ui.base.component.BaseFragment
 import com.lusosmile.utils.helper.Constants

@@ -59,7 +59,7 @@ class ServicesFragment : BaseFragment<ServicesMvpView, ServicesPresenter>(), Ser
     }
 
     private fun getAdapter(): ServicesAdapter {
-        return mBinding.recyclerViewServices.adapter
+        return mBinding.recyclerViewServices.adapter as ServicesAdapter
     }
 
     override fun onError(message: String) {

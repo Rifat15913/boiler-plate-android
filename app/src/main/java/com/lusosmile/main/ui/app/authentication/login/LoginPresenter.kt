@@ -1,25 +1,15 @@
 package com.lusosmile.main.ui.app.authentication.login
 
 import android.content.Context
-import android.text.TextUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.lusosmile.main.data.BaseRepository
 import com.lusosmile.main.ui.base.component.BasePresenter
 import com.lusosmile.main.ui.base.helper.ProgressDialogUtils
-import com.lusosmile.utils.helper.Constants
-import com.lusosmile.utils.helper.DataUtils
-import com.lusosmile.utils.helper.SharedPrefUtils
-import com.lusosmile.utils.helper.network.NoConnectivityException
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
-import timber.log.Timber
 
 class LoginPresenter : BasePresenter<LoginMvpView>() {
     private var mToken: String? = null
 
     fun login(context: Context, email: String, password: String) {
         ProgressDialogUtils.on().showProgressDialog(context)
-        FirebaseInstanceId.getInstance().instanceId
+        /*FirebaseInstanceId.getInstance().instanceId
                 .addOnCompleteListener(OnCompleteListener { task ->
                     if (!task.isSuccessful) {
                         mvpView?.onError(DataUtils.getString(R.string.login_error_login_failed))
@@ -89,6 +79,6 @@ class LoginPresenter : BasePresenter<LoginMvpView>() {
                                             mvpView?.onError(DataUtils.getString(R.string.login_error_login_failed))
                                         }
                                     }))
-                })
+                })*/
     }
 }

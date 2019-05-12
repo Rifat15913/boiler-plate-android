@@ -1,6 +1,7 @@
 package com.lusosmile.main.ui.app.appointment.myappointments
 
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.FragmentMyAppointmentsContainerBinding
 import com.lusosmile.main.ui.app.landing.container.ContainerActivity
 import com.lusosmile.main.ui.base.component.BaseFragment
 

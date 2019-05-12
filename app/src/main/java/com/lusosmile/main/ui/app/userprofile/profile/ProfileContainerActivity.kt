@@ -8,6 +8,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.ActivityProfileContainerBinding
 import com.lusosmile.main.ui.base.component.BaseActivity
 import com.lusosmile.utils.helper.DataUtils
 import com.lusosmile.utils.helper.ViewUtils

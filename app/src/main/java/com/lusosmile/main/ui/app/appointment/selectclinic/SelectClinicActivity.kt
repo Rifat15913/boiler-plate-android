@@ -137,7 +137,7 @@ class SelectClinicActivity : BaseActivity<SelectClinicMvpView, SelectClinicPrese
     }
 
     private fun getAdapter(): ClinicAdapter {
-        return mBinding.recyclerViewClinicNames.adapter
+        return mBinding.recyclerViewClinicNames.adapter as ClinicAdapter
     }
 
     override fun onSuccess(clinicList: List<Clinic>) {

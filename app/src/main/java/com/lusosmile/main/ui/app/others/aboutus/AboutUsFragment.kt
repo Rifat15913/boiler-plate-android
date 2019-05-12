@@ -1,6 +1,7 @@
 package com.lusosmile.main.ui.app.others.aboutus
 
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.FragmentAboutUsBinding
 import com.lusosmile.main.data.remote.model.About
 import com.lusosmile.main.ui.app.landing.container.ContainerActivity
 import com.lusosmile.main.ui.base.component.BaseFragment

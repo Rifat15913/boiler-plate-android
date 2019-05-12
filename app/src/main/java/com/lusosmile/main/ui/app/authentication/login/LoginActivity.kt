@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.util.Patterns
 import android.view.View
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.ActivityLoginBinding
 import com.lusosmile.main.ui.app.authentication.forgotpassword.ForgotPasswordActivity
 import com.lusosmile.main.ui.app.authentication.registration.RegistrationActivity
 import com.lusosmile.main.ui.app.landing.container.ContainerActivity

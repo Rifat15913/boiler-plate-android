@@ -4,6 +4,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.ItemMyAppointmentBinding
 import com.lusosmile.main.data.remote.model.Appointment
 import com.lusosmile.main.ui.base.component.BaseAdapter
 import com.lusosmile.main.ui.base.component.BaseViewHolder

@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.card.MaterialCardView
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.FragmentReachUsBinding
 import com.lusosmile.LusoSmileApplication
 import com.lusosmile.main.data.remote.model.Clinic
 import com.lusosmile.main.ui.app.appointment.selectappointmenttype.SelectAppointmentTypeActivity

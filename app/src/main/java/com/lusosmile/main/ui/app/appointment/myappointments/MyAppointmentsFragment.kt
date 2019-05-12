@@ -3,8 +3,10 @@ package com.lusosmile.main.ui.app.appointment.myappointments
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.FragmentMyAppointmentsBinding
 import com.lusosmile.main.data.remote.model.Appointment
 import com.lusosmile.main.ui.base.callback.ItemClickListener
 import com.lusosmile.main.ui.base.component.BaseFragment
@@ -58,17 +60,20 @@ class MyAppointmentsFragment : BaseFragment<MyAppointmentsMvpView, MyAppointment
                             when (view.id) {
                                 R.id.text_view_cancel -> {
                                     if (mContext != null) {
-                                        AlertDialogUtils.on().showDialog(mContext!!,
-                                                getString(R.string.my_appointments_are_you_sure),
+                                        AlertDialogUtils.on().showNativeDialog(mContext!!,
+                                                true,
                                                 getString(R.string.my_appointments_yes),
-                                                getString(R.string.my_appointments_no),
                                                 DialogInterface.OnClickListener { dialog, _ ->
                                                     dialog.dismiss()
                                                     presenter.cancelAppointment(mContext!!, item)
                                                 },
+                                                getString(R.string.my_appointments_no),
                                                 DialogInterface.OnClickListener { dialog, _ ->
                                                     dialog.dismiss()
-                                                })
+                                                },
+                                                getString(R.string.my_appointments_are_you_sure),
+                                                null,
+                                                null)
                                     }
                                 }
                             }
@@ -91,7 +96,7 @@ class MyAppointmentsFragment : BaseFragment<MyAppointmentsMvpView, MyAppointment
     }
 
     private fun getAdapter(): MyAppointmentsAdapter {
-        return mBinding.recyclerViewAppointments.adapter
+        return mBinding.recyclerViewAppointments.adapter as MyAppointmentsAdapter
     }
 
     private fun loadData() {

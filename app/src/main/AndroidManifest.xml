@@ -89,7 +89,13 @@
             android:name="com.lusosmile.main.ui.app.appointment.selectappointmenttype.SelectAppointmentTypeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name="com.lusosmile.main.ui.app.appointment.selectdatesession.SelectDateSessionActivity"
@@ -106,11 +112,7 @@
             android:name="com.lusosmile.main.ui.app.authentication.splash.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Launcher">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

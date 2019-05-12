@@ -7,6 +7,7 @@ import android.text.TextUtils
 import android.util.Patterns
 import android.view.View
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.ActivityRegistrationBinding
 import com.lusosmile.main.ui.app.authentication.login.LoginActivity
 import com.lusosmile.main.ui.base.component.BaseActivity
 import com.lusosmile.main.ui.base.helper.ProgressDialogUtils

@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.view.View
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.FragmentHomeBinding
 import com.lusosmile.main.ui.app.appointment.myappointments.MyAppointmentsContainerFragment
 import com.lusosmile.main.ui.app.appointment.selectclinic.SelectClinicActivity
 import com.lusosmile.main.ui.app.landing.container.ContainerActivity

@@ -53,7 +53,7 @@ class AvailabilitiesFragment : BaseFragment<AvailabilitiesMvpView, Availabilitie
     }
 
     private fun getAdapter(): AvailabilitiesAdapter {
-        return mBinding.recyclerViewAvailabilities.adapter
+        return mBinding.recyclerViewAvailabilities.adapter as AvailabilitiesAdapter
     }
 
     override fun onError(message: String) {

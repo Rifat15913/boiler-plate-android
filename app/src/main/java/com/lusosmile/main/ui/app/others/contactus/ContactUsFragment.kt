@@ -10,6 +10,7 @@ import android.util.Patterns
 import android.view.MotionEvent
 import android.view.View
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.FragmentContactUsBinding
 import com.lusosmile.main.ui.app.landing.container.ContainerActivity
 import com.lusosmile.main.ui.base.component.BaseFragment
 import com.lusosmile.main.ui.base.helper.ProgressDialogUtils

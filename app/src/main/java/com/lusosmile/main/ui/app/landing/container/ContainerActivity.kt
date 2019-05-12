@@ -153,18 +153,21 @@ class ContainerActivity : BaseActivity<ContainerMvpView, ContainerPresenter>() {
                             }
 
                             R.drawable.power_off -> {
-                                AlertDialogUtils.on().showDialog(this@ContainerActivity,
-                                        getString(R.string.my_appointments_are_you_sure),
+                                AlertDialogUtils.on().showNativeDialog(this@ContainerActivity,
+                                        true,
                                         getString(R.string.my_appointments_yes),
-                                        getString(R.string.my_appointments_no),
                                         DialogInterface.OnClickListener { dialog, _ ->
                                             dialog.dismiss()
                                             presenter.compositeDisposable.add(
                                                     BaseRepository.on().logOut(this@ContainerActivity, true))
                                         },
+                                        getString(R.string.my_appointments_no),
                                         DialogInterface.OnClickListener { dialog, _ ->
                                             dialog.dismiss()
-                                        })
+                                        },
+                                        getString(R.string.my_appointments_are_you_sure),
+                                        null,
+                                        null)
                             }
                         }
                     }

@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.util.Patterns
 import android.view.View
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.FragmentProfileBinding
 import com.lusosmile.main.data.remote.model.User
 import com.lusosmile.main.ui.base.component.BaseFragment
 import com.lusosmile.main.ui.base.helper.ProgressDialogUtils

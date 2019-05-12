@@ -1,17 +1,8 @@
 package com.lusosmile.main.ui.app.authentication.registration
 
 import android.content.Context
-import android.text.TextUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.lusosmile.main.data.BaseRepository
 import com.lusosmile.main.ui.base.component.BasePresenter
 import com.lusosmile.main.ui.base.helper.ProgressDialogUtils
-import com.lusosmile.utils.helper.DataUtils
-import com.lusosmile.utils.helper.network.NoConnectivityException
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
-import timber.log.Timber
-import java.util.*
 
 class RegistrationPresenter : BasePresenter<RegistrationMvpView>() {
 
@@ -19,7 +10,7 @@ class RegistrationPresenter : BasePresenter<RegistrationMvpView>() {
 
     fun registerTheUser(context: Context, name: String, email: String, mobilePhone: String, password: String) {
         ProgressDialogUtils.on().showProgressDialog(context)
-        FirebaseInstanceId.getInstance().instanceId
+        /*FirebaseInstanceId.getInstance().instanceId
                 .addOnCompleteListener(OnCompleteListener { task ->
                     if (!task.isSuccessful) {
                         mvpView?.onError(DataUtils.getString(R.string.registration_error_of_registration))
@@ -58,6 +49,6 @@ class RegistrationPresenter : BasePresenter<RegistrationMvpView>() {
 
 
                                     }))
-                })
+                })*/
     }
 }

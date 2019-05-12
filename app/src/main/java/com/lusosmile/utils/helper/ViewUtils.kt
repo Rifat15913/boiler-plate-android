@@ -14,15 +14,20 @@ import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.recyclerview.selection.SelectionPredicates
 import androidx.recyclerview.selection.SelectionTracker
+import androidx.recyclerview.selection.StableIdKeyProvider
+import androidx.recyclerview.selection.StorageStrategy
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.itechsoftsolutions.lusosmile.R
 import com.lusosmile.LusoSmileApplication
+import com.lusosmile.main.data.local.model.SelectionTrackerParameters
 import com.lusosmile.main.ui.base.callback.ItemClickListener
 import com.lusosmile.main.ui.base.callback.ItemLongClickListener
 import com.lusosmile.main.ui.base.component.BaseAdapter
+import com.lusosmile.main.ui.base.component.BaseItemDetailsLookup
 import com.lusosmile.main.ui.base.component.BaseSelectableAdapter
 import com.lusosmile.main.ui.base.helper.SwipeItemHandler
 import io.reactivex.Observable
@@ -186,7 +191,7 @@ class ViewUtils {
                                        itemDecoration: RecyclerView.ItemDecoration?,
                                        swipeItemHandler: SwipeItemHandler?,
                                        itemAnimator: RecyclerView.ItemAnimator?,
-                                       selectionTracker: SelectionTracker<Long>? = null) {
+                                       selectionTrackerParams: SelectionTrackerParameters? = null) {
 
             if (itemDecoration != null) {
                 recyclerView.addItemDecoration(itemDecoration)
@@ -201,8 +206,27 @@ class ViewUtils {
             itemLongClickListener?.setAdapter(adapter)
             swipeItemHandler?.attachToRecyclerView(recyclerView)
 
-            if (selectionTracker != null) {
-                (adapter as BaseSelectableAdapter).tracker = selectionTracker
+            if (selectionTrackerParams != null) {
+                selectionTrackerParams.trackerObjectFromActivityOrFragment =
+                        SelectionTracker.Builder<Long>(
+                                selectionTrackerParams.selectionId,
+                                recyclerView,
+                                StableIdKeyProvider(recyclerView),
+                                BaseItemDetailsLookup(recyclerView),
+                                StorageStrategy.createLongStorage())
+                                .withSelectionPredicate(
+                                        if (selectionTrackerParams.willSelectSingleItem) {
+                                            SelectionPredicates.createSelectSingleAnything()
+                                        } else {
+                                            SelectionPredicates.createSelectAnything()
+                                        })
+                                .build()
+
+                (adapter as BaseSelectableAdapter).tracker =
+                        selectionTrackerParams.trackerObjectFromActivityOrFragment
+
+                adapter.selectionListener =
+                        selectionTrackerParams.selectionListener
             }
         }
 

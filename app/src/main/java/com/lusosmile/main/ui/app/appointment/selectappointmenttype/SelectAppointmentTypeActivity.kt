@@ -5,17 +5,14 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.selection.SelectionPredicates
 import androidx.recyclerview.selection.SelectionTracker
-import androidx.recyclerview.selection.StableIdKeyProvider
-import androidx.recyclerview.selection.StorageStrategy
 import androidx.recyclerview.widget.GridLayoutManager
 import com.itechsoftsolutions.lusosmile.R
+import com.lusosmile.main.data.local.model.SelectionTrackerParameters
 import com.lusosmile.main.data.remote.model.AppointmentType
 import com.lusosmile.main.ui.app.appointment.selectdatesession.SelectDateSessionActivity
 import com.lusosmile.main.ui.base.callback.SelectionListener
 import com.lusosmile.main.ui.base.component.BaseActivity
-import com.lusosmile.main.ui.base.component.BaseItemDetailsLookup
 import com.lusosmile.main.ui.base.helper.GridSpacingItemDecoration
 import com.lusosmile.main.ui.base.helper.ProgressDialogUtils
 import com.lusosmile.utils.helper.Constants
@@ -104,20 +101,33 @@ class SelectAppointmentTypeActivity : BaseActivity<SelectAppointmentTypeMvpView,
                 GridLayoutManager(this, 3),
                 GridSpacingItemDecoration(3, ViewUtils.getPixel(R.dimen.margin_8), true),
                 null,
-                null)
+                null,
+                SelectionTrackerParameters(
+                        Constants.SelectionIds.APPOINTMENT_TYPE,
+                        true,
+                        mTracker,
+                        this))
 
-        mTracker = SelectionTracker.Builder<Long>(
-                Constants.SelectionIds.APPOINTMENT_TYPE,
-                mBinding.recyclerViewAppointmentTypes,
-                StableIdKeyProvider(mBinding.recyclerViewAppointmentTypes),
-                BaseItemDetailsLookup(mBinding.recyclerViewAppointmentTypes),
-                StorageStrategy.createLongStorage())
-                .withSelectionPredicate(SelectionPredicates.createSelectSingleAnything())
-                .build()
-        getAdapter().tracker = mTracker
-        getAdapter().selectionListener = this
+        val list: MutableList<AppointmentType> = ArrayList()
+        list.add(AppointmentType(1, "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?cs=srgb&dl=blur-blurred-background-colors-754082.jpg&fm=jpg", "One"))
 
-        loadData()
+        list.add(AppointmentType(2, "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?cs=srgb&dl=blur-blurred-background-colors-754082.jpg&fm=jpg", "Two"))
+
+        list.add(AppointmentType(3, "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?cs=srgb&dl=blur-blurred-background-colors-754082.jpg&fm=jpg", "Three"))
+
+        list.add(AppointmentType(4, "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?cs=srgb&dl=blur-blurred-background-colors-754082.jpg&fm=jpg", "Four"))
+
+        list.add(AppointmentType(5, "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?cs=srgb&dl=blur-blurred-background-colors-754082.jpg&fm=jpg", "Five"))
+
+        list.add(AppointmentType(6, "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?cs=srgb&dl=blur-blurred-background-colors-754082.jpg&fm=jpg", "Six"))
+
+        list.add(AppointmentType(7, "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?cs=srgb&dl=blur-blurred-background-colors-754082.jpg&fm=jpg", "Seven"))
+
+        list.add(AppointmentType(8, "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?cs=srgb&dl=blur-blurred-background-colors-754082.jpg&fm=jpg", "Eight"))
+
+        onSuccess(list)
+
+        //loadData()
     }
 
     private fun loadData() {
@@ -159,7 +169,7 @@ class SelectAppointmentTypeActivity : BaseActivity<SelectAppointmentTypeMvpView,
     }
 
     private fun getAdapter(): AppointmentTypeAdapter {
-        return mBinding.recyclerViewAppointmentTypes.adapter
+        return mBinding.recyclerViewAppointmentTypes.adapter as AppointmentTypeAdapter
     }
 
     override fun onSuccess(appointmentTypeList: List<AppointmentType>) {

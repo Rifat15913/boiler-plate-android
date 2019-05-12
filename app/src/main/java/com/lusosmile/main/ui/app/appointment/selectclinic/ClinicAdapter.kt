@@ -4,6 +4,7 @@ import android.text.TextUtils
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.lusosmile.databinding.ItemClinicNameBinding
 import com.lusosmile.main.data.remote.model.Clinic
 import com.lusosmile.main.ui.base.component.BaseSelectableAdapter
 import com.lusosmile.main.ui.base.component.BaseSelectableViewHolder
