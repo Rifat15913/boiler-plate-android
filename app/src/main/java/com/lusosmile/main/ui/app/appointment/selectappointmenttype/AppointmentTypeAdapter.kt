@@ -45,7 +45,7 @@ class AppointmentTypeAdapter : BaseSelectableAdapter<AppointmentType>() {
         return AppointmentTypeViewHolder(inflate(parent, R.layout.item_appointment_type))
     }
 
-    class AppointmentTypeViewHolder(binding: ViewDataBinding) : BaseSelectableViewHolder<AppointmentType>(binding) {
+    inner class AppointmentTypeViewHolder(binding: ViewDataBinding) : BaseSelectableViewHolder<AppointmentType>(binding) {
         private val mBinding: ItemAppointmentTypeBinding = binding as ItemAppointmentTypeBinding
 
         override fun bind(item: AppointmentType) {

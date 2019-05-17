@@ -71,7 +71,8 @@ class BaseRepository(context: Context) {
      * @param token FCM token of device in order to send push notifications in future
      * @return base response consists of success status, data and message
      * */
-    fun register(name: String, email: String, mobilePhone: String, password: String, token: String): Flowable<retrofit2.Response<BaseResponse>> {
+    fun register(name: String, email: String, mobilePhone: String, password: String, token: String)
+            : Flowable<retrofit2.Response<BaseResponse>> {
         return mAppRemoteDataSource.register(name, email, mobilePhone, password, token)
     }
 
