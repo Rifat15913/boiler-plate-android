@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
-import com.lusosmile.LusoSmileApplication
+import com.lusosmile.BaseApplication
 import java.util.concurrent.ExecutionException
 
 
@@ -124,7 +124,7 @@ class GlideUtils private constructor() {
          */
         fun custom(imageView: ImageView, source: Any, requestOptions: RequestOptions,
                    requestListener: RequestListener<Bitmap>?) {
-            Glide.with(LusoSmileApplication.getBaseApplicationContext())
+            Glide.with(BaseApplication.getBaseApplicationContext())
                     .asBitmap()
                     .load(source)
                     .apply(requestOptions)
@@ -142,7 +142,7 @@ class GlideUtils private constructor() {
         // TODO: Test this method
         fun getBitmap(source: Any, width: Int, height: Int): Bitmap? {
             try {
-                return Glide.with(LusoSmileApplication.getBaseApplicationContext())
+                return Glide.with(BaseApplication.getBaseApplicationContext())
                         .asBitmap()
                         .load(source)
                         .apply(RequestOptions()

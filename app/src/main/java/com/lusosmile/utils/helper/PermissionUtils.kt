@@ -4,7 +4,7 @@ import android.app.Activity
 import android.content.pm.PackageManager
 import android.os.Build
 import androidx.fragment.app.Fragment
-import com.lusosmile.LusoSmileApplication
+import com.lusosmile.BaseApplication
 import java.util.*
 
 /**
@@ -116,7 +116,7 @@ object PermissionUtils {
             return true
         }
 
-        return LusoSmileApplication.getBaseApplicationContext()
+        return BaseApplication.getBaseApplicationContext()
                 .checkSelfPermission(permission) == PackageManager.PERMISSION_GRANTED
     }
 }

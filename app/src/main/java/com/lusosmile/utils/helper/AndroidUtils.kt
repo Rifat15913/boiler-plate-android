@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.os.Build
-import com.lusosmile.LusoSmileApplication
+import com.lusosmile.BaseApplication
 
 /**
  * This is a class that contains utils to work with Android os level
@@ -51,7 +51,7 @@ class AndroidUtils private constructor() {
          * @return [PackageInfo] package info of the application
          * */
         fun getPackageInfo(): PackageInfo? {
-            val context: Context = LusoSmileApplication.getBaseApplicationContext()
+            val context: Context = BaseApplication.getBaseApplicationContext()
 
             return try {
                 context.packageManager.getPackageInfo(context.packageName, 0)

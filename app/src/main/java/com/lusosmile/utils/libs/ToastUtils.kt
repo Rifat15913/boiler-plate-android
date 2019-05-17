@@ -3,7 +3,7 @@ package com.lusosmile.utils.libs
 import android.graphics.drawable.Drawable
 import android.text.TextUtils
 import android.widget.Toast
-import com.lusosmile.LusoSmileApplication
+import com.lusosmile.BaseApplication
 import es.dmoral.toasty.Toasty
 
 /**
@@ -26,7 +26,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun error(text: String) {
-        Toasty.error(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.error(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_SHORT, true)
                 .show()
     }
@@ -38,7 +38,7 @@ object ToastUtils {
      * @param isLongDuration should the toast stay longer?
      * */
     fun error(text: String, isLongDuration: Boolean) {
-        Toasty.error(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.error(BaseApplication.getBaseApplicationContext(), text,
                 if (isLongDuration) Toast.LENGTH_LONG else Toast.LENGTH_SHORT, true)
                 .show()
     }
@@ -49,7 +49,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun errorWithoutIcon(text: String) {
-        Toasty.error(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.error(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_SHORT, false)
                 .show()
     }
@@ -60,7 +60,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun success(text: String) {
-        Toasty.success(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.success(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_SHORT, true)
                 .show()
     }
@@ -72,7 +72,7 @@ object ToastUtils {
      * @param isLongDuration should the toast stay longer?
      * */
     fun success(text: String, isLongDuration: Boolean) {
-        Toasty.success(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.success(BaseApplication.getBaseApplicationContext(), text,
                 if (isLongDuration) Toast.LENGTH_LONG else Toast.LENGTH_SHORT, true)
                 .show()
     }
@@ -83,7 +83,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun successWithoutIcon(text: String) {
-        Toasty.success(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.success(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_SHORT, false)
                 .show()
     }
@@ -94,7 +94,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun info(text: String) {
-        Toasty.info(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.info(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_SHORT, true)
                 .show()
     }
@@ -105,7 +105,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun infoWithoutIcon(text: String) {
-        Toasty.info(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.info(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_SHORT, false)
                 .show()
     }
@@ -116,7 +116,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun warning(text: String) {
-        Toasty.warning(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.warning(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_SHORT, true)
                 .show()
     }
@@ -128,7 +128,7 @@ object ToastUtils {
      * @param isLongDuration should the toast stay longer?
      * */
     fun warning(text: String, isLongDuration: Boolean) {
-        Toasty.warning(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.warning(BaseApplication.getBaseApplicationContext(), text,
                 if (isLongDuration) Toast.LENGTH_LONG else Toast.LENGTH_SHORT, true)
                 .show()
     }
@@ -139,7 +139,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun warningWithoutIcon(text: String) {
-        Toasty.warning(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.warning(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_SHORT, false)
                 .show()
     }
@@ -150,7 +150,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun normalWithIcon(text: String, icon: Drawable) {
-        Toasty.normal(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.normal(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_SHORT, icon, true)
                 .show()
     }
@@ -161,7 +161,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun normalShort(text: String) {
-        Toasty.normal(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.normal(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_SHORT, null, false)
                 .show()
     }
@@ -172,7 +172,7 @@ object ToastUtils {
      * @param text the text to be shown
      * */
     fun normalLong(text: String) {
-        Toasty.normal(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.normal(BaseApplication.getBaseApplicationContext(), text,
                 Toast.LENGTH_LONG, null, false)
                 .show()
     }
@@ -189,7 +189,7 @@ object ToastUtils {
      * */
     fun custom(text: String, icon: Drawable, colorId: Int, shortDuration: Boolean,
                withIcon: Boolean, shouldTint: Boolean) {
-        Toasty.custom(LusoSmileApplication.getBaseApplicationContext(), text,
+        Toasty.custom(BaseApplication.getBaseApplicationContext(), text,
                 icon, colorId,
                 if (shortDuration) {
                     Toast.LENGTH_SHORT
@@ -206,7 +206,7 @@ object ToastUtils {
      * */
     fun nativeLong(text: String) {
         if (!TextUtils.isEmpty(text)) {
-            Toast.makeText(LusoSmileApplication.getBaseApplicationContext(),
+            Toast.makeText(BaseApplication.getBaseApplicationContext(),
                     text, Toast.LENGTH_LONG).show()
         }
     }
@@ -218,7 +218,7 @@ object ToastUtils {
      * */
     fun nativeShort(text: String) {
         if (!TextUtils.isEmpty(text)) {
-            Toast.makeText(LusoSmileApplication.getBaseApplicationContext(),
+            Toast.makeText(BaseApplication.getBaseApplicationContext(),
                     text, Toast.LENGTH_SHORT).show()
         }
     }

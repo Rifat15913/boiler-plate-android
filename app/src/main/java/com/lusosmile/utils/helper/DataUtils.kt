@@ -2,7 +2,7 @@ package com.lusosmile.utils.helper
 
 import android.content.ContentResolver
 import android.net.Uri
-import com.lusosmile.LusoSmileApplication
+import com.lusosmile.BaseApplication
 import java.util.*
 
 /**
@@ -38,7 +38,7 @@ class DataUtils private constructor() {
          * @return desired string
          * */
         fun getString(resourceId: Int): String {
-            return LusoSmileApplication.getBaseApplicationContext().getString(resourceId)
+            return BaseApplication.getBaseApplicationContext().getString(resourceId)
         }
 
         /**

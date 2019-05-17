@@ -2,7 +2,7 @@ package com.lusosmile.utils.helper.network
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.lusosmile.LusoSmileApplication
+import com.lusosmile.BaseApplication
 
 /**
  * This is a class that contains utils to work with network
@@ -18,7 +18,7 @@ object NetworkUtils {
     @Synchronized
     fun isOnline(): Boolean {
         val connectivityManager =
-                LusoSmileApplication.getBaseApplicationContext()
+                BaseApplication.getBaseApplicationContext()
                         .getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val netInfo = connectivityManager.activeNetworkInfo
         return (netInfo != null && netInfo.isConnected)

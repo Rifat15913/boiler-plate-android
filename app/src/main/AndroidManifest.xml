@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.lusosmile.LusoSmileApplication"
+        android:name="com.lusosmile.BaseApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:hardwareAccelerated="true"

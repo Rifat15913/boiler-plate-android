@@ -5,7 +5,7 @@ import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
 // import com.google.firebase.analytics.FirebaseAnalytics
 import com.itechsoftsolutions.lusosmile.BuildConfig
-import com.lusosmile.LusoSmileApplication.Companion.sInstance
+import com.lusosmile.BaseApplication.Companion.sInstance
 import com.lusosmile.main.data.BaseRepository
 import com.lusosmile.utils.helper.Constants
 import com.lusosmile.utils.helper.LanguageUtils
@@ -18,14 +18,14 @@ import timber.log.Timber
  * @property sInstance an instance of this Application class
  * @author Mohd. Asfaq-E-Azam Rifat
  */
-class LusoSmileApplication : MultiDexApplication() {
+class BaseApplication : MultiDexApplication() {
 
     init {
         sInstance = this
     }
 
     companion object {
-        private lateinit var sInstance: LusoSmileApplication
+        private lateinit var sInstance: BaseApplication
 
         /**
          * This method provides the Application context

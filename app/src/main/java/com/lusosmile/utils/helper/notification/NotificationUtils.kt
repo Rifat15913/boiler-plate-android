@@ -10,7 +10,7 @@ import android.net.Uri
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.lusosmile.LusoSmileApplication
+import com.lusosmile.BaseApplication
 import com.lusosmile.utils.helper.DataUtils
 import java.util.*
 
@@ -89,7 +89,7 @@ object NotificationUtils {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val notificationManager: NotificationManager =
-                    LusoSmileApplication.getBaseApplicationContext()
+                    BaseApplication.getBaseApplicationContext()
                             .getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
             var shouldCreateChannel = true
@@ -107,7 +107,7 @@ object NotificationUtils {
         }
 
         val builder =
-                NotificationCompat.Builder(LusoSmileApplication.getBaseApplicationContext(), channelDetails.id)
+                NotificationCompat.Builder(BaseApplication.getBaseApplicationContext(), channelDetails.id)
                         .setSmallIcon(iconResourceId)
                         .setContentTitle(title)
                         .setContentText(subtitle)
@@ -131,7 +131,7 @@ object NotificationUtils {
 
 
         val manager: NotificationManagerCompat = NotificationManagerCompat.from(
-                LusoSmileApplication.getBaseApplicationContext())
+                BaseApplication.getBaseApplicationContext())
         manager.notify(notificationId, builder.build())
     }
 }
