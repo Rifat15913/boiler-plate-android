@@ -15,7 +15,7 @@ LusoSmile is a native application which books appointments at different clinics.
 Change "app_name" from string.xml of all the languages
 ![Visual](readme-images/refactor00.PNG)
 #### Change Package Name
-<center>
+    <center>
  No | Action | Screenshot
  --- | --- | --- 
  A | Open the project, Select the "Project" type as file structure(top left) | ![Visual](readme-images/refactor01.PNG) 
@@ -23,7 +23,7 @@ Change "app_name" from string.xml of all the languages
  C | Put new app name | ![Visual](readme-images/refactor03.PNG) 
  D | Click on "Do Refactor" if the dialog pops up | ![Visual](readme-images/refactor04.PNG) 
  E | Wait | ![Visual](readme-images/refactor05.PNG)
-</center>
+    </center>
 ### Configure Firebase Core
 1. Activate at build.gradle
     * <code>"implementation 'com.google.firebase:firebase-core:16.0.8'"</code>
