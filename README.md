@@ -1,12 +1,6 @@
-# LusoSmile
+# Boiler-plate-android
 
 LusoSmile is a native application which books appointments at different clinics.
-
-## Background Story
-
-As the tagline says, the application can book appointments for different clinics. An user can simply registers into our application, goes through verification. Later on, he can log into our system and choose different clinics, different type of services and different time schedules. The user will also be able know to availabilities of the clinics, contact the admin. There will be maps to indicate the clinics in a more interactive way. 
-
-After booking an appointment, the user will also be able to look upon the list of appointments he requested to book, booked and requested to cancel. He can also see his profile and update it whenever it's needed.
 
 ## Built With
 ### Languages
@@ -14,11 +8,19 @@ After booking an appointment, the user will also be able to look upon the list o
     * Java
     * XML
     * MarkDown
-### Platforms
-    * Firebase
+    
+## How to Configure
+### Configure Firebase Core
+    1. Make "implementation 'com.google.firebase:firebase-core:16.0.8'" active at build.gradle file
+### Configure Crashlytics
+    1. Configure crashlytics at firebase console. You can follow [this](https://firebase.google.com/docs/crashlytics/get-started?platform=android#setup-in-console)
+    2. Configure firebase core 
+    3. Make "apply plugin: 'com.google.gms.google-services'", "implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'", "apply plugin: 'io.fabric'" active at build.gradle file 
+    4. Make "import com.google.firebase.analytics.FirebaseAnalytics" active at BaseApplication class
+    5. Make "FirebaseAnalytics.getInstance(context)" active at initiate() method of BaseApplication class
     
 ## Authors
-* Mohd. Asfaq-E-Azam Rifat, Dev Lead - [Rifat](https://gitlab.com/itech_rifat)
+* Mohd. Asfaq-E-Azam Rifat, Executive Software Engineer - [Rifat](https://github.com/rifat15913)
 
 ## Technical Documentation
 The technical documentation is located [here.](app/documentation/)
