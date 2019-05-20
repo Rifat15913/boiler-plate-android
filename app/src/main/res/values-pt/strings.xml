@@ -1,6 +1,6 @@
 <resources>
     <!--App Essentials-->
-    <string name="app_name">LusoSmile</string>
+    <string name="app_name">Boiler Plate</string>
     <string name="please_wait">Please Wait</string>
     <string name="loading">Loading…</string>
 
