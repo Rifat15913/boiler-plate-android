@@ -16,12 +16,12 @@ Change "app_name" from string.xml of all the languages
 ![Visual](readme-images/refactor00.PNG)
 #### Change Package Name
 No | Action | Screenshot
-| ----- | :---: | ---: |  
-A | Open the project, Select the "Project" type as file structure(top left) | ![Visual](readme-images/refactor01.PNG) 
-B | Right click and go to Refactor > Rename | ![Visual](readme-images/refactor02.PNG) 
-C | Put new app name | ![Visual](readme-images/refactor03.PNG) 
-D | Click on "Do Refactor" if the dialog pops up | ![Visual](readme-images/refactor04.PNG) 
-E | Wait | ![Visual](readme-images/refactor05.PNG)
+| :-----: | :---: | :---: |  
+1 | Open the project, Select the "Project" type as file structure(top left) | ![Visual](readme-images/refactor01.PNG) 
+2 | Right click and go to Refactor > Rename | ![Visual](readme-images/refactor02.PNG) 
+3 | Put new app name | ![Visual](readme-images/refactor03.PNG) 
+4 | Click on "Do Refactor" if the dialog pops up | ![Visual](readme-images/refactor04.PNG) 
+5 | Wait | ![Visual](readme-images/refactor05.PNG)
 ### Configure Firebase Core
 1. Activate at build.gradle
     * <code>"implementation 'com.google.firebase:firebase-core:16.0.8'"</code>
