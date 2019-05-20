@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.lusosmile.main.ui.base.widget.CustomStatusBarView
+        <com.boilerplate.main.ui.base.widget.CustomStatusBarView
             android:id="@+id/status_bar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

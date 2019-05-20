@@ -11,7 +11,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name="com.lusosmile.BaseApplication"
+        android:name="com.boilerplate.BaseApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:hardwareAccelerated="true"
@@ -50,43 +50,43 @@
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.lusosmile.main.ui.app.authentication.welcome.WelcomeActivity"
+            android:name="com.boilerplate.main.ui.app.authentication.welcome.WelcomeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.GradientStatusBar" />
 
         <activity
-            android:name="com.lusosmile.main.ui.app.authentication.registration.RegistrationActivity"
+            android:name="com.boilerplate.main.ui.app.authentication.registration.RegistrationActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.lusosmile.main.ui.app.authentication.login.LoginActivity"
+            android:name="com.boilerplate.main.ui.app.authentication.login.LoginActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.lusosmile.main.ui.app.landing.container.ContainerActivity"
+            android:name="com.boilerplate.main.ui.app.landing.container.ContainerActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.GradientStatusBar" />
 
         <activity
-            android:name="com.lusosmile.main.ui.app.userprofile.profile.ProfileContainerActivity"
+            android:name="com.boilerplate.main.ui.app.userprofile.profile.ProfileContainerActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.GradientStatusBar" />
 
         <activity
-            android:name="com.lusosmile.main.ui.app.appointment.selectclinic.SelectClinicActivity"
+            android:name="com.boilerplate.main.ui.app.appointment.selectclinic.SelectClinicActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.lusosmile.main.ui.app.appointment.selectappointmenttype.SelectAppointmentTypeActivity"
+            android:name="com.boilerplate.main.ui.app.appointment.selectappointmenttype.SelectAppointmentTypeActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme">
@@ -98,18 +98,18 @@
         </activity>
 
         <activity
-            android:name="com.lusosmile.main.ui.app.appointment.selectdatesession.SelectDateSessionActivity"
+            android:name="com.boilerplate.main.ui.app.appointment.selectdatesession.SelectDateSessionActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.lusosmile.main.ui.app.authentication.forgotpassword.ForgotPasswordActivity"
+            android:name="com.boilerplate.main.ui.app.authentication.forgotpassword.ForgotPasswordActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
 
         <activity
-            android:name="com.lusosmile.main.ui.app.authentication.splash.SplashActivity"
+            android:name="com.boilerplate.main.ui.app.authentication.splash.SplashActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Launcher">
 

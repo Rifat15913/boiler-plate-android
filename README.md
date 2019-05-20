@@ -10,6 +10,9 @@ LusoSmile is a native application which books appointments at different clinics.
     * MarkDown
     
 ## How to Configure
+### Configure Base Project
+1. Change "app_name" from string.xml of all the languages
+![Visual](readme-images/refactor00.PNG)
 ### Configure Firebase Core
 1. Activate at build.gradle
     * <code>"implementation 'com.google.firebase:firebase-core:16.0.8'"</code>
