@@ -12,8 +12,8 @@ LusoSmile is a native application which books appointments at different clinics.
 ## How to Configure
 ### Configure Base Project
 #### Change Application Name
-Change "app_name" from string.xml of all the languages
-![Visual](readme-images/refactor00.PNG)
+1. Change "app_name" from string.xml of all the languages
+    ![Visual](readme-images/refactor00.PNG)
 #### Change Package Name
 No | Action | Screenshot
 | :---: | :---: | :---: |  
