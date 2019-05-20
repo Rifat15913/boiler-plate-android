@@ -14,15 +14,15 @@ LusoSmile is a native application which books appointments at different clinics.
     1. Activate at build.gradle
         * "implementation 'com.google.firebase:firebase-core:16.0.8'"
 ### Configure Crashlytics
-    1. Configure crashlytics at firebase console. You can visit, [`hello`](http://bit.ly/2VBDluy)
-    2. Configure firebase core 
-    3. Activate at build.gradle file 
-        * "apply plugin: 'com.google.gms.google-services'"
-        * "implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'"
-        * "apply plugin: 'io.fabric'"
-    4. Activate at BaseApplication class
-        * "import com.google.firebase.analytics.FirebaseAnalytics"
-        * "FirebaseAnalytics.getInstance(context)"
+1. Configure crashlytics at firebase console. You can visit, [`hello`](http://bit.ly/2VBDluy)
+2. Configure firebase core 
+3. Activate at build.gradle file 
+    * "apply plugin: 'com.google.gms.google-services'"
+    * "implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'"
+    * "apply plugin: 'io.fabric'"
+4. Activate at BaseApplication class
+    * "import com.google.firebase.analytics.FirebaseAnalytics"
+    * "FirebaseAnalytics.getInstance(context)"
     
 ## Authors
 * Mohd. Asfaq-E-Azam Rifat, Executive Software Engineer - [Rifat](https://github.com/rifat15913)
