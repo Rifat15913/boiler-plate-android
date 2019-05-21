@@ -177,7 +177,7 @@ dependencies {
     implementation "org.osmdroid:osmdroid-android:$rootProject.ext.osmdroid_version"
 
     // App data storage
-    debugImplementation 'com.awesomedroidapps:inappstoragereader:1.0.2'
+    // debugImplementation 'com.awesomedroidapps:inappstoragereader:1.0.2'
 
     // Memory leak detector
     // debugImplementation "com.squareup.leakcanary:leakcanary-android:$rootProject.ext.leak_canary_version"
