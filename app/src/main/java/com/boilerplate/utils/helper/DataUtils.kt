@@ -101,8 +101,8 @@ class DataUtils private constructor() {
             return builder.toString()
         }
 
-        @SuppressLint("InlinedApi")
-        fun printHashKey() {
+        @SuppressLint("InlinedApi", "LogNotTimber")
+        fun getAndroidHashKey() {
             val context = BaseApplication.getBaseApplicationContext()
             try {
                 val packageInfo: PackageInfo = context.packageManager.getPackageInfo(context.packageName,
@@ -112,17 +112,17 @@ class DataUtils private constructor() {
                             PackageManager.GET_SIGNATURES
                         })
 
-                val signatureArray: Signature
+                var signatures = arrayOf<Signature>()
 
                 if (AndroidUtils.getCurrentBuildApiVersion() >= Build.VERSION_CODES.P) {
                     if (packageInfo.signingInfo != null) {
-                        packageInfo.signingInfo.apkContentsSigners
+                        signatures = packageInfo.signingInfo.apkContentsSigners
                     }
                 } else {
-
+                    signatures = packageInfo.signatures
                 }
 
-                for (signature in packageInfo.signatures) {
+                for (signature in signatures) {
                     val messageDigest = MessageDigest.getInstance("SHA")
                     messageDigest.update(signature.toByteArray())
                     val hashKey = String(Base64.encode(messageDigest.digest(), 0))
