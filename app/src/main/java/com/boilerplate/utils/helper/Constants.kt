@@ -29,6 +29,7 @@ class Constants {
 
     class Common {
         companion object {
+            const val ANDROID_HASH_KEY = "Hash Key"
             const val COMMON_TIME_ZONE = "UTC"
             const val APP_COMMON_DATE_FORMAT: String = "dd MMMM, yyyy"
             const val APP_COMMON_TIME_FORMAT: String = "HH:mm"

@@ -1,8 +1,18 @@
 package com.boilerplate.utils.helper
 
+import android.annotation.SuppressLint
 import android.content.ContentResolver
+import android.content.pm.PackageInfo
+import android.content.pm.PackageManager
+import android.content.pm.Signature
 import android.net.Uri
+import android.os.Build
+import android.util.Base64
+import android.util.Log
 import com.boilerplate.BaseApplication
+import timber.log.Timber
+import java.security.MessageDigest
+import java.security.NoSuchAlgorithmException
 import java.util.*
 
 /**
@@ -89,6 +99,40 @@ class DataUtils private constructor() {
             }
 
             return builder.toString()
+        }
+
+        @SuppressLint("InlinedApi")
+        fun printHashKey() {
+            val context = BaseApplication.getBaseApplicationContext()
+            try {
+                val packageInfo: PackageInfo = context.packageManager.getPackageInfo(context.packageName,
+                        if (AndroidUtils.getCurrentBuildApiVersion() >= Build.VERSION_CODES.P) {
+                            PackageManager.GET_SIGNING_CERTIFICATES
+                        } else {
+                            PackageManager.GET_SIGNATURES
+                        })
+
+                val signatureArray: Signature
+
+                if (AndroidUtils.getCurrentBuildApiVersion() >= Build.VERSION_CODES.P) {
+                    if (packageInfo.signingInfo != null) {
+                        packageInfo.signingInfo.apkContentsSigners
+                    }
+                } else {
+
+                }
+
+                for (signature in packageInfo.signatures) {
+                    val messageDigest = MessageDigest.getInstance("SHA")
+                    messageDigest.update(signature.toByteArray())
+                    val hashKey = String(Base64.encode(messageDigest.digest(), 0))
+                    Log.i(Constants.Common.ANDROID_HASH_KEY, hashKey)
+                }
+            } catch (e: NoSuchAlgorithmException) {
+                Timber.e(e)
+            } catch (e: Exception) {
+                Timber.e(e)
+            }
         }
     }
 }
