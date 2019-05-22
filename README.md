@@ -41,11 +41,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | 2 | Go to <code>Title Bar Menu > Edit > Find > Replace in Path</code> | ![Visual](readme-images/appid02.PNG) |
 | 3 | Paste the old application id in the first field and write down the new application id in the second field. Then press <code>Replace All</code> | ![Visual](readme-images/appid03.PNG) | 
 | 4 | If alert dialog pops up, then click on <code>Replace</code> | ![Visual](readme-images/appid04.PNG) |
-| 5 | 
-- Wait
-- Go to <code>Build > Clean Project</code>
-- Sync gradle 
-| |
+| 5 | <ul><li>Wait</li><li>Go to <code>Build > Clean Project</code></li><li>Sync gradle</li></ul> | |
 
 ### Change Package Name
 | No | Action | Screenshot |
