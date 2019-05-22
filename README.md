@@ -2,19 +2,19 @@
 
 Tree is a native application which contains all the essential codes (boiler-plate) to kick start an Android project.
 
-## Built With
-### Languages
+# Built With
+## Languages
     * Kotlin
     * Java
     * XML
     * MarkDown
     
-## How to Configure
-### Configure Base Project
-#### Change Application Name
+# How to Configure
+## Configure Base Project
+### Change Application Name
 1. Change "app_name" from string.xml of all the languages
     ![Visual](readme-images/refactor00.PNG)
-#### Change Package Name
+### Change Package Name
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
 | 1 | Open the project, Select the "Project" type as file structure(top left) | ![Visual](readme-images/refactor01.PNG) | 
@@ -22,10 +22,10 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | 3 | Put new app name | ![Visual](readme-images/refactor03.PNG) | 
 | 4 | Click on "Do Refactor" if the dialog pops up | ![Visual](readme-images/refactor04.PNG) |
 | 5 | Wait | ![Visual](readme-images/refactor05.PNG) |
-### Configure Firebase Core
+## Configure Firebase Core
 1. Activate at <code>build.gradle</code>
     * <code>implementation 'com.google.firebase:firebase-core:16.0.8'</code>
-### Configure Crashlytics
+## Configure Crashlytics
 1. Configure crashlytics at firebase console. To know more, [visit here](http://bit.ly/2VBDluy)
 2. Configure firebase core 
 3. Activate at <code>build.gradle</code> file 
@@ -35,8 +35,8 @@ Tree is a native application which contains all the essential codes (boiler-plat
 4. Activate at <code>BaseApplication</code> class
     * <code>import com.google.firebase.analytics.FirebaseAnalytics</code>
     * <code>FirebaseAnalytics.getInstance(context)</code>
-## Extras
-### Fetch Android Hash Key
+# Extras
+## Fetch Android Hash Key
 1. Activate at <code>BaseApplication</code> class
     * <code>import com.boilerplate.utils.helper.DataUtils</code>
     * <code>DataUtils.getAndroidHashKey()</code> at <code>onCreate()</code>
@@ -46,14 +46,14 @@ Tree is a native application which contains all the essential codes (boiler-plat
 5. Filter the <code>Info</code> logs
 6. Search for the tag <code>Hash</code>
 7. Get the hash key depending on the build variant; i.e: <code>debug, release</code>
-## Authors
+# Authors
 * Mohd. Asfaq-E-Azam Rifat, Executive Software Engineer - [Rifat](https://github.com/rifat15913)
 
-## Technical Documentation
+# Technical Documentation
 The technical documentation is located [here.](app/documentation/)
 
-## Releases
+# Releases
 Please visit [this link](app/release/) to get the latest build.
 
-## Contributing
+# Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
