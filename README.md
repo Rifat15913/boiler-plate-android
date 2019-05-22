@@ -1,8 +1,20 @@
 # Table of Contents  
 * [Tree](#tree)
 * [Built With](#built-with)
+    * [Languages](#languages)
 * [How to Configure](#how-to-configure)
+    * [Configure Base Project](#configure-base-project)
+        * [Change Application Launcher Icon](#change-application-launcher-icon)
+        * [Change Application Name ](#change-application-name)
+        * [Change Package Name](#change-package-name)
+        * [Change Font](#change-font)
+    * [Configure Firebase Core](#configure-firebase-core)
+    * [Configure Push Notification](#configure-push-notification)
+    * [Configure Crashlytics](#configure-crashlytics)
 * [Extras](#extras)
+    * [Fetch Signing Fingerprint](#fetch-signing-fingerprint)
+    * [Fetch Android Hash Key](#fetch-android-hash-key)
+    * [Show Application Local Data](#show-application-local-data)
 * [Authors](#authors)
 * [Technical Documentation](#technical-documentation)
 * [Releases](#releases)
@@ -58,7 +70,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
 2. Activate at <code>build.gradle</code>
     * <code>implementation 'com.google.firebase:firebase-core:16.0.8'</code>
     
-## Configure FCM Notification
+## Configure Push Notification
 1. [Configure firebase core](#configure-firebase-core)  
 2. Uncomment at <code>build.gradle</code> file 
     * <code>implementation 'com.google.firebase:firebase-messaging:17.6.0'</code>
