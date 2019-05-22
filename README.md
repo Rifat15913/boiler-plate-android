@@ -59,6 +59,10 @@ Debug:
 5. Filter the <code>Info</code> logs
 6. Search for the tag <code>Hash</code>
 7. Get the hash key depending on the build variant; i.e: <code>debug, release</code>
+## Fetch Application Local Data
+1. Activate at <code>build.gradle</code>
+    * <code>debugImplementation 'com.awesomedroidapps:inappstoragereader:1.0.2'</code>
+2. Visit <code>App Data</code> from your device. It will have similar icon as the app launcher.
 # Authors
 * Mohd. Asfaq-E-Azam Rifat, Executive Software Engineer - [Rifat](https://github.com/rifat15913)
 
