@@ -1,5 +1,6 @@
 package com.boilerplate.utils.helper
 
+import android.annotation.SuppressLint
 import android.app.ActivityManager
 import android.content.Context
 import android.content.pm.PackageInfo
@@ -11,7 +12,7 @@ import com.boilerplate.BaseApplication
  * This is a class that contains utils to work with Android os level
  * @author Mohd. Asfaq-E-Azam Rifat
  * */
-class AndroidUtils private constructor() : Build() {
+class AndroidUtils private constructor() {
     companion object {
         /**
          * This method provides application id of the application
@@ -27,9 +28,10 @@ class AndroidUtils private constructor() : Build() {
          *
          * @return [Int] version code
          * */
+        @SuppressLint("NewApi")
         @Suppress("DEPRECATION")
         fun getApplicationVersionCode(): Long {
-            return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            return if (getCurrentBuildApiVersion() >= Build.VERSION_CODES.P) {
                 getPackageInfo()?.longVersionCode ?: 0
             } else {
                 getPackageInfo()?.versionCode as Long? ?: 0
@@ -85,15 +87,6 @@ class AndroidUtils private constructor() : Build() {
          * */
         fun getCurrentBuildApiVersion(): Int {
             return Build.VERSION.SDK_INT
-        }
-
-        /**
-         * This method provides Android API version codes
-         *
-         * @return [Build.VERSION_CODES] version codes of Android APIs
-         * */
-        fun getApiVersionCodes(): Class<Build> {
-            return Build::class.java
         }
     }
 }

@@ -23,19 +23,28 @@ LusoSmile is a native application which books appointments at different clinics.
 | 4 | Click on "Do Refactor" if the dialog pops up | ![Visual](readme-images/refactor04.PNG) |
 | 5 | Wait | ![Visual](readme-images/refactor05.PNG) |
 ### Configure Firebase Core
-1. Activate at build.gradle
-    * <code>"implementation 'com.google.firebase:firebase-core:16.0.8'"</code>
+1. Activate at <code>build.gradle</code>
+    * <code>implementation 'com.google.firebase:firebase-core:16.0.8'</code>
 ### Configure Crashlytics
 1. Configure crashlytics at firebase console. To know more, [visit here](http://bit.ly/2VBDluy)
 2. Configure firebase core 
-3. Activate at build.gradle file 
-    * <code>"apply plugin: 'io.fabric'"</code>
-    * <code>"implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'"</code>
-    * <code>"apply plugin: 'com.google.gms.google-services'"</code>
-4. Activate at BaseApplication class
-    * <code>"import com.google.firebase.analytics.FirebaseAnalytics"</code>
-    * <code>"FirebaseAnalytics.getInstance(context)"</code>
-    
+3. Activate at <code>build.gradle</code> file 
+    * <code>apply plugin: 'io.fabric'</code>
+    * <code>implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'</code>
+    * <code>apply plugin: 'com.google.gms.google-services'</code>
+4. Activate at <code>BaseApplication</code> class
+    * <code>import com.google.firebase.analytics.FirebaseAnalytics</code>
+    * <code>FirebaseAnalytics.getInstance(context)</code>
+### Configure Android Hash Key
+1. Activate at <code>BaseApplication</code> class
+    * <code>import com.boilerplate.utils.helper.DataUtils</code>
+    * <code>DataUtils.getAndroidHashKey()</code> at <code>onCreate()</code>
+2. Connect a device via <code>adb</code> and install the application into it
+3. Open the application at device
+4. Open Logcat from Android Studio
+5. Filter the <code>Info</code> logs
+6. Search for the tag <code>Hash</code>
+7. Get the hash key depending on the build variant; i.e: <code>debug, release</code>
 ## Authors
 * Mohd. Asfaq-E-Azam Rifat, Executive Software Engineer - [Rifat](https://github.com/rifat15913)
 

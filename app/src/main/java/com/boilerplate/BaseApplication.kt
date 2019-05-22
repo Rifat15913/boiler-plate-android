@@ -7,6 +7,7 @@ import androidx.multidex.MultiDexApplication
 import com.boilerplate.BaseApplication.Companion.sInstance
 import com.boilerplate.main.data.BaseRepository
 import com.boilerplate.utils.helper.Constants
+// import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.LanguageUtils
 import com.boilerplate.utils.helper.SharedPrefUtils
 import com.itechsoftsolutions.lusosmile.BuildConfig
@@ -38,6 +39,7 @@ class BaseApplication : MultiDexApplication() {
 
     override fun onCreate() {
         super.onCreate()
+        // DataUtils.getAndroidHashKey()
 
         if (applicationContext != null) {
             if (BuildConfig.DEBUG) {
