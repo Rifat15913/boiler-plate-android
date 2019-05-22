@@ -35,9 +35,8 @@ LusoSmile is a native application which books appointments at different clinics.
 4. Activate at <code>BaseApplication</code> class
     * <code>import com.google.firebase.analytics.FirebaseAnalytics</code>
     * <code>FirebaseAnalytics.getInstance(context)</code>
-## Extra
-### Essential
-#### Fetch Android Hash Key
+## Extras
+### Fetch Android Hash Key
 1. Activate at <code>BaseApplication</code> class
     * <code>import com.boilerplate.utils.helper.DataUtils</code>
     * <code>DataUtils.getAndroidHashKey()</code> at <code>onCreate()</code>
