@@ -22,10 +22,10 @@ LusoSmile is a native application which books appointments at different clinics.
 | 3 | Put new app name | ![Visual](readme-images/refactor03.PNG) | 
 | 4 | Click on "Do Refactor" if the dialog pops up | ![Visual](readme-images/refactor04.PNG) |
 | 5 | Wait | ![Visual](readme-images/refactor05.PNG) |
-#### Configure Firebase Core
+### Configure Firebase Core
 1. Activate at <code>build.gradle</code>
     * <code>implementation 'com.google.firebase:firebase-core:16.0.8'</code>
-#### Configure Crashlytics
+### Configure Crashlytics
 1. Configure crashlytics at firebase console. To know more, [visit here](http://bit.ly/2VBDluy)
 2. Configure firebase core 
 3. Activate at <code>build.gradle</code> file 
