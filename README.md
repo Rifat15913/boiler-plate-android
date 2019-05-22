@@ -12,15 +12,15 @@ Tree is a native application which contains all the essential codes (boiler-plat
 # How to Configure
 ## Configure Base Project
 ### Change Application Name
-1. Change "app_name" from string.xml of all the languages
+1. Change <code>app_name</code> from <code>string.xml</code> of all the languages
     ![Visual](readme-images/refactor00.PNG)
 ### Change Package Name
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
-| 1 | Open the project, Select the "Project" type as file structure(top left) | ![Visual](readme-images/refactor01.PNG) | 
-| 2 | Right click and go to Refactor > Rename | ![Visual](readme-images/refactor02.PNG) |
+| 1 | Open the project, Select the <code>Project</code> type as file structure(top left) | ![Visual](readme-images/refactor01.PNG) | 
+| 2 | Right click and go to <code>Refactor > Rename</code> | ![Visual](readme-images/refactor02.PNG) |
 | 3 | Put new app name | ![Visual](readme-images/refactor03.PNG) | 
-| 4 | Click on "Do Refactor" if the dialog pops up | ![Visual](readme-images/refactor04.PNG) |
+| 4 | Click on <code>Do Refactor</code> if the dialog pops up | ![Visual](readme-images/refactor04.PNG) |
 | 5 | Wait | ![Visual](readme-images/refactor05.PNG) |
 ## Configure Firebase Core
 1. Visit [here](https://tinyurl.com/yyebfbnu) and complete Step 1-3
