@@ -4,10 +4,10 @@ Tree is a native application which contains all the essential codes (boiler-plat
 
 # Built With
 ## Languages
-1. Kotlin
-2. Java
-3. XML
-4. MarkDown
+1. <code>Kotlin</code>
+2. <code>Java</code>
+3. <code>XML</code>
+4. <code>MarkDown</code>
     
 # How to Configure
 ## Configure Base Project
@@ -23,9 +23,8 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | 4 | Click on "Do Refactor" if the dialog pops up | ![Visual](readme-images/refactor04.PNG) |
 | 5 | Wait | ![Visual](readme-images/refactor05.PNG) |
 ## Configure Firebase Core
-1. Visit [here](https://tinyurl.com/yyebfbnu)
-2. Complete Step 1-3
-3. Activate at <code>build.gradle</code>
+1. Visit [here](https://tinyurl.com/yyebfbnu) and complete Step 1-3
+2. Activate at <code>build.gradle</code>
     * <code>implementation 'com.google.firebase:firebase-core:16.0.8'</code>
 ## Configure Crashlytics
 1. Configure crashlytics at firebase console. To know more, [visit here](http://bit.ly/2VBDluy)
