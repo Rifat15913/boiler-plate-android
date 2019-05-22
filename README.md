@@ -24,9 +24,10 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | 7 | Asset can be picked for background, in the <code>Background Layer</code> tab. Click on next if it seems okay. | ![Visual](readme-images/launcher07.PNG) |
 | 8 | Finish the dialog and your launcher icon is changed now | ![Visual](readme-images/launcher08.PNG) |
 
-### Change Application Name
-1. Change <code>app_name</code> from <code>string.xml</code> of all the languages
-    ![Visual](readme-images/refactor00.PNG)
+### Change Application Name 
+| No | Action | Screenshot |
+| :---: | :---: | :---: |
+| 1 | Change <code>app_name</code> from <code>string.xml</code> of all the languages | ![Visual](readme-images/refactor00.PNG) | 
     
 ### Change Package Name
 | No | Action | Screenshot |
@@ -38,8 +39,9 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | 5 | Wait | ![Visual](readme-images/refactor05.PNG) |
 
 ### Change Font
-1. Overwrite <code>regular.ttf</code> from <code>font</code> directory in order to achieve text changes globally in the application of regular fonts. Additional fonts can be added; i.e. <code>bold</code>, <code>italic</code> etc.
-    ![Visual](readme-images/font01.PNG)
+| No | Action | Screenshot |
+| :---: | :---: | :---: |
+| 1 | Overwrite <code>regular.ttf</code> from <code>font</code> directory in order to achieve text changes globally in the application of regular fonts. Additional fonts can be added; i.e. <code>bold</code>, <code>italic</code> etc. | ![Visual](readme-images/font01.PNG)|
     
 ## Configure Firebase Core
 1. Visit [here](https://tinyurl.com/yyebfbnu) and complete step 1-3
