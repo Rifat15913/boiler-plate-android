@@ -11,6 +11,17 @@ Tree is a native application which contains all the essential codes (boiler-plat
     
 # How to Configure
 ## Configure Base Project
+### Change Application Launcher Icon
+| No | Action | Screenshot |
+| :---: | :---: | :---: |
+| 1 | Open the project, Select the <code>Project</code> type as file structure(top left) | ![Visual](readme-images/launcher01.PNG) | 
+| 2 | Right click and go to <code>Refactor > Rename</code> | ![Visual](readme-images/launcher02.PNG) |
+| 3 | Put new app name | ![Visual](readme-images/launcher03.PNG) | 
+| 4 | Click on <code>Do Refactor</code> if the dialog pops up | ![Visual](readme-images/launcher04.PNG) |
+| 5 | Wait | ![Visual](readme-images/launcher05.PNG) |
+| 6 | Wait | ![Visual](readme-images/launcher06.PNG) |
+| 7 | Wait | ![Visual](readme-images/launcher07.PNG) |
+| 8 | Wait | ![Visual](readme-images/launcher08.PNG) |
 ### Change Application Name
 1. Change <code>app_name</code> from <code>string.xml</code> of all the languages
     ![Visual](readme-images/refactor00.PNG)
