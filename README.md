@@ -36,6 +36,17 @@ Tree is a native application which contains all the essential codes (boiler-plat
     * <code>import com.google.firebase.analytics.FirebaseAnalytics</code>
     * <code>FirebaseAnalytics.getInstance(context)</code>
 # Extras
+## Fetch Signing Fingerprint
+Release:
+1. Add the path of <code>keytool</code> from <code>JDK</code> to System Variable <code>PATH</code>
+2. Go to <code>keystore</code> folder
+3. Press <code>Shift + Right</code> Click
+4. Start command prompt
+5. Put command <code>keytool -exportcert -alias ALIAS_NAME -keystore KEYSTORE_NAME_WITH_EXTENSION -list -v</code>
+
+Debug:
+1. Go to right side of Android Studio.
+2. Execute <code>Gradle > root > Tasks > android > signingReport</code>
 ## Fetch Android Hash Key
 1. Activate at <code>BaseApplication</code> class
     * <code>import com.boilerplate.utils.helper.DataUtils</code>
