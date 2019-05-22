@@ -1,3 +1,13 @@
+# Table of Contents  
+* [Tree](#tree)
+* [Built With](#built-with)
+* [How to Configure](#how-to-configure)
+* [Extras](#extras)
+* [Authors](#authors)
+* [Technical Documentation](#technical-documentation)
+* [Releases](#releases)
+* [Contributing](#contributing)
+
 # Tree
 
 Tree is a native application which contains all the essential codes (boiler-plate) to kick start an Android project.
@@ -94,7 +104,7 @@ Debug:
 6. Search for the tag <code>Hash</code>
 7. Get the hash key depending on the build variant; i.e: <code>debug, release</code>
 
-## Fetch Application Local Data
+## Show Application Local Data
 1. Uncomment at <code>build.gradle</code>
     * <code>debugImplementation 'com.awesomedroidapps:inappstoragereader:1.0.2'</code>
 2. Visit <code>App Data</code> from your device. It will have similar icon as the app launcher.
