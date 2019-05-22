@@ -1,6 +1,6 @@
-# Boiler-plate-android
+# Tree
 
-LusoSmile is a native application which books appointments at different clinics.
+Tree is a native application which contains all the essential codes (boiler-plate) to kick start an Android project.
 
 ## Built With
 ### Languages
