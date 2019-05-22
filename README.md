@@ -4,10 +4,10 @@ Tree is a native application which contains all the essential codes (boiler-plat
 
 # Built With
 ## Languages
-    * Kotlin
-    * Java
-    * XML
-    * MarkDown
+1. Kotlin
+2. Java
+3. XML
+4. MarkDown
     
 # How to Configure
 ## Configure Base Project
