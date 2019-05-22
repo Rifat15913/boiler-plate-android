@@ -37,14 +37,25 @@ Tree is a native application which contains all the essential codes (boiler-plat
 1. Visit [here](https://tinyurl.com/yyebfbnu) and complete step 1-3
 2. Activate at <code>build.gradle</code>
     * <code>implementation 'com.google.firebase:firebase-core:16.0.8'</code>
+    
+## Configure FCM Notification
+1. [Configure firebase core](#configure-firebase-core)  
+2. Uncomment at <code>build.gradle</code> file 
+    * <code>implementation 'com.google.firebase:firebase-messaging:17.6.0'</code>
+    * <code>apply plugin: 'com.google.gms.google-services'</code>
+3. Uncomment at <code>NotificationService.kt</code>
+    * All the commented lines
+4. Uncomment at <code>AndroidManifest.xml</code>
+    * <code>com.lusosmile.main.data.remote.service.NotificationService</code>
+5. To know about getting the device registration token, [visit here](https://tinyurl.com/y6lndsa4)
 ## Configure Crashlytics
-1. Configure crashlytics at firebase console. To know more, [visit here](http://bit.ly/2VBDluy)
-2. [Configure firebase core](#configure-firebase-core) 
-3. Activate at <code>build.gradle</code> file 
+1. [Configure firebase core](#configure-firebase-core)
+2. Configure crashlytics at firebase console. To know more, [visit here](http://bit.ly/2VBDluy) 
+3. Uncomment at <code>build.gradle</code> 
     * <code>apply plugin: 'io.fabric'</code>
     * <code>implementation 'com.crashlytics.sdk.android:crashlytics:2.9.9'</code>
     * <code>apply plugin: 'com.google.gms.google-services'</code>
-4. Activate at <code>BaseApplication</code> class
+4. Uncomment at <code>BaseApplication.kt</code>
     * <code>import com.google.firebase.analytics.FirebaseAnalytics</code>
     * <code>FirebaseAnalytics.getInstance(context)</code>
 # Extras
@@ -60,7 +71,7 @@ Debug:
 1. Go to right side of Android Studio.
 2. Execute <code>Gradle > root > Tasks > android > signingReport</code>
 ## Fetch Android Hash Key
-1. Activate at <code>BaseApplication</code> class
+1. Uncomment at <code>BaseApplication.kt</code>
     * <code>import com.boilerplate.utils.helper.DataUtils</code>
     * <code>DataUtils.getAndroidHashKey()</code> at <code>onCreate()</code>
 2. Connect a device via <code>adb</code> and install the application into it
@@ -70,7 +81,7 @@ Debug:
 6. Search for the tag <code>Hash</code>
 7. Get the hash key depending on the build variant; i.e: <code>debug, release</code>
 ## Fetch Application Local Data
-1. Activate at <code>build.gradle</code>
+1. Uncomment at <code>build.gradle</code>
     * <code>debugImplementation 'com.awesomedroidapps:inappstoragereader:1.0.2'</code>
 2. Visit <code>App Data</code> from your device. It will have similar icon as the app launcher.
 # Authors
