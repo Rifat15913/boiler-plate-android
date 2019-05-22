@@ -37,10 +37,10 @@ Tree is a native application which contains all the essential codes (boiler-plat
 ### Change Application ID
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
-| 1 | Open the project, Select the <code>Android</code> type as file structure(top left). Then right click on the <code>res</code> folder. | ![Visual](readme-images/appid01.PNG) | 
-| 2 | Go to <code>New > Image Asset</code> | ![Visual](readme-images/appid02.PNG) |
-| 3 | There are two main tabs here, <code>Foreground Layer</code> & <code>Background Layer</code>. We can select assets for foreground and background from these tabs. | ![Visual](readme-images/appid03.PNG) | 
-| 4 | (Optional) Browse images (vector is also acceptable) clicking on the folder icon | ![Visual](readme-images/appid04.PNG) |
+| 1 | Go to <code>build.gradle(app)</code> file and copy the <code>applicationId</code> | ![Visual](readme-images/appid01.PNG) | 
+| 2 | Go to <code>Title Bar Menu > Edit > Find > Replace in Path</code> | ![Visual](readme-images/appid02.PNG) |
+| 3 | Paste the old application id in the first field and write down the new application id in the second field. Then press <code>Replace All</code> | ![Visual](readme-images/appid03.PNG) | 
+| 4 | If alert dialog pops up, then click on <code>Replace</code> | ![Visual](readme-images/appid04.PNG) |
 | 5 | 
 - Wait
 - Go to <code>Build > Clean Project</code>
