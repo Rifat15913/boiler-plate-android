@@ -10,6 +10,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
 4. <code>MarkDown</code>
     
 # How to Configure
+
 ## Configure Base Project
 ### Change Application Launcher Icon
 | No | Action | Screenshot |
@@ -22,9 +23,11 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | 6 | <code>Show Grid</code> can be ticked in order to see the boundaries. Other settings can also be modified. | ![Visual](readme-images/launcher06.PNG) |
 | 7 | Asset can be picked for background, in the <code>Background Layer</code> tab. Click on next if it seems okay. | ![Visual](readme-images/launcher07.PNG) |
 | 8 | Finish the dialog and your launcher icon is changed now | ![Visual](readme-images/launcher08.PNG) |
+
 ### Change Application Name
 1. Change <code>app_name</code> from <code>string.xml</code> of all the languages
     ![Visual](readme-images/refactor00.PNG)
+    
 ### Change Package Name
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
@@ -33,6 +36,11 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | 3 | Put new app name | ![Visual](readme-images/refactor03.PNG) | 
 | 4 | Click on <code>Do Refactor</code> if the dialog pops up | ![Visual](readme-images/refactor04.PNG) |
 | 5 | Wait | ![Visual](readme-images/refactor05.PNG) |
+
+### Change Font
+1. Overwrite <code>regular.ttf</code> from <code>font</code> directory in order to achieve text changes globally in the application of regular fonts. Additional fonts can be added; i.e. <code>bold</code>, <code>italic</code> etc.
+    ![Visual](readme-images/font01.PNG)
+    
 ## Configure Firebase Core
 1. Visit [here](https://tinyurl.com/yyebfbnu) and complete step 1-3
 2. Activate at <code>build.gradle</code>
@@ -48,6 +56,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
 4. Uncomment at <code>AndroidManifest.xml</code>
     * <code>com.lusosmile.main.data.remote.service.NotificationService</code>
 5. To know about getting the device registration token, [visit here](https://tinyurl.com/y6lndsa4)
+
 ## Configure Crashlytics
 1. [Configure firebase core](#configure-firebase-core)
 2. Configure crashlytics at firebase console. To know more, [visit here](http://bit.ly/2VBDluy) 
@@ -58,6 +67,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
 4. Uncomment at <code>BaseApplication.kt</code>
     * <code>import com.google.firebase.analytics.FirebaseAnalytics</code>
     * <code>FirebaseAnalytics.getInstance(context)</code>
+    
 # Extras
 ## Fetch Signing Fingerprint
 Release:
@@ -70,6 +80,7 @@ Release:
 Debug:
 1. Go to right side of Android Studio.
 2. Execute <code>Gradle > root > Tasks > android > signingReport</code>
+
 ## Fetch Android Hash Key
 1. Uncomment at <code>BaseApplication.kt</code>
     * <code>import com.boilerplate.utils.helper.DataUtils</code>
@@ -80,10 +91,12 @@ Debug:
 5. Filter the <code>Info</code> logs
 6. Search for the tag <code>Hash</code>
 7. Get the hash key depending on the build variant; i.e: <code>debug, release</code>
+
 ## Fetch Application Local Data
 1. Uncomment at <code>build.gradle</code>
     * <code>debugImplementation 'com.awesomedroidapps:inappstoragereader:1.0.2'</code>
 2. Visit <code>App Data</code> from your device. It will have similar icon as the app launcher.
+
 # Authors
 * Mohd. Asfaq-E-Azam Rifat, Executive Software Engineer - [Rifat](https://github.com/rifat15913)
 
