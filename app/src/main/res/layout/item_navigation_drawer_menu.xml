@@ -34,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="About Us" />
 
-        <com.boilerplate.main.ui.base.widget.DottedLineView
+        <com.itechsoftsolutions.tree.main.ui.base.widget.DottedLineView
             android:id="@+id/view_dotted_line"
             android:layout_width="0dp"
             android:layout_height="@dimen/height_4"

@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/splash_background">
 
-        <com.boilerplate.main.ui.base.widget.CustomStatusBarView
+        <com.itechsoftsolutions.tree.main.ui.base.widget.CustomStatusBarView
             android:id="@+id/status_bar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

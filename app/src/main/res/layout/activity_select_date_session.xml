@@ -112,7 +112,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <com.boilerplate.main.ui.base.widget.ScrollableCalendarView
+                        <com.itechsoftsolutions.tree.main.ui.base.widget.ScrollableCalendarView
                             android:id="@+id/calendar_view"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
