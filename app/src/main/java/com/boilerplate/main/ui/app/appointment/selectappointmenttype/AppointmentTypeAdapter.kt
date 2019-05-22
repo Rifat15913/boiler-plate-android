@@ -16,8 +16,8 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.ItemAppointmentTypeBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.ItemAppointmentTypeBinding
 
 class AppointmentTypeAdapter : BaseSelectableAdapter<AppointmentType>() {
     override fun getItemIdForPosition(position: Int): Long {

@@ -10,7 +10,7 @@ import com.boilerplate.main.ui.app.authentication.welcome.WelcomeActivity
 import com.boilerplate.main.ui.base.helper.ProgressDialogUtils
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers

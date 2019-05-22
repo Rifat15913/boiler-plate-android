@@ -29,7 +29,7 @@ import com.boilerplate.main.ui.base.component.BaseAdapter
 import com.boilerplate.main.ui.base.component.BaseItemDetailsLookup
 import com.boilerplate.main.ui.base.component.BaseSelectableAdapter
 import com.boilerplate.main.ui.base.helper.SwipeItemHandler
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import io.reactivex.Observable
 
 /**

@@ -34,6 +34,28 @@ Tree is a native application which contains all the essential codes (boiler-plat
 # How to Configure
 
 ## Configure Base Project
+### Change Application ID
+| No | Action | Screenshot |
+| :---: | :---: | :---: |
+| 1 | Open the project, Select the <code>Android</code> type as file structure(top left). Then right click on the <code>res</code> folder. | ![Visual](readme-images/appid01.PNG) | 
+| 2 | Go to <code>New > Image Asset</code> | ![Visual](readme-images/appid02.PNG) |
+| 3 | There are two main tabs here, <code>Foreground Layer</code> & <code>Background Layer</code>. We can select assets for foreground and background from these tabs. | ![Visual](readme-images/appid03.PNG) | 
+| 4 | (Optional) Browse images (vector is also acceptable) clicking on the folder icon | ![Visual](readme-images/appid04.PNG) |
+| 5 | 
+- Wait
+- Go to <code>Build > Clean Project</code>
+- Sync gradle 
+| |
+
+### Change Package Name
+| No | Action | Screenshot |
+| :---: | :---: | :---: |
+| 1 | Open the project, Select the <code>Project</code> type as file structure(top left) | ![Visual](readme-images/refactor01.PNG) | 
+| 2 | Right click and go to <code>Refactor > Rename</code> | ![Visual](readme-images/refactor02.PNG) |
+| 3 | Put new app name | ![Visual](readme-images/refactor03.PNG) | 
+| 4 | Click on <code>Do Refactor</code> if the dialog pops up | ![Visual](readme-images/refactor04.PNG) |
+| 5 | Wait | ![Visual](readme-images/refactor05.PNG) |
+
 ### Change Application Launcher Icon
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
@@ -50,15 +72,6 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
 | 1 | Change <code>app_name</code> from <code>string.xml</code> of all the languages | ![Visual](readme-images/refactor00.PNG) | 
-    
-### Change Package Name
-| No | Action | Screenshot |
-| :---: | :---: | :---: |
-| 1 | Open the project, Select the <code>Project</code> type as file structure(top left) | ![Visual](readme-images/refactor01.PNG) | 
-| 2 | Right click and go to <code>Refactor > Rename</code> | ![Visual](readme-images/refactor02.PNG) |
-| 3 | Put new app name | ![Visual](readme-images/refactor03.PNG) | 
-| 4 | Click on <code>Do Refactor</code> if the dialog pops up | ![Visual](readme-images/refactor04.PNG) |
-| 5 | Wait | ![Visual](readme-images/refactor05.PNG) |
 
 ### Change Font
 | No | Action | Screenshot |

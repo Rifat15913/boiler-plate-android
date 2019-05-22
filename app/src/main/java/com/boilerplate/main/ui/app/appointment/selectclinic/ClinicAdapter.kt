@@ -7,8 +7,8 @@ import com.boilerplate.main.data.remote.model.Clinic
 import com.boilerplate.main.ui.base.component.BaseSelectableAdapter
 import com.boilerplate.main.ui.base.component.BaseSelectableViewHolder
 import com.boilerplate.main.ui.base.component.BaseViewHolder
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.ItemClinicNameBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.ItemClinicNameBinding
 
 class ClinicAdapter : BaseSelectableAdapter<Clinic>() {
     override fun getItemIdForPosition(position: Int): Long {

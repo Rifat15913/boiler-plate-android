@@ -10,8 +10,8 @@ import com.boilerplate.main.ui.base.component.BaseFragment
 import com.boilerplate.main.ui.base.helper.ProgressDialogUtils
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.FragmentProfileBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.FragmentProfileBinding
 
 class ProfileTabFragment : BaseFragment<ProfileTabMvpView, ProfileTabPresenter>(),
         ProfileTabMvpView {

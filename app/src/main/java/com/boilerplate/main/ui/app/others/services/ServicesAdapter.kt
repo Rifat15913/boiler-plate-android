@@ -8,7 +8,7 @@ import com.boilerplate.main.ui.base.component.BaseAdapter
 import com.boilerplate.main.ui.base.component.BaseViewHolder
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.libs.GlideUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 class ServicesAdapter : BaseAdapter<AppointmentType>() {
 
@@ -21,7 +21,7 @@ class ServicesAdapter : BaseAdapter<AppointmentType>() {
     }
 
     class ServiceViewHolder(binding: ViewDataBinding) : BaseViewHolder<AppointmentType>(binding) {
-        private val mBinding = binding as com.itechsoftsolutions.lusosmile.databinding.ItemServiceBinding
+        private val mBinding = binding as com.itechsoftsolutions.tree.databinding.ItemServiceBinding
 
         override fun bind(item: AppointmentType) {
             if (!TextUtils.isEmpty(item.name)) {

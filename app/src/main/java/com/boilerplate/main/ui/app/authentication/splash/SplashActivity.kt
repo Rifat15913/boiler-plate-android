@@ -6,7 +6,7 @@ import com.boilerplate.main.ui.app.landing.container.ContainerActivity
 import com.boilerplate.main.ui.base.component.BaseActivity
 import com.boilerplate.utils.helper.Constants
 import com.boilerplate.utils.helper.SharedPrefUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 class SplashActivity : BaseActivity<SplashMvpView, SplashPresenter>(), SplashMvpView {
     override val layoutResourceId: Int

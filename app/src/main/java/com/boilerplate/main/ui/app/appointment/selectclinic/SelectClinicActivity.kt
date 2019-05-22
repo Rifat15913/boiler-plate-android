@@ -20,7 +20,7 @@ import com.boilerplate.main.ui.base.helper.ProgressDialogUtils
 import com.boilerplate.utils.helper.Constants
 import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 class SelectClinicActivity : BaseActivity<SelectClinicMvpView, SelectClinicPresenter>(),
         SelectClinicMvpView, SelectionListener {
@@ -36,7 +36,7 @@ class SelectClinicActivity : BaseActivity<SelectClinicMvpView, SelectClinicPrese
         }
     }
 
-    private lateinit var mBinding: com.itechsoftsolutions.lusosmile.databinding.ActivitySelectClinicBinding
+    private lateinit var mBinding: com.itechsoftsolutions.tree.databinding.ActivitySelectClinicBinding
     private var mTracker: SelectionTracker<Long>? = null
 
     override val layoutResourceId: Int
@@ -73,7 +73,7 @@ class SelectClinicActivity : BaseActivity<SelectClinicMvpView, SelectClinicPrese
     }
 
     override fun startUI() {
-        mBinding = viewDataBinding as com.itechsoftsolutions.lusosmile.databinding.ActivitySelectClinicBinding
+        mBinding = viewDataBinding as com.itechsoftsolutions.tree.databinding.ActivitySelectClinicBinding
         setListeners()
         initialize()
     }

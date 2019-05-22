@@ -18,7 +18,7 @@ import com.boilerplate.utils.helper.FileUtils
 import com.boilerplate.utils.helper.PermissionUtils
 import com.boilerplate.utils.libs.ImageCropperUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import java.io.File
 import java.util.*
 

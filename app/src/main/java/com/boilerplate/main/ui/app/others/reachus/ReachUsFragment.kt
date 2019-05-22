@@ -17,8 +17,8 @@ import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.libs.ToastUtils
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.card.MaterialCardView
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.FragmentReachUsBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.FragmentReachUsBinding
 import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint

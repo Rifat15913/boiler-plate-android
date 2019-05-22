@@ -2,8 +2,8 @@ package com.boilerplate.main.ui.app.appointment.myappointments
 
 import com.boilerplate.main.ui.app.landing.container.ContainerActivity
 import com.boilerplate.main.ui.base.component.BaseFragment
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.FragmentMyAppointmentsContainerBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.FragmentMyAppointmentsContainerBinding
 
 class MyAppointmentsContainerFragment : BaseFragment<MyAppointmentsContainerMvpView,
         MyAppointmentsContainerPresenter>() {

@@ -1,6 +1,6 @@
 package com.boilerplate.utils.helper
 
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 /**
  * This is a class that contains all the needed constants

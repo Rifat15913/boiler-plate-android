@@ -10,8 +10,8 @@ import androidx.viewpager.widget.ViewPager
 import com.boilerplate.main.ui.base.component.BaseActivity
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.ViewUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.ActivityProfileContainerBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.ActivityProfileContainerBinding
 
 
 class ProfileContainerActivity : BaseActivity<ProfileContainerMvpView, ProfileContainerPresenter>() {

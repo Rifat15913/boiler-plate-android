@@ -13,7 +13,7 @@ import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.TimeUtils
 import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import java.util.*
 
 
@@ -35,7 +35,7 @@ class SelectDateSessionActivity : BaseActivity<SelectDateSessionMvpView, SelectD
         }
     }
 
-    private lateinit var mBinding: com.itechsoftsolutions.lusosmile.databinding.ActivitySelectDateSessionBinding
+    private lateinit var mBinding: com.itechsoftsolutions.tree.databinding.ActivitySelectDateSessionBinding
     private var mPickedTime: Long? = null
     private var mMonthLimit: Int? = null
 
@@ -61,7 +61,7 @@ class SelectDateSessionActivity : BaseActivity<SelectDateSessionMvpView, SelectD
     }
 
     override fun startUI() {
-        mBinding = viewDataBinding as com.itechsoftsolutions.lusosmile.databinding.ActivitySelectDateSessionBinding
+        mBinding = viewDataBinding as com.itechsoftsolutions.tree.databinding.ActivitySelectDateSessionBinding
         setListeners()
         initialize()
     }

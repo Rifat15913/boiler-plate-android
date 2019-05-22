@@ -7,7 +7,7 @@ import com.boilerplate.main.ui.base.component.BaseAdapter
 import com.boilerplate.main.ui.base.component.BaseViewHolder
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.ViewUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import java.util.*
 
 class AvailabilitiesAdapter : BaseAdapter<Availability>() {
@@ -21,7 +21,7 @@ class AvailabilitiesAdapter : BaseAdapter<Availability>() {
     }
 
     class AvailabilityViewHolder(binding: ViewDataBinding) : BaseViewHolder<Availability>(binding) {
-        private val mBinding = binding as com.itechsoftsolutions.lusosmile.databinding.ItemAvailabilityBinding
+        private val mBinding = binding as com.itechsoftsolutions.tree.databinding.ItemAvailabilityBinding
 
         override fun bind(item: Availability) {
             if (item.isHoliday != 0) {

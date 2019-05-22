@@ -6,7 +6,7 @@ import android.view.View
 import com.boilerplate.main.ui.app.authentication.login.LoginActivity
 import com.boilerplate.main.ui.app.authentication.registration.RegistrationActivity
 import com.boilerplate.main.ui.base.component.BaseActivity
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import java.util.*
 
 class WelcomeActivity : BaseActivity<WelcomeMvpView, WelcomePresenter>() {
@@ -25,7 +25,7 @@ class WelcomeActivity : BaseActivity<WelcomeMvpView, WelcomePresenter>() {
         }
     }
 
-    lateinit var mBinding: com.itechsoftsolutions.lusosmile.databinding.ActivityWelcomeBinding
+    lateinit var mBinding: com.itechsoftsolutions.tree.databinding.ActivityWelcomeBinding
 
     override val layoutResourceId: Int
         get() = R.layout.activity_welcome
@@ -35,7 +35,7 @@ class WelcomeActivity : BaseActivity<WelcomeMvpView, WelcomePresenter>() {
     }
 
     override fun startUI() {
-        mBinding = viewDataBinding as com.itechsoftsolutions.lusosmile.databinding.ActivityWelcomeBinding
+        mBinding = viewDataBinding as com.itechsoftsolutions.tree.databinding.ActivityWelcomeBinding
         setClickListener(mBinding.textViewLogin, mBinding.textViewRegister)
         setAppLocale(this)
     }

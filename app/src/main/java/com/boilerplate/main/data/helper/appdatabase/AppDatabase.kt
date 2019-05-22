@@ -7,7 +7,7 @@ import com.boilerplate.main.data.local.user.UserDao
 import com.boilerplate.main.data.local.user.UserEntity
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.libs.room.BaseDatabase
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 /**
  * This is the database class of the LusoSmile project. If we try to have local database in future,

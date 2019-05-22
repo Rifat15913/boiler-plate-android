@@ -9,7 +9,7 @@ import com.amulyakhare.textdrawable.TextDrawable
 import com.boilerplate.main.ui.base.helper.SwipeItemHandler.BackgroundMaterial.ICON
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.ViewUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 /**
  * This is a class which handles swipe with RecyclerView items

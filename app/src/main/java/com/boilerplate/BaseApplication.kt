@@ -10,7 +10,7 @@ import com.boilerplate.utils.helper.Constants
 // import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.LanguageUtils
 import com.boilerplate.utils.helper.SharedPrefUtils
-import com.itechsoftsolutions.lusosmile.BuildConfig
+import com.itechsoftsolutions.tree.BuildConfig
 import timber.log.Timber
 
 /**

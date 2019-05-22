@@ -8,14 +8,14 @@ import com.boilerplate.main.ui.base.helper.GridSpacingItemDecoration
 import com.boilerplate.main.ui.base.helper.ProgressDialogUtils
 import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 class ServicesFragment : BaseFragment<ServicesMvpView, ServicesPresenter>(), ServicesMvpView {
 
     override val layoutId: Int
         get() = R.layout.fragment_services
 
-    private lateinit var mBinding: com.itechsoftsolutions.lusosmile.databinding.FragmentServicesBinding
+    private lateinit var mBinding: com.itechsoftsolutions.tree.databinding.FragmentServicesBinding
     private lateinit var mItemDecoration: GridSpacingItemDecoration
 
     override fun getFragmentPresenter(): ServicesPresenter {
@@ -23,7 +23,7 @@ class ServicesFragment : BaseFragment<ServicesMvpView, ServicesPresenter>(), Ser
     }
 
     override fun startUI() {
-        mBinding = viewDataBinding as com.itechsoftsolutions.lusosmile.databinding.FragmentServicesBinding
+        mBinding = viewDataBinding as com.itechsoftsolutions.tree.databinding.FragmentServicesBinding
         initialize()
     }
 

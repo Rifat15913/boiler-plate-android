@@ -8,7 +8,7 @@ import com.boilerplate.main.ui.base.component.BaseAdapter
 import com.boilerplate.main.ui.base.component.BaseViewHolder
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.libs.GlideUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 class DrawerAdapter : BaseAdapter<NavigationDrawerItem>() {
     override fun isEqual(left: NavigationDrawerItem, right: NavigationDrawerItem): Boolean {
@@ -21,7 +21,7 @@ class DrawerAdapter : BaseAdapter<NavigationDrawerItem>() {
 
     inner class DrawerItemViewHolder(binding: ViewDataBinding) : BaseViewHolder<NavigationDrawerItem>(binding) {
 
-        private val mBinding = binding as com.itechsoftsolutions.lusosmile.databinding.ItemNavigationDrawerMenuBinding
+        private val mBinding = binding as com.itechsoftsolutions.tree.databinding.ItemNavigationDrawerMenuBinding
 
         override fun bind(item: NavigationDrawerItem) {
             mBinding.textViewTitle.text = DataUtils.toTitleCase(item.title)

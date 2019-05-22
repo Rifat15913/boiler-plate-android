@@ -13,8 +13,8 @@ import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.KeyboardUtils
 import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.ActivityRegistrationBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.ActivityRegistrationBinding
 
 class RegistrationActivity : BaseActivity<RegistrationMvpView, RegistrationPresenter>(),
         RegistrationMvpView {

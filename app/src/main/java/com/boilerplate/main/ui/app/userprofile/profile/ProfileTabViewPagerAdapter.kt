@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.boilerplate.utils.helper.DataUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 
 class ProfileTabViewPagerAdapter internal constructor(fragmentManager: FragmentManager, context: Context)

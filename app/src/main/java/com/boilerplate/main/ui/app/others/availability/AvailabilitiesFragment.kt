@@ -9,21 +9,21 @@ import com.boilerplate.main.ui.base.component.BaseFragment
 import com.boilerplate.main.ui.base.helper.ProgressDialogUtils
 import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 class AvailabilitiesFragment : BaseFragment<AvailabilitiesMvpView, AvailabilitiesPresenter>(), AvailabilitiesMvpView {
 
     override val layoutId: Int
         get() = R.layout.fragment_availability
 
-    private lateinit var mBinding: com.itechsoftsolutions.lusosmile.databinding.FragmentAvailabilityBinding
+    private lateinit var mBinding: com.itechsoftsolutions.tree.databinding.FragmentAvailabilityBinding
 
     override fun getFragmentPresenter(): AvailabilitiesPresenter {
         return AvailabilitiesPresenter()
     }
 
     override fun startUI() {
-        mBinding = viewDataBinding as com.itechsoftsolutions.lusosmile.databinding.FragmentAvailabilityBinding
+        mBinding = viewDataBinding as com.itechsoftsolutions.tree.databinding.FragmentAvailabilityBinding
         setListeners()
         initialize()
     }

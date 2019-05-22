@@ -32,7 +32,7 @@ import com.boilerplate.utils.helper.PermissionUtils
 import com.boilerplate.utils.helper.SharedPrefUtils
 import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 
 class ContainerActivity : BaseActivity<ContainerMvpView, ContainerPresenter>() {
@@ -51,7 +51,7 @@ class ContainerActivity : BaseActivity<ContainerMvpView, ContainerPresenter>() {
         }
     }
 
-    private lateinit var mBinding: com.itechsoftsolutions.lusosmile.databinding.ActivityContainerBinding
+    private lateinit var mBinding: com.itechsoftsolutions.tree.databinding.ActivityContainerBinding
 
     override val layoutResourceId: Int
         get() = R.layout.activity_container
@@ -61,7 +61,7 @@ class ContainerActivity : BaseActivity<ContainerMvpView, ContainerPresenter>() {
     }
 
     override fun startUI() {
-        mBinding = viewDataBinding as com.itechsoftsolutions.lusosmile.databinding.ActivityContainerBinding
+        mBinding = viewDataBinding as com.itechsoftsolutions.tree.databinding.ActivityContainerBinding
 
         // Handle status bar color
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {

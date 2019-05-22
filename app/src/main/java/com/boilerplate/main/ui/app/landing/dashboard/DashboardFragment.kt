@@ -5,8 +5,8 @@ import com.boilerplate.main.ui.base.component.BaseFragment
 import com.boilerplate.utils.helper.Constants
 import com.boilerplate.utils.helper.SharedPrefUtils
 import com.boilerplate.utils.libs.GlideUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.FragmentDashboardBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.FragmentDashboardBinding
 import java.util.*
 
 class DashboardFragment : BaseFragment<DashboardMvpView, DashboardPresenter>(),

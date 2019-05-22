@@ -12,8 +12,8 @@ import com.boilerplate.main.ui.base.helper.AlertDialogUtils
 import com.boilerplate.main.ui.base.helper.LinearMarginItemDecoration
 import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.FragmentMyAppointmentsBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.FragmentMyAppointmentsBinding
 
 class MyAppointmentsFragment : BaseFragment<MyAppointmentsMvpView, MyAppointmentsPresenter>(),
         MyAppointmentsMvpView {

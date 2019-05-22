@@ -15,8 +15,8 @@ import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.KeyboardUtils
 import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.ActivityLoginBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.ActivityLoginBinding
 
 class LoginActivity : BaseActivity<LoginMvpView, LoginPresenter>(),
         LoginMvpView {

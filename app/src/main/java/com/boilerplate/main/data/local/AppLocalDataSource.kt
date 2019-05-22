@@ -7,7 +7,7 @@ import com.boilerplate.main.data.local.user.UserEntity
 import com.boilerplate.utils.helper.Constants
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.SharedPrefUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers

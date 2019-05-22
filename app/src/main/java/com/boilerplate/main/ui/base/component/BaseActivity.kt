@@ -18,7 +18,7 @@ import com.boilerplate.utils.helper.LanguageUtils
 import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.helper.imagepicker.ImagePickerUtils
 import com.boilerplate.utils.libs.ImageCropperUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import timber.log.Timber
 
 /**

@@ -8,7 +8,7 @@ import android.text.TextUtils
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import timber.log.Timber
 
 /**

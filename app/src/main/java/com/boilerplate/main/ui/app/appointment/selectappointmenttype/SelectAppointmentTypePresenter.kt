@@ -9,7 +9,7 @@ import com.boilerplate.main.ui.base.helper.ProgressDialogUtils
 import com.boilerplate.utils.helper.Constants
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.network.NoConnectivityException
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import timber.log.Timber

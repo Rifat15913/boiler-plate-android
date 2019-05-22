@@ -5,7 +5,7 @@ import com.boilerplate.main.data.remote.service.ConnectivityInterceptor
 import com.boilerplate.utils.helper.Constants
 import com.boilerplate.utils.helper.DataUtils
 import com.google.gson.GsonBuilder
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import io.reactivex.Flowable
 import okhttp3.OkHttpClient
 import retrofit2.Response

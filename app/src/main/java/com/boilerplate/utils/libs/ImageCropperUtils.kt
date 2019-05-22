@@ -12,7 +12,7 @@ import com.boilerplate.utils.helper.FileUtils
 import com.boilerplate.utils.helper.imagepicker.ImagePickerUtils
 import com.boilerplate.utils.libs.ImageCropperUtils.mCroppedImage
 import com.boilerplate.utils.libs.ImageCropperUtils.mListener
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import com.yalantis.ucrop.UCrop
 import java.io.File
 

@@ -17,8 +17,8 @@ import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.KeyboardUtils
 import com.boilerplate.utils.helper.PermissionUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.FragmentContactUsBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.FragmentContactUsBinding
 
 
 class ContactUsFragment : BaseFragment<ContactUsMvpView, ContactUsPresenter>(),

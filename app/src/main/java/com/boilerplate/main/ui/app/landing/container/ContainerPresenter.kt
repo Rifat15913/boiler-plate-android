@@ -3,7 +3,7 @@ package com.boilerplate.main.ui.app.landing.container
 import com.boilerplate.main.data.local.model.NavigationDrawerItem
 import com.boilerplate.main.ui.base.component.BasePresenter
 import com.boilerplate.utils.helper.DataUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 class ContainerPresenter : BasePresenter<ContainerMvpView>() {
     fun getDrawerMenuList(): List<NavigationDrawerItem> {

@@ -10,8 +10,8 @@ import com.boilerplate.main.ui.app.landing.dashboard.DashboardFragment
 import com.boilerplate.main.ui.base.component.BaseActivity.Companion.runCurrentActivity
 import com.boilerplate.main.ui.base.component.BaseFragment
 import com.boilerplate.utils.helper.ViewUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.FragmentHomeBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.FragmentHomeBinding
 
 class HomeFragment : BaseFragment<HomeMvpView, HomePresenter>() {
 

@@ -7,7 +7,7 @@ import com.boilerplate.utils.helper.Constants
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.SharedPrefUtils
 import com.boilerplate.utils.helper.TimeUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 import io.reactivex.Flowable
 
 /**

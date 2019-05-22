@@ -8,8 +8,8 @@ import com.boilerplate.main.ui.base.component.BaseAdapter
 import com.boilerplate.main.ui.base.component.BaseViewHolder
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.TimeUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.ItemMyAppointmentBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.ItemMyAppointmentBinding
 
 class MyAppointmentsAdapter(private val mIsUpcoming: Boolean) : BaseAdapter<Appointment>() {
 

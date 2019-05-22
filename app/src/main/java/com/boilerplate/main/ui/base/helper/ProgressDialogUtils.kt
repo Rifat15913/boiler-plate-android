@@ -5,7 +5,7 @@ import android.content.Context
 import android.graphics.Typeface
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
-import com.itechsoftsolutions.lusosmile.databinding.ProgresssDialogLayoutBinding
+import com.itechsoftsolutions.tree.databinding.ProgresssDialogLayoutBinding
 import timber.log.Timber
 
 /**

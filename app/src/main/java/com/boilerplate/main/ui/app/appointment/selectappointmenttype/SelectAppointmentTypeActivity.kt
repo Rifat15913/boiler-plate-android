@@ -18,7 +18,7 @@ import com.boilerplate.utils.helper.Constants
 import com.boilerplate.utils.helper.DataUtils
 import com.boilerplate.utils.helper.ViewUtils
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
+import com.itechsoftsolutions.tree.R
 
 class SelectAppointmentTypeActivity : BaseActivity<SelectAppointmentTypeMvpView, SelectAppointmentTypePresenter>(),
         SelectAppointmentTypeMvpView, SelectionListener {
@@ -36,7 +36,7 @@ class SelectAppointmentTypeActivity : BaseActivity<SelectAppointmentTypeMvpView,
         }
     }
 
-    private lateinit var mBinding: com.itechsoftsolutions.lusosmile.databinding.ActivitySelectAppointmentTypeBinding
+    private lateinit var mBinding: com.itechsoftsolutions.tree.databinding.ActivitySelectAppointmentTypeBinding
     private var mTracker: SelectionTracker<Long>? = null
     private var mMonthLimit: Int? = null
 
@@ -74,7 +74,7 @@ class SelectAppointmentTypeActivity : BaseActivity<SelectAppointmentTypeMvpView,
     }
 
     override fun startUI() {
-        mBinding = viewDataBinding as com.itechsoftsolutions.lusosmile.databinding.ActivitySelectAppointmentTypeBinding
+        mBinding = viewDataBinding as com.itechsoftsolutions.tree.databinding.ActivitySelectAppointmentTypeBinding
         setListeners()
         initialize()
     }

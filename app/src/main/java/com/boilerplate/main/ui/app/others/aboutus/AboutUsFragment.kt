@@ -6,8 +6,8 @@ import com.boilerplate.main.ui.base.component.BaseFragment
 import com.boilerplate.main.ui.base.helper.ProgressDialogUtils
 import com.boilerplate.utils.helper.Constants
 import com.boilerplate.utils.libs.ToastUtils
-import com.itechsoftsolutions.lusosmile.R
-import com.itechsoftsolutions.lusosmile.databinding.FragmentAboutUsBinding
+import com.itechsoftsolutions.tree.R
+import com.itechsoftsolutions.tree.databinding.FragmentAboutUsBinding
 import java.util.*
 
 class AboutUsFragment : BaseFragment<AboutUsMvpView, AboutUsPresenter>(),
@@ -16,7 +16,7 @@ class AboutUsFragment : BaseFragment<AboutUsMvpView, AboutUsPresenter>(),
     override val layoutId: Int
         get() = R.layout.fragment_about_us
 
-    private lateinit var mBinding: com.itechsoftsolutions.lusosmile.databinding.FragmentAboutUsBinding
+    private lateinit var mBinding: com.itechsoftsolutions.tree.databinding.FragmentAboutUsBinding
 
     override fun getFragmentPresenter(): AboutUsPresenter {
         return AboutUsPresenter()
