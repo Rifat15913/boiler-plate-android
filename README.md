@@ -1,19 +1,19 @@
-# Table of Contents  
-- [Tree](#tree)
-- [Built With](#built-with)
-    - [Languages](#languages)
-    - [Architecture](#architecture)
-    - [Components](#components)
-- [How to Configure](#how-to-configure)
-    - [Configure Base Project](#configure-base-project)
-        - [Change Application ID](#change-application-id)
-        - [Change Package Name](#change-package-name)
-        - [Change Application Launcher Icon](#change-application-launcher-icon)
-        - [Change Application Name ](#change-application-name)
-        - [Change Font](#change-font)
-    - [Configure Firebase Core](#configure-firebase-core)
-    - [Configure Push Notification](#configure-push-notification)
-    - [Configure Crashlytics](#configure-crashlytics)
+# Table of contents  
+- [1. Tree](#1-tree)
+- [2. Built with](#2-built-with)
+    - [2.1 Languages](#21-languages)
+    - [2.2 Architecture](#22-architecture)
+    - [2.3 Components](#23-components)
+- [3. How to configure](#3-how-to-configure)
+    - [3.1 Configure base project](#31-configure-base-project)
+        - [3.1.1 Change application id](#311-change-application-id)
+        - [3.1.2 Change package name](#312-change-package-name)
+        - [3.1.3 Change application launcher icon](#313-change-application-launcher-icon)
+        - [3.1.4 Change application name](#314-change-application-name)
+        - [3.1.5 Change font](#315-change-font)
+    - [3.2 Configure firebase core](#32-configure-firebase-core)
+    - [3.3 Configure push notification](#33-configure-push-notification)
+    - [3.4 Configure crashlytics](#34-configure-crashlytics)
 - [Guideline](#guideline)
 - [Extras](#extras)
     - [Fetch Signing Fingerprint](#fetch-signing-fingerprint)
@@ -27,23 +27,22 @@
 # 1. Tree
 Tree is a native application which contains all the essential codes (boiler-plate) to kick start an Android project.
 
-# 2. Built With
-## Languages
+# 2. Built with
+## 2.1 Languages
 1. <code>Kotlin</code>
 2. <code>Java</code>
 3. <code>XML</code>
 4. <code>MarkDown</code>
 
-## Architecture
+## 2.2 Architecture
 1. <code>MVP (Model View Presenter)</code>
 
-## Components
+## 2.3 Components
 1. <code>MVP (Model View Presenter)</code>
     
-# 3. How to Configure
-
-## Configure Base Project
-### Change Application ID
+# 3. How to configure
+## 3.1 Configure base project
+### 3.1.1 Change applicaiton id
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
 | 1 | Go to <code>build.gradle(app)</code> file and copy the <code>applicationId</code> | ![Visual](readme-images/appid01.PNG) | 
@@ -54,7 +53,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | 6 | Go to <code>Build > Clean Project</code> | - |
 | 7 | Sync gradle| - |
 
-### Change Package Name
+### 3.1.2 Change package name
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
 | 1 | Open the project, Select the <code>Project</code> type as file structure(top left) | ![Visual](readme-images/refactor01.PNG) | 
@@ -63,7 +62,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | 4 | Click on <code>Do Refactor</code> if the dialog pops up | ![Visual](readme-images/refactor04.PNG) |
 | 5 | Wait | ![Visual](readme-images/refactor05.PNG) |
 
-### Change Application Launcher Icon
+### 3.1.3 Change application launcher icon
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
 | 1 | Open the project, Select the <code>Android</code> type as file structure(top left). Then right click on the <code>res</code> folder. | ![Visual](readme-images/launcher01.PNG) | 
@@ -75,22 +74,22 @@ Tree is a native application which contains all the essential codes (boiler-plat
 | 7 | Asset can be picked for background, in the <code>Background Layer</code> tab. Click on next if it seems okay. | ![Visual](readme-images/launcher07.PNG) |
 | 8 | Finish the dialog and your launcher icon is changed now | ![Visual](readme-images/launcher08.PNG) |
 
-### Change Application Name 
+### 3.1.4 Change application name 
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
 | 1 | Change <code>app_name</code> from <code>string.xml</code> of all the languages | ![Visual](readme-images/refactor00.PNG) | 
 
-### Change Font
+### 3.1.5 Change font
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
 | 1 | Overwrite <code>regular.ttf</code> from <code>font</code> directory in order to achieve text changes globally in the application of regular fonts. Additional fonts can be added; i.e. <code>bold</code>, <code>italic</code> etc. | ![Visual](readme-images/font01.PNG)|
     
-## Configure Firebase Core
+## 3.2 Configure firebase core
 1. Visit [here](https://tinyurl.com/yyebfbnu) and complete step 1-3
 2. Activate at <code>build.gradle</code>
     * <code>implementation 'com.google.firebase:firebase-core:16.0.8'</code>
     
-## Configure Push Notification
+## 3.3 Configure push notification
 1. [Configure firebase core](#configure-firebase-core)  
 2. Uncomment at <code>build.gradle</code> file 
     * <code>implementation 'com.google.firebase:firebase-messaging:17.6.0'</code>
@@ -101,7 +100,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
     * <code>com.lusosmile.main.data.remote.service.NotificationService</code>
 5. To know about getting the device registration token, [visit here](https://tinyurl.com/y6lndsa4)
 
-## Configure Crashlytics
+## 3.4 Configure crashlytics
 1. [Configure firebase core](#configure-firebase-core)
 2. Configure crashlytics at firebase console. To know more, [visit here](http://bit.ly/2VBDluy) 
 3. Uncomment at <code>build.gradle</code> 
@@ -116,16 +115,12 @@ Tree is a native application which contains all the essential codes (boiler-plat
 ## 4.1 File naming
 
 ### 4.1.1 Class files
-Class names are written in [UpperCamelCase](http://en.wikipedia.org/wiki/CamelCase).
-
-For classes that extend an Android component, the name of the class should end with the name of the component; for example: `SignInActivity`, `SignInFragment`, `ImageUploaderService`, `ChangePasswordDialog`.
+Class names are written in [UpperCamelCase](http://en.wikipedia.org/wiki/CamelCase). For classes that extend an Android component, the name of the class should end with the name of the component; for example: `SignInActivity`, `SignInFragment`, `ImageUploaderService`, `ChangePasswordDialog`.
 
 ### 4.1.2 Resources files
-
 Resources file names are written in __lowercase_underscore__.
 
 #### 4.1.2.1 Drawable files
-
 Naming conventions for drawables:
 
 
@@ -163,7 +158,6 @@ Naming conventions for selector states:
 
 
 #### 4.1.2.2 Layout files
-
 Layout files should match the name of the Android components that they are intended for but moving the top level component name to the beginning. For example, if we are creating a layout for the `SignInActivity`, the name of the layout file should be `activity_sign_in.xml`.
 
 | Component        | Class Name             | Layout Name                   |
@@ -174,34 +168,30 @@ Layout files should match the name of the Android components that they are inten
 | AdapterView item | ---                    | `item_person.xml`             |
 | Partial layout   | ---                    | `partial_stats_bar.xml`       |
 
-A slightly different case is when we are creating a layout that is going to be inflated by an `Adapter`, e.g to populate a `ListView`. In this case, the name of the layout should start with `item_`.
+A slightly different case is when we are creating a layout that is going to be inflated by an `Adapter`, e.g to populate a `RecyclerView`. In this case, the name of the layout should start with `item_`.
 
 Note that there are cases where these rules will not be possible to apply. For example, when creating layout files that are intended to be part of other layouts. In this case you should use the prefix `partial_`.
 
 #### 4.1.2.3 Menu files
-
-Similar to layout files, menu files should match the name of the component. For example, if we are defining a menu file that is going to be used in the `UserActivity`, then the name of the file should be `activity_user.xml`
-
-A good practice is to not include the word `menu` as part of the name because these files are already located in the `menu` directory.
+Similar to layout files, menu files should match the name of the component. For example, if we are defining a menu file that is going to be used in the `UserActivity`, then the name of the file should be `activity_user.xml`. A good practice is to not include the word `menu` as part of the name because these files are already located in the `menu` directory.
 
 #### 4.1.2.4 Values files
-
 Resource files in the values folder should be __plural__, e.g. `strings.xml`, `styles.xml`, `colors.xml`, `dimens.xml`, `attrs.xml`
     
 # 5. Extras
-## Fetch Signing Fingerprint
-Release:
+## 5.1 Fetch signing fingerprint
+### 5.1.1 Release
 1. Add the path of <code>keytool</code> from <code>JDK</code> to System Variable <code>PATH</code>
 2. Go to <code>keystore</code> folder
 3. Press <code>Shift + Right</code> Click
 4. Start command prompt
 5. Put command <code>keytool -exportcert -alias ALIAS_NAME -keystore KEYSTORE_NAME_WITH_EXTENSION -list -v</code>
 
-Debug:
+### 5.1.2 Debug
 1. Go to right side of Android Studio.
 2. Execute <code>Gradle > root > Tasks > android > signingReport</code>
 
-## Fetch Android Hash Key
+## 5.2 Fetch android hash key
 1. Uncomment at <code>BaseApplication.kt</code>
     * <code>import com.boilerplate.utils.helper.DataUtils</code>
     * <code>DataUtils.getAndroidHashKey()</code> at <code>onCreate()</code>
@@ -212,7 +202,7 @@ Debug:
 6. Search for the tag <code>Hash</code>
 7. Get the hash key depending on the build variant; i.e: <code>debug, release</code>
 
-## Show Application Local Data
+## 5.3 Show application local data
 1. Uncomment at <code>build.gradle</code>
     * <code>debugImplementation 'com.awesomedroidapps:inappstoragereader:1.0.2'</code>
 2. Visit <code>App Data</code> from your device. It will have similar icon as the app launcher.
@@ -220,7 +210,7 @@ Debug:
 # 6. Authors
 * Mohd. Asfaq-E-Azam Rifat, Executive Software Engineer - [Rifat](https://github.com/rifat15913)
 
-# 7. Technical Documentation
+# 7. Technical documentation
 The technical documentation is located [here.](app/documentation/)
 
 # 8. Releases
