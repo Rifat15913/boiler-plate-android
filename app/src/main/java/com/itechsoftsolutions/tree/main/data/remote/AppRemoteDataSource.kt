@@ -4,6 +4,8 @@ import android.content.Context
 import com.itechsoftsolutions.tree.R
 import com.itechsoftsolutions.tree.main.data.remote.response.*
 import com.itechsoftsolutions.tree.main.data.remote.service.lusosmile.ApiService
+import com.itechsoftsolutions.tree.main.data.remote.service.retrophoto.RetroPhoto
+import com.itechsoftsolutions.tree.main.data.remote.service.retrophoto.RetroPhotoService
 import com.itechsoftsolutions.tree.utils.helper.Constants
 import com.itechsoftsolutions.tree.utils.helper.DataUtils
 import com.itechsoftsolutions.tree.utils.helper.SharedPrefUtils
@@ -203,5 +205,9 @@ class AppRemoteDataSource(context: Context) {
                 SharedPrefUtils.readString(Constants.PreferenceKeys.ACCESS_TOKEN),
                 name, mobile)
                 .onBackpressureLatest()
+    }
+
+    fun getAllPhotos(): Flowable<List<RetroPhoto>> {
+        return RetroPhotoService.on().getAllPhotos().onBackpressureLatest()
     }
 }

@@ -122,13 +122,9 @@ object NotificationUtils {
             builder.setContentIntent(intent)
         }
 
-
-        builder.setSound(
-                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O && soundFileUri != null)
-                    soundFileUri
-                else
-                    RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O && soundFileUri != null) {
+            builder.setSound(soundFileUri)
+        }
 
         val manager: NotificationManagerCompat = NotificationManagerCompat.from(
                 BaseApplication.getBaseApplicationContext())

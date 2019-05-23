@@ -7,6 +7,7 @@ import com.itechsoftsolutions.tree.main.data.local.AppLocalDataSource
 import com.itechsoftsolutions.tree.main.data.local.user.UserEntity
 import com.itechsoftsolutions.tree.main.data.remote.AppRemoteDataSource
 import com.itechsoftsolutions.tree.main.data.remote.response.*
+import com.itechsoftsolutions.tree.main.data.remote.service.retrophoto.RetroPhoto
 import com.itechsoftsolutions.tree.main.ui.app.authentication.welcome.WelcomeActivity
 import com.itechsoftsolutions.tree.main.ui.base.helper.ProgressDialogUtils
 import com.itechsoftsolutions.tree.utils.helper.DataUtils
@@ -240,5 +241,9 @@ class BaseRepository(context: Context) {
      * */
     fun updateUserProfile(name: String, mobile: String): Flowable<retrofit2.Response<BaseResponse>> {
         return mAppRemoteDataSource.updateUserProfile(name, mobile)
+    }
+
+    fun getAllPhotosFromServer(): Flowable<List<RetroPhoto>> {
+        return mAppRemoteDataSource.getAllPhotos()
     }
 }

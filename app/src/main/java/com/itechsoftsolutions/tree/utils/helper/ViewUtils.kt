@@ -11,9 +11,11 @@ import android.os.Build
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.WindowManager
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.selection.SelectionPredicates
 import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.selection.StableIdKeyProvider
@@ -298,6 +300,26 @@ class ViewUtils {
                 result = getResources().getDimensionPixelSize(resourceId)
             }
             return result
+        }
+
+        /**
+         * This method sets the color tint of the drawable
+         *
+         * @param drawable working drawable
+         * @param colorResourceId resource id of the color
+         * */
+        fun setColorTint(drawable: Drawable, colorResourceId: Int) {
+            DrawableCompat.setTint(drawable, getColor(colorResourceId))
+        }
+
+        /**
+         * This method sets the color tint of the ImageView
+         *
+         * @param imageView working ImageView
+         * @param colorResourceId resource id of the color
+         * */
+        fun setColorTint(imageView: ImageView, colorResourceId: Int) {
+            setColorTint(imageView.drawable, colorResourceId)
         }
     }
 }
