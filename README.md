@@ -14,15 +14,24 @@
     - [3.2 Configure firebase core](#32-configure-firebase-core)
     - [3.3 Configure push notification](#33-configure-push-notification)
     - [3.4 Configure crashlytics](#34-configure-crashlytics)
-- [Guideline](#guideline)
-- [Extras](#extras)
-    - [Fetch Signing Fingerprint](#fetch-signing-fingerprint)
-    - [Fetch Android Hash Key](#fetch-android-hash-key)
-    - [Show Application Local Data](#show-application-local-data)
-- [Authors](#authors)
-- [Technical Documentation](#technical-documentation)
-- [Releases](#releases)
-- [Contributing](#contributing)
+- [4. Guideline](#4-guideline)
+    - [4.1 File naming guideline](#41-file-naming-guideline)
+        - [4.1.1 Class files](#411-class-files)
+        - [4.1.2 Resources files](#412-resource-files)
+    - [4.2 Code guideline](#42-code-guideline)
+        - [4.2.1 Java language rules](#421-java-language-rules)
+        - [4.2.2 Java style rules](#422-java-style-rules)
+        - [4.2.3 XML style rules](#423-xml-style-rules)
+- [5. Extras](#5-extras)
+    - [5.1 Fetch signing fingerprint](#51-fetch-signing-fingerprint)
+        - [5.1.1 Release](#511-release)
+        - [5.1.2 Debug](#512-debug)
+    - [5.2 Fetch android hash key](#52-fetch-android-hash-key)
+    - [5.3 Show application local data](#53-show-application-local-data)
+- [6. Authors](#6-authors)
+- [7. Technical documentation](#7-technical-documentation)
+- [8. Releases](#8-releases)
+- [9. Contributing](#9-contributing)
 
 # 1. Tree
 Tree is a native application which contains all the essential codes (boiler-plate) to kick start an Android project.
@@ -366,7 +375,6 @@ Example:
 
 ```java
 public class MainActivity extends Activity {
-
 	private String mTitle;
     private TextView mTextViewTitle;
 
@@ -394,8 +402,7 @@ If your class is extending an __Android component__ such as an Activity or a Fra
 
 ```java
 public class MainActivity extends Activity {
-
-	//Order matches Activity lifecycle
+    //Order matches Activity lifecycle
     @Override
     public void onCreate() {}
 
@@ -407,7 +414,6 @@ public class MainActivity extends Activity {
 
     @Override
     public void onDestroy() {}
-
 }
 ```
 
@@ -556,7 +562,7 @@ This is good:
 This is __bad__ :
 
 ```xml
-<!-- Don\'t do this! -->
+<!-- Don't do this! -->
 <TextView
     android:id="@+id/text_view_profile"
     android:layout_width="wrap_content"
