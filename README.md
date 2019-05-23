@@ -2,6 +2,8 @@
 - [Tree](#tree)
 - [Built With](#built-with)
     - [Languages](#languages)
+    - [Architecture](#architecture)
+    - [Components](#components)
 - [How to Configure](#how-to-configure)
     - [Configure Base Project](#configure-base-project)
         - [Change Application ID](#change-application-id)
@@ -12,6 +14,7 @@
     - [Configure Firebase Core](#configure-firebase-core)
     - [Configure Push Notification](#configure-push-notification)
     - [Configure Crashlytics](#configure-crashlytics)
+- [Guideline](#guideline)
 - [Extras](#extras)
     - [Fetch Signing Fingerprint](#fetch-signing-fingerprint)
     - [Fetch Android Hash Key](#fetch-android-hash-key)
@@ -21,18 +24,23 @@
 - [Releases](#releases)
 - [Contributing](#contributing)
 
-# Tree
-
+# 1. Tree
 Tree is a native application which contains all the essential codes (boiler-plate) to kick start an Android project.
 
-# Built With
+# 2. Built With
 ## Languages
 1. <code>Kotlin</code>
 2. <code>Java</code>
 3. <code>XML</code>
 4. <code>MarkDown</code>
+
+## Architecture
+1. <code>MVP (Model View Presenter)</code>
+
+## Components
+1. <code>MVP (Model View Presenter)</code>
     
-# How to Configure
+# 3. How to Configure
 
 ## Configure Base Project
 ### Change Application ID
@@ -104,7 +112,83 @@ Tree is a native application which contains all the essential codes (boiler-plat
     * <code>import com.google.firebase.analytics.FirebaseAnalytics</code>
     * <code>FirebaseAnalytics.getInstance(context)</code>
     
-# Extras
+# 4. Guideline
+## 4.1 File naming
+
+### 4.1.1 Class files
+Class names are written in [UpperCamelCase](http://en.wikipedia.org/wiki/CamelCase).
+
+For classes that extend an Android component, the name of the class should end with the name of the component; for example: `SignInActivity`, `SignInFragment`, `ImageUploaderService`, `ChangePasswordDialog`.
+
+### 4.1.2 Resources files
+
+Resources file names are written in __lowercase_underscore__.
+
+#### 4.1.2.1 Drawable files
+
+Naming conventions for drawables:
+
+
+| Asset Type   | Prefix            |		Example               |
+|--------------| ------------------|-----------------------------|
+| Action bar   | `ab_`             | `ab_stacked.png`          |
+| Button       | `btn_`	            | `btn_send_pressed.png`    |
+| Dialog       | `dialog_`         | `dialog_top.png`          |
+| Divider      | `divider_`        | `divider_horizontal.png`  |
+| Icon         | `ic_`	            | `ic_star.png`               |
+| Menu         | `menu_	`           | `menu_submenu_bg.png`     |
+| Notification | `notification_`	| `notification_bg.png`     |
+| Tabs         | `tab_`            | `tab_pressed.png`         |
+
+Naming conventions for icons (taken from [Android iconography guidelines](http://developer.android.com/design/style/iconography.html)):
+
+| Asset Type                      | Prefix             | Example                      |
+| --------------------------------| ----------------   | ---------------------------- |
+| Icons                           | `ic_`              | `ic_star.png`                |
+| Launcher icons                  | `ic_launcher`      | `ic_launcher_calendar.png`   |
+| Menu icons and Action Bar icons | `ic_menu`          | `ic_menu_archive.png`        |
+| Status bar icons                | `ic_stat_notify`   | `ic_stat_notify_msg.png`     |
+| Tab icons                       | `ic_tab`           | `ic_tab_recent.png`          |
+| Dialog icons                    | `ic_dialog`        | `ic_dialog_info.png`         |
+
+Naming conventions for selector states:
+
+| State	       | Suffix          | Example                     |
+|--------------|-----------------|-----------------------------|
+| Normal       | `_normal`       | `btn_order_normal.png`    |
+| Pressed      | `_pressed`      | `btn_order_pressed.png`   |
+| Focused      | `_focused`      | `btn_order_focused.png`   |
+| Disabled     | `_disabled`     | `btn_order_disabled.png`  |
+| Selected     | `_selected`     | `btn_order_selected.png`  |
+
+
+#### 4.1.2.2 Layout files
+
+Layout files should match the name of the Android components that they are intended for but moving the top level component name to the beginning. For example, if we are creating a layout for the `SignInActivity`, the name of the layout file should be `activity_sign_in.xml`.
+
+| Component        | Class Name             | Layout Name                   |
+| ---------------- | ---------------------- | ----------------------------- |
+| Activity         | `UserProfileActivity`  | `activity_user_profile.xml`   |
+| Fragment         | `SignUpFragment`       | `fragment_sign_up.xml`        |
+| Dialog           | `ChangePasswordDialog` | `dialog_change_password.xml`  |
+| AdapterView item | ---                    | `item_person.xml`             |
+| Partial layout   | ---                    | `partial_stats_bar.xml`       |
+
+A slightly different case is when we are creating a layout that is going to be inflated by an `Adapter`, e.g to populate a `ListView`. In this case, the name of the layout should start with `item_`.
+
+Note that there are cases where these rules will not be possible to apply. For example, when creating layout files that are intended to be part of other layouts. In this case you should use the prefix `partial_`.
+
+#### 4.1.2.3 Menu files
+
+Similar to layout files, menu files should match the name of the component. For example, if we are defining a menu file that is going to be used in the `UserActivity`, then the name of the file should be `activity_user.xml`
+
+A good practice is to not include the word `menu` as part of the name because these files are already located in the `menu` directory.
+
+#### 4.1.2.4 Values files
+
+Resource files in the values folder should be __plural__, e.g. `strings.xml`, `styles.xml`, `colors.xml`, `dimens.xml`, `attrs.xml`
+    
+# 5. Extras
 ## Fetch Signing Fingerprint
 Release:
 1. Add the path of <code>keytool</code> from <code>JDK</code> to System Variable <code>PATH</code>
@@ -133,14 +217,14 @@ Debug:
     * <code>debugImplementation 'com.awesomedroidapps:inappstoragereader:1.0.2'</code>
 2. Visit <code>App Data</code> from your device. It will have similar icon as the app launcher.
 
-# Authors
+# 6. Authors
 * Mohd. Asfaq-E-Azam Rifat, Executive Software Engineer - [Rifat](https://github.com/rifat15913)
 
-# Technical Documentation
+# 7. Technical Documentation
 The technical documentation is located [here.](app/documentation/)
 
-# Releases
+# 8. Releases
 Please visit [this link](app/release/) to get the latest build.
 
-# Contributing
+# 9. Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
