@@ -45,6 +45,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
 
 ## 2.2 Architecture
 1. <code>MVP (Model View Presenter)</code>
+</br>
 ![Visual](readme-images/mvp.png)
     
 # 3. How to configure
