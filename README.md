@@ -542,7 +542,7 @@ Menu example:
 
 ```xml
 <menu>
-<item
+    <item
         android:id="@+id/menu_done"
         android:title="Done" />
 </menu>
