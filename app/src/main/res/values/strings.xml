@@ -7,6 +7,9 @@
     <string name="please_wait">Please Wait</string>
     <string name="loading">Loading…</string>
 
+    <!--Braintree-->
+    <string name="tokenization_key" translatable="false">sandbox_x68cfm6c_y3yksnpgkmg5vw9x</string>
+
     <!--API-->
     <string name="api_base_url" translatable="false">https://lusosmile.dev01.squaredbyte.com/api/</string>
 
