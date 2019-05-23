@@ -653,7 +653,7 @@ As a general rule you should try to group similar attributes together. A good wa
 2. Visit <code>App Data</code> from your device. It will have similar icon as the app launcher.
 
 # 6. Authors
-* Mohd. Asfaq-E-Azam Rifat, Executive Software Engineer - [Rifat](https://github.com/rifat15913)
+Mohd. Asfaq-E-Azam Rifat, Executive Software Engineer - [Rifat](https://github.com/rifat15913)
 
 # 7. Technical documentation
 The technical documentation is located [here.](app/documentation/)
