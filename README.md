@@ -112,7 +112,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
     * <code>FirebaseAnalytics.getInstance(context)</code>
     
 # 4. Guideline
-## 4.1 File naming
+## 4.1 File naming guideline
 
 ### 4.1.1 Class files
 Class names are written in [UpperCamelCase](http://en.wikipedia.org/wiki/CamelCase). For classes that extend an Android component, the name of the class should end with the name of the component; for example: `SignInActivity`, `SignInFragment`, `ImageUploaderService`, `ChangePasswordDialog`.
@@ -178,7 +178,7 @@ Similar to layout files, menu files should match the name of the component. For 
 #### 4.1.2.4 Values files
 Resource files in the values folder should be __plural__, e.g. `strings.xml`, `styles.xml`, `colors.xml`, `dimens.xml`, `attrs.xml`
 
-## 4.2 Code guidelines
+## 4.2 Code guideline
 ### 4.2.1 Java language rules
 #### 4.2.1.1 Don't ignore exceptions
 You must never do the following:
@@ -542,7 +542,7 @@ Menu example:
 
 ```xml
 <menu>
-	<item
+<item
         android:id="@+id/menu_done"
         android:title="Done" />
 </menu>
