@@ -177,6 +177,398 @@ Similar to layout files, menu files should match the name of the component. For 
 
 #### 4.1.2.4 Values files
 Resource files in the values folder should be __plural__, e.g. `strings.xml`, `styles.xml`, `colors.xml`, `dimens.xml`, `attrs.xml`
+
+## 4.2 Code guidelines
+### 4.2.1 Java language rules
+#### 4.2.1.1 Don't ignore exceptions
+You must never do the following:
+
+```java
+void setServerPort(String value) {
+    try {
+        serverPort = Integer.parseInt(value);
+    } catch (NumberFormatException e) { }
+}
+```
+
+_While you may think that your code will never encounter this error condition or that it is not important to handle it, ignoring exceptions like above creates mines in your code for someone else to trip over some day. You must handle every Exception in your code in some principled way. The specific handling varies depending on the case._ - ([Android code style guidelines](https://source.android.com/source/code-style.html))
+
+See alternatives [here](https://source.android.com/source/code-style.html#dont-ignore-exceptions).
+
+#### 4.2.1.2 Don't catch generic exception
+You should not do this:
+
+```java
+try {
+    someComplicatedIOFunction();        // may throw IOException
+    someComplicatedParsingFunction();   // may throw ParsingException
+    someComplicatedSecurityFunction();  // may throw SecurityException
+    // phew, made it all the way
+} catch (Exception e) {                 // I'll just catch all exceptions
+    handleError();                      // with one generic handler!
+}
+```
+
+See the reason why and some alternatives [here](https://source.android.com/source/code-style.html#dont-catch-generic-exception)
+
+#### 4.2.1.3 Fully qualify imports
+This is bad: `import foo.*;`
+
+This is good: `import foo.Bar;`
+
+See more info [here](https://source.android.com/source/code-style.html#fully-qualify-imports)
+
+### 4.2.2 Java style rules
+#### 4.2.2.1 Fields definition and naming
+Fields should be defined at the __top of the file__ and they should follow the naming rules listed below.
+
+* Private, non-static field names start with __m__.
+* Private, static field names start with __s__.
+* Other fields start with a lower case letter.
+* Static final fields (constants) are ALL_CAPS_WITH_UNDERSCORES.
+
+Example:
+
+```java
+public class MyClass {
+    public static final int SOME_CONSTANT = 42;
+    public int publicField;
+    private static MyClass sSingleton;
+    int mPackagePrivate;
+    private int mPrivate;
+    protected int mProtected;
+}
+```
+
+#### 4.2.2.2 Treat acronyms as words
+| Good           | Bad            |
+| -------------- | -------------- |
+| `XmlHttpRequest` | `XMLHTTPRequest` |
+| `getCustomerId`  | `getCustomerID`  |
+| `String url`     | `String URL`     |
+| `long id`        | `long ID`        |
+
+#### 4.2.2.3 Use spaces for indentation
+Use __4 space__ indents for blocks:
+
+```java
+if (x == 1) {
+    x++;
+}
+```
+
+Use __8 space__ indents for line wraps:
+
+```java
+Instrument i =
+        someLongExpression(that, wouldNotFit, on, one, line);
+```
+
+#### 4.2.2.4 Use standard brace style
+Braces go on the same line as the code before them.
+
+```java
+class MyClass {
+    int func() {
+        if (something) {
+            // ...
+        } else if (somethingElse) {
+            // ...
+        } else {
+            // ...
+        }
+    }
+}
+```
+
+Braces around the statements are required unless the condition and the body fit on one line.
+
+If the condition and the body fit on one line and that line is shorter than the max line length, then braces are not required, e.g.
+
+```java
+if (condition) body();
+```
+
+This is __bad__:
+
+```java
+if (condition)
+    body();  // bad!
+```
+
+#### 4.2.2.5 Limit variable scope
+_The scope of local variables should be kept to a minimum (Effective Java Item 29). By doing so, you increase the readability and maintainability of your code and reduce the likelihood of error. Each variable should be declared in the innermost block that encloses all uses of the variable._
+
+_Local variables should be declared at the point they are first used. Nearly every local variable declaration should contain an initializer. If you don't yet have enough information to initialize a variable sensibly, you should postpone the declaration until you do._ - ([Android code style guidelines](https://source.android.com/source/code-style.html#limit-variable-scope))
+
+#### 4.2.2.6 Order import statements
+If you are using an IDE such as Android Studio, you don't have to worry about this because your IDE is already obeying these rules. If not, have a look below.
+
+The ordering of import statements is:
+
+1. Android imports
+2. Imports from third parties (com, junit, net, org)
+3. java and javax
+4. Same project imports
+
+To exactly match the IDE settings, the imports should be:
+
+* Alphabetically ordered within each grouping, with capital letters before lower case letters (e.g. Z before a).
+* There should be a blank line between each major grouping (android, com, junit, net, org, java, javax).
+
+More info [here](https://source.android.com/source/code-style.html#limit-variable-scope)
+
+#### 4.2.2.7 Logging guidelines
+Use the logging methods provided by the `Timber` class to print out error messages or other information that may be useful for developers to identify issues:
+
+* `Timber.v(String message)` (verbose)
+* `Timber.d(String message)` (debug)
+* `Timber.i(String message)` (information)
+* `Timber.w(String message)` (warning)
+* `Timber.e(Throwable error)` (error)
+
+#### 4.2.2.8 Class member ordering
+There is no single correct solution for this but using a __logical__ and __consistent__ order will improve code learning ability and readability. It is recommendable to use the following order:
+
+1. Constants
+2. Fields
+3. Constructors
+4. Override methods and callbacks (public or private)
+5. Public methods
+6. Private methods
+7. Inner classes or interfaces
+
+Example:
+
+```java
+public class MainActivity extends Activity {
+
+	private String mTitle;
+    private TextView mTextViewTitle;
+
+    public void setTitle(String title) {
+    	mTitle = title;
+    }
+
+    @Override
+    public void onCreate() {
+        ...
+    }
+
+    private void setUpView() {
+        ...
+    }
+
+    static class AnInnerClass {
+
+    }
+
+}
+```
+
+If your class is extending an __Android component__ such as an Activity or a Fragment, it is a good practice to order the override methods so that they __match the component's lifecycle__. For example, if you have an Activity that implements `onCreate()`, `onDestroy()`, `onPause()` and `onResume()`, then the correct order is:
+
+```java
+public class MainActivity extends Activity {
+
+	//Order matches Activity lifecycle
+    @Override
+    public void onCreate() {}
+
+    @Override
+    public void onResume() {}
+
+    @Override
+    public void onPause() {}
+
+    @Override
+    public void onDestroy() {}
+
+}
+```
+
+#### 4.2.2.9 Parameter ordering in methods
+
+When programming for Android, it is quite common to define methods that take a `Context`. If you are writing a method like this, then the __Context__ must be the __first__ parameter.
+
+The opposite case are __callback__ interfaces that should always be the __last__ parameter.
+
+Examples:
+
+```java
+// Context always goes first
+public User loadUser(Context context, int userId);
+
+// Callbacks always go last
+public void loadUserAsync(Context context, int userId, UserCallback callback);
+```
+
+#### 4.2.2.10 String constants, naming, and values
+Many elements of the Android SDK such as `SharedPreferences`, `Bundle`, or `Intent` use a key-value pair approach so it's very likely that even for a small app you end up having to write a lot of String constants.
+
+While using one of these components, you __must__ define the keys as a `static final` fields.
+
+#### 4.2.2.11 Line length limit
+Code lines should not exceed __80 characters__. If the line is longer than this limit there are usually two options to reduce its length:
+
+* Extract a local variable or method (preferable).
+* Apply line-wrapping to divide a single line into multiple ones.
+
+There are two __exceptions__ where it is possible to have lines longer than 80:
+
+* Lines that are not possible to split, e.g. long URLs in comments.
+* `package` and `import` statements.
+
+##### 4.2.2.11.1 Line-wrapping strategies
+
+There isn't an exact formula that explains how to line-wrap and quite often different solutions are valid. However there are a few rules that can be applied to common cases.
+
+__Break at operators__
+
+When the line is broken at an operator, the break comes __before__ the operator. For example:
+
+```java
+int longName = anotherVeryLongVariable + anEvenLongerOne - thisRidiculousLongOne
+        + theFinalOne;
+```
+
+__Assignment Operator Exception__
+
+An exception to the `break at operators` rule is the assignment operator `=`, where the line break should happen __after__ the operator.
+
+```java
+int longName =
+        anotherVeryLongVariable + anEvenLongerOne - thisRidiculousLongOne + theFinalOne;
+```
+
+__Method chain case__
+
+When multiple methods are chained in the same line - for example when using Builders - every call to a method should go in its own line, breaking the line before the `.`
+
+```java
+Picasso.with(context).load("http://ribot.co.uk/images/sexyjoe.jpg").into(imageView);
+```
+
+```java
+Picasso.with(context)
+        .load("http://ribot.co.uk/images/sexyjoe.jpg")
+        .into(imageView);
+```
+
+__Long parameters case__
+
+When a method has many parameters or its parameters are very long, we should break the line after every comma `,`
+
+```java
+loadPicture(context, "http://ribot.co.uk/images/sexyjoe.jpg", mImageViewProfilePicture, clickListener, "Title of the picture");
+```
+
+```java
+loadPicture(context,
+        "http://ribot.co.uk/images/sexyjoe.jpg",
+        mImageViewProfilePicture,
+        clickListener,
+        "Title of the picture");
+```
+
+#### 4.2.2.12 RxJava chains styling
+Rx chains of operators require line-wrapping. Every operator must go in a new line and the line should be broken before the `.`
+
+```java
+public Observable<Location> syncLocations() {
+    return mDatabaseHelper.getAllLocations()
+            .concatMap(new Func1<Location, Observable<? extends Location>>() {
+                @Override
+                 public Observable<? extends Location> call(Location location) {
+                     return mRetrofitService.getLocation(location.id);
+                 }
+            })
+            .retry(new Func2<Integer, Throwable, Boolean>() {
+                 @Override
+                 public Boolean call(Integer numRetries, Throwable throwable) {
+                     return throwable instanceof RetrofitError;
+                 }
+            });
+}
+```
+
+### 4.2.3 XML style rules
+#### 4.2.3.1 Use self closing tags
+When an XML element doesn't have any contents, you __must__ use self closing tags.
+
+This is good:
+
+```xml
+<TextView
+	android:id="@+id/text_view_profile"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" />
+```
+
+This is __bad__ :
+
+```xml
+<!-- Don\'t do this! -->
+<TextView
+    android:id="@+id/text_view_profile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+</TextView>
+```
+
+#### 4.2.3.2 Resources naming
+Resource IDs and names are written in __lowercase_underscore__.
+
+##### 4.2.3.2.1 ID naming
+IDs should be prefixed with the name of the element in lowercase underscore. For example:
+
+| Element            | Prefix            |
+| -----------------  | ----------------- |
+| `TextView`           | `text_view`             |
+| `ImageView`          | `image_view`            |
+| `Button`             | `button_`           |
+| `Menu`               | `menu_`             |
+
+Image view example:
+
+```xml
+<ImageView
+    android:id="@+id/image_view_profile"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" />
+```
+
+Menu example:
+
+```xml
+<menu>
+	<item
+        android:id="@+id/menu_done"
+        android:title="Done" />
+</menu>
+```
+
+##### 4.2.3.2.2 Strings
+String names start with a prefix that identifies the section they belong to. For example `registration_email_hint` or `registration_name_hint`. If a string __doesn't belong__ to any section, then you should follow the rules below:
+
+| Prefix             | Description                           |
+| -----------------  | --------------------------------------|
+| `error_`             | An error message                      |
+| `msg_`               | A regular information message         |
+| `title_`             | A title, i.e. a dialog title          |
+| `action_`            | An action such as "Save" or "Create"  |
+
+##### 4.2.3.2.3 Styles and Themes
+Unlike the rest of resources, style names are written in __UpperCamelCase__.
+
+#### 4.2.3.3 Attributes ordering
+As a general rule you should try to group similar attributes together. A good way of ordering the most common attributes is:
+
+1. View Id
+2. Style
+3. Layout width and layout height
+4. Other layout attributes, sorted alphabetically
+5. Remaining attributes, sorted alphabetically
     
 # 5. Extras
 ## 5.1 Fetch signing fingerprint
