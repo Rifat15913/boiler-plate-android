@@ -184,10 +184,14 @@ Resource files in the values folder should be __plural__, e.g. `strings.xml`, `s
 You must never do the following:
 
 ```java
-void setServerPort(String value) {
-    try {
-        serverPort = Integer.parseInt(value);
-    } catch (NumberFormatException e) { }
+class ServerUtils {
+    void setServerPort(String value) {
+        try {
+            serverPort = Integer.parseInt(value);
+        } catch (NumberFormatException e) { 
+            // Handle error
+        }
+    }
 }
 ```
 
@@ -199,13 +203,17 @@ See alternatives [here](https://source.android.com/source/code-style.html#dont-i
 You should not do this:
 
 ```java
-try {
-    someComplicatedIOFunction();        // may throw IOException
-    someComplicatedParsingFunction();   // may throw ParsingException
-    someComplicatedSecurityFunction();  // may throw SecurityException
-    // phew, made it all the way
-} catch (Exception e) {                 // I'll just catch all exceptions
-    handleError();                      // with one generic handler!
+class Driver {
+    void test() {
+        try {
+            someComplicatedIOFunction();        // may throw IOException
+            someComplicatedParsingFunction();   // may throw ParsingException
+            someComplicatedSecurityFunction();  // may throw SecurityException
+            // phew, made it all the way
+        } catch (Exception e) {                 // I'll just catch all exceptions
+            handleError();                      // with one generic handler!
+        }
+    }
 }
 ```
 
@@ -252,16 +260,24 @@ public class MyClass {
 Use __4 space__ indents for blocks:
 
 ```java
-if (x == 1) {
-    x++;
+class Condition {   
+    void test() {
+        if (x == 1) {
+            x++;
+        }
+    }
 }
 ```
 
 Use __8 space__ indents for line wraps:
 
 ```java
-Instrument i =
-        someLongExpression(that, wouldNotFit, on, one, line);
+class LongExpression {
+    void test() {
+        Instrument i =
+                someLongExpression(that, wouldNotFit, on, one, line);
+    }
+}
 ```
 
 #### 4.2.2.4 Use standard brace style
@@ -286,14 +302,22 @@ Braces around the statements are required unless the condition and the body fit 
 If the condition and the body fit on one line and that line is shorter than the max line length, then braces are not required, e.g.
 
 ```java
-if (condition) body();
+class Condition {
+    void test() {
+        if (condition) body();
+    }
+}
 ```
 
 This is __bad__:
 
 ```java
-if (condition)
-    body();  // bad!
+class Condition {
+    void test() {
+        if (condition) 
+            body();  // bad!
+    }
+}
 ```
 
 #### 4.2.2.5 Limit variable scope
@@ -352,11 +376,11 @@ public class MainActivity extends Activity {
 
     @Override
     public void onCreate() {
-        ...
+        // ...
     }
 
     private void setUpView() {
-        ...
+        // ...
     }
 
     static class AnInnerClass {
@@ -396,11 +420,13 @@ The opposite case are __callback__ interfaces that should always be the __last__
 Examples:
 
 ```java
-// Context always goes first
-public User loadUser(Context context, int userId);
+interface Callback {
+    // Context always goes first
+    User loadUser(Context context, int userId);
 
-// Callbacks always go last
-public void loadUserAsync(Context context, int userId, UserCallback callback);
+    // Callbacks always go last
+    void loadUserAsync(Context context, int userId, UserCallback callback);
+}
 ```
 
 #### 4.2.2.10 String constants, naming, and values
@@ -428,8 +454,10 @@ __Break at operators__
 When the line is broken at an operator, the break comes __before__ the operator. For example:
 
 ```java
-int longName = anotherVeryLongVariable + anEvenLongerOne - thisRidiculousLongOne
+class LineWrapper {
+    int longName = anotherVeryLongVariable + anEvenLongerOne - thisRidiculousLongOne
         + theFinalOne;
+}
 ```
 
 __Assignment Operator Exception__
@@ -437,8 +465,10 @@ __Assignment Operator Exception__
 An exception to the `break at operators` rule is the assignment operator `=`, where the line break should happen __after__ the operator.
 
 ```java
-int longName =
-        anotherVeryLongVariable + anEvenLongerOne - thisRidiculousLongOne + theFinalOne;
+class LineWrapper {
+    int longName =
+        anotherVeryLongVariable + anEvenLongerOne - thisRidiculousLongOne + theFinalOne;   
+}
 ```
 
 __Method chain case__
@@ -446,13 +476,21 @@ __Method chain case__
 When multiple methods are chained in the same line - for example when using Builders - every call to a method should go in its own line, breaking the line before the `.`
 
 ```java
-Picasso.with(context).load("http://ribot.co.uk/images/sexyjoe.jpg").into(imageView);
+class MethodChain {
+    void test() {
+        Picasso.with(context).load("http://ribot.co.uk/images/sexyjoe.jpg").into(imageView);
+    }
+}
 ```
 
 ```java
-Picasso.with(context)
+class MethodChain {
+    void test() {
+        Picasso.with(context)
         .load("http://ribot.co.uk/images/sexyjoe.jpg")
         .into(imageView);
+    }
+}
 ```
 
 __Long parameters case__
@@ -460,35 +498,45 @@ __Long parameters case__
 When a method has many parameters or its parameters are very long, we should break the line after every comma `,`
 
 ```java
-loadPicture(context, "http://ribot.co.uk/images/sexyjoe.jpg", mImageViewProfilePicture, clickListener, "Title of the picture");
+class LongParameter {
+    void test() {
+        loadPicture(context, "http://ribot.co.uk/images/sexyjoe.jpg", mImageViewProfilePicture, clickListener, "Title of the picture");
+    }
+}
 ```
 
 ```java
-loadPicture(context,
-        "http://ribot.co.uk/images/sexyjoe.jpg",
-        mImageViewProfilePicture,
-        clickListener,
-        "Title of the picture");
+class LongParameter {
+    void test() {
+        loadPicture(context,
+            "http://ribot.co.uk/images/sexyjoe.jpg",
+            mImageViewProfilePicture,
+            clickListener,
+            "Title of the picture");
+    }
+}
 ```
 
 #### 4.2.2.12 RxJava chains styling
 Rx chains of operators require line-wrapping. Every operator must go in a new line and the line should be broken before the `.`
 
 ```java
-public Observable<Location> syncLocations() {
-    return mDatabaseHelper.getAllLocations()
-            .concatMap(new Func1<Location, Observable<? extends Location>>() {
-                @Override
-                 public Observable<? extends Location> call(Location location) {
-                     return mRetrofitService.getLocation(location.id);
-                 }
-            })
-            .retry(new Func2<Integer, Throwable, Boolean>() {
-                 @Override
-                 public Boolean call(Integer numRetries, Throwable throwable) {
-                     return throwable instanceof RetrofitError;
-                 }
-            });
+class RxJavaExample {
+    public Observable<Location> syncLocations() {
+        return mDatabaseHelper.getAllLocations()
+                .concatMap(new Func1<Location, Observable<? extends Location>>() {
+                    @Override
+                     public Observable<? extends Location> call(Location location) {
+                         return mRetrofitService.getLocation(location.id);
+                     }
+                })
+                .retry(new Func2<Integer, Throwable, Boolean>() {
+                     @Override
+                     public Boolean call(Integer numRetries, Throwable throwable) {
+                         return false;
+                     }
+                });
+    }
 }
 ```
 
