@@ -50,7 +50,7 @@ Tree is a native application which contains all the essential codes (boiler-plat
     
 # 3. How to configure
 ## 3.1 Configure base project
-### 3.1.1 Change applicaiton id
+### 3.1.1 Change application id
 | No | Action | Screenshot |
 | :---: | :---: | :---: |
 | 1 | Go to <code>build.gradle(app)</code> file and copy the <code>applicationId</code> | ![Visual](readme-images/appid01.PNG) | 
