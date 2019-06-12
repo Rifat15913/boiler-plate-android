@@ -184,6 +184,7 @@ class ViewUtils {
          * @param itemDecoration item decoration for margin or separator
          * @param swipeItemHandler handler to work with item swipe
          * @param itemAnimator animator for RecyclerView items
+         * @param selectionTrackerParams parameters we do need, to initialize selection tracker
          * */
         fun <T> initializeRecyclerView(recyclerView: RecyclerView,
                                        adapter: BaseAdapter<T>,
@@ -209,26 +210,24 @@ class ViewUtils {
             swipeItemHandler?.attachToRecyclerView(recyclerView)
 
             if (selectionTrackerParams != null) {
-                selectionTrackerParams.trackerObjectFromActivityOrFragment =
-                        SelectionTracker.Builder<Long>(
-                                selectionTrackerParams.selectionId,
-                                recyclerView,
-                                StableIdKeyProvider(recyclerView),
-                                BaseItemDetailsLookup(recyclerView),
-                                StorageStrategy.createLongStorage())
-                                .withSelectionPredicate(
-                                        if (selectionTrackerParams.willSelectSingleItem) {
-                                            SelectionPredicates.createSelectSingleAnything()
-                                        } else {
-                                            SelectionPredicates.createSelectAnything()
-                                        })
-                                .build()
+                val tracker = SelectionTracker.Builder<Long>(
+                        selectionTrackerParams.selectionId,
+                        recyclerView,
+                        StableIdKeyProvider(recyclerView),
+                        BaseItemDetailsLookup(recyclerView),
+                        StorageStrategy.createLongStorage())
+                        .withSelectionPredicate(
+                                if (selectionTrackerParams.willSelectSingleItem) {
+                                    SelectionPredicates.createSelectSingleAnything()
+                                } else {
+                                    SelectionPredicates.createSelectAnything()
+                                })
+                        .build()
 
-                (adapter as BaseSelectableAdapter).tracker =
-                        selectionTrackerParams.trackerObjectFromActivityOrFragment
-
-                adapter.selectionListener =
-                        selectionTrackerParams.selectionListener
+                selectionTrackerParams.activity?.selectionTracker = tracker
+                selectionTrackerParams.fragment?.selectionTracker = tracker
+                (adapter as BaseSelectableAdapter).tracker = tracker
+                adapter.selectionListener = selectionTrackerParams.selectionListener
             }
         }
 

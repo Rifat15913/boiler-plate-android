@@ -13,6 +13,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.selection.SelectionTracker
 import com.itechsoftsolutions.tree.R
 import com.itechsoftsolutions.tree.main.ui.base.callback.MvpView
 import com.itechsoftsolutions.tree.utils.helper.LanguageUtils
@@ -29,13 +30,6 @@ abstract class BaseActivity<V : MvpView, P : BasePresenter<V>>
     : AppCompatActivity(), MvpView, View.OnClickListener, View.OnFocusChangeListener {
 
     /**
-     * LifecycleRegistry is an implementation of Lifecycle that can handle multiple observers.
-     * It is used by Fragments and Support Library Activities.
-     * You can also directly use it if you have a custom LifecycleOwner.
-     */
-    private val mLifecycleRegistry = LifecycleRegistry(this)
-
-    /**
      * Fields
      * */
     // Child class has to pass it's layout resource id via this field
@@ -48,6 +42,15 @@ abstract class BaseActivity<V : MvpView, P : BasePresenter<V>>
     protected var currentFragment: BaseFragment<*, *>? = null
         private set
     protected lateinit var presenter: P
+
+    /**
+     * LifecycleRegistry is an implementation of Lifecycle that can handle multiple observers.
+     * It is used by Fragments and Support Library Activities.
+     * You can also directly use it if you have a custom LifecycleOwner.
+     */
+    private lateinit var mLifecycleRegistry: LifecycleRegistry
+    // Selection tracker for RecyclerViews with selection
+    var selectionTracker: SelectionTracker<Long>? = null
 
     /**
      * The methods to be implemented by the child class (Abstract methods)
@@ -92,6 +95,10 @@ abstract class BaseActivity<V : MvpView, P : BasePresenter<V>>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        if (savedInstanceState != null) {
+            selectionTracker?.onRestoreInstanceState(savedInstanceState)
+        }
+
         if (layoutResourceId > INVALID_ID) {
             initializeLayout()
         }
@@ -101,6 +108,14 @@ abstract class BaseActivity<V : MvpView, P : BasePresenter<V>>
         initializeStatusBar()
 
         this.startUI()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+
+        if (outState != null) {
+            selectionTracker?.onSaveInstanceState(outState)
+        }
     }
 
     /**
@@ -117,6 +132,7 @@ abstract class BaseActivity<V : MvpView, P : BasePresenter<V>>
         }
 
         presenter = viewModel.getPresenter()!!
+        mLifecycleRegistry = LifecycleRegistry(this)
         presenter.attachLifecycle(mLifecycleRegistry)
         @Suppress("UNCHECKED_CAST")
         presenter.attachView(this as V)

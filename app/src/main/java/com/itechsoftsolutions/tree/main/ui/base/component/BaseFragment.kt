@@ -11,6 +11,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.selection.SelectionTracker
 import com.itechsoftsolutions.tree.R
 import com.itechsoftsolutions.tree.main.ui.base.callback.MvpView
 import com.itechsoftsolutions.tree.utils.helper.imagepicker.ImagePickerUtils
@@ -23,13 +24,6 @@ import timber.log.Timber
  * */
 abstract class BaseFragment<V : MvpView, P : BasePresenter<V>> : Fragment(),
         MvpView, View.OnClickListener {
-
-    /**
-     * LifecycleRegistry is an implementation of Lifecycle that can handle multiple observers.
-     * It is used by Fragments and Support Library Activities.
-     * You can also directly use it if you have a custom LifecycleOwner.
-     */
-    private val mLifecycleRegistry = LifecycleRegistry(this)
 
     /**
      * Fields
@@ -45,6 +39,15 @@ abstract class BaseFragment<V : MvpView, P : BasePresenter<V>> : Fragment(),
 
     // This fragment context
     protected var mContext: Context? = null
+    // Selection tracker for RecyclerViews with selection
+    var selectionTracker: SelectionTracker<Long>? = null
+
+    /**
+     * LifecycleRegistry is an implementation of Lifecycle that can handle multiple observers.
+     * It is used by Fragments and Support Library Activities.
+     * You can also directly use it if you have a custom LifecycleOwner.
+     */
+    private lateinit var mLifecycleRegistry: LifecycleRegistry
 
     /**
      * The methods to be implemented by the child class (Abstract methods)
@@ -84,9 +87,18 @@ abstract class BaseFragment<V : MvpView, P : BasePresenter<V>> : Fragment(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        if (savedInstanceState != null) {
+            selectionTracker?.onRestoreInstanceState(savedInstanceState)
+        }
+
         if (getMenuId() > INVALID_ID) {
             setHasOptionsMenu(true)
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        selectionTracker?.onSaveInstanceState(outState)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
@@ -152,6 +164,7 @@ abstract class BaseFragment<V : MvpView, P : BasePresenter<V>> : Fragment(),
         }
 
         presenter = viewModel.getPresenter()!!
+        mLifecycleRegistry = LifecycleRegistry(this)
         presenter.attachLifecycle(mLifecycleRegistry)
         @Suppress("UNCHECKED_CAST")
         presenter.attachView(this as V)

@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.selection.SelectionTracker
 import androidx.recyclerview.widget.GridLayoutManager
 import com.itechsoftsolutions.tree.R
 import com.itechsoftsolutions.tree.main.data.local.model.SelectionTrackerParameters
@@ -37,7 +36,6 @@ class SelectAppointmentTypeActivity : BaseActivity<SelectAppointmentTypeMvpView,
     }
 
     private lateinit var mBinding: com.itechsoftsolutions.tree.databinding.ActivitySelectAppointmentTypeBinding
-    private var mTracker: SelectionTracker<Long>? = null
     private var mMonthLimit: Int? = null
 
     override val layoutResourceId: Int
@@ -58,19 +56,7 @@ class SelectAppointmentTypeActivity : BaseActivity<SelectAppointmentTypeMvpView,
             // Do nothing for Jelly bean and Kitkat devices
         }
 
-        if (savedInstanceState != null) {
-            mTracker?.onRestoreInstanceState(savedInstanceState)
-        }
-
         super.onCreate(savedInstanceState)
-    }
-
-    override fun onSaveInstanceState(outState: Bundle?) {
-        super.onSaveInstanceState(outState)
-
-        if (outState != null) {
-            mTracker?.onSaveInstanceState(outState)
-        }
     }
 
     override fun startUI() {
@@ -104,9 +90,7 @@ class SelectAppointmentTypeActivity : BaseActivity<SelectAppointmentTypeMvpView,
                 null,
                 SelectionTrackerParameters(
                         Constants.SelectionIds.APPOINTMENT_TYPE,
-                        true,
-                        mTracker,
-                        this))
+                        true, this, null, this))
 
         val list: MutableList<AppointmentType> = ArrayList()
         list.add(AppointmentType(1, "https://images.pexels.com/photos/754082/pexels-photo-754082.jpeg?cs=srgb&dl=blur-blurred-background-colors-754082.jpg&fm=jpg", "One"))
@@ -145,7 +129,7 @@ class SelectAppointmentTypeActivity : BaseActivity<SelectAppointmentTypeMvpView,
 
             R.id.text_view_next_steps -> {
                 var clinicId: Long = Constants.Default.DEFAULT_LONG
-                val serviceId: Long = mTracker?.selection?.map {
+                val serviceId: Long = selectionTracker?.selection?.map {
                     getAdapter().findItemUsingKey(it)
                 }?.first()?.id!!
 
