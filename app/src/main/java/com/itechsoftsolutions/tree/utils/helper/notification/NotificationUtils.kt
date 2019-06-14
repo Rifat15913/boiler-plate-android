@@ -5,6 +5,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.media.AudioAttributes
+import android.media.AudioManager
 import android.media.RingtoneManager
 import android.net.Uri
 import android.os.Build
@@ -13,6 +14,7 @@ import androidx.core.app.NotificationManagerCompat
 import com.itechsoftsolutions.tree.BaseApplication
 import com.itechsoftsolutions.tree.utils.helper.DataUtils
 import java.util.*
+
 
 /**
  * This is a class that contains utils to work with notifications
@@ -49,9 +51,11 @@ object NotificationUtils {
                     }
 
             // Configure the notification channel
-            channel.setSound(soundFileUri ?: RingtoneManager.getDefaultUri(
-                    RingtoneManager.TYPE_NOTIFICATION), AudioAttributes.Builder()
-                    .setUsage(AudioAttributes.USAGE_NOTIFICATION).build())
+            channel.enableVibration(true)
+            channel.enableLights(true)
+            channel.setSound(soundFileUri
+                    ?: RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION),
+                    AudioAttributes.Builder().setUsage(AudioAttributes.USAGE_NOTIFICATION).build())
 
             // Register the channel with the system
             notificationManager.createNotificationChannel(channel)
@@ -79,18 +83,19 @@ object NotificationUtils {
                           intent: PendingIntent? = null,
                           soundFileResourceId: Int? = null) {
 
-        var soundFileUri: Uri? = null
-
-        if (soundFileResourceId != null) {
-            soundFileUri = DataUtils.getUriFromResource(soundFileResourceId)
+        val soundFileUri: Uri? = if (soundFileResourceId != null) {
+            DataUtils.getUriFromResource(soundFileResourceId)
+        } else {
+            RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         }
 
         val channelDetails = notificationChannelRepository[notificationType]!!
+        val applicationContext = BaseApplication.getBaseApplicationContext()
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            val notificationManager: NotificationManager =
-                    BaseApplication.getBaseApplicationContext()
-                            .getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationManager =
+                    applicationContext.getSystemService(Context.NOTIFICATION_SERVICE)
+                            as NotificationManager
 
             var shouldCreateChannel = true
 
@@ -106,13 +111,12 @@ object NotificationUtils {
             }
         }
 
-        val builder =
-                NotificationCompat.Builder(BaseApplication.getBaseApplicationContext(), channelDetails.id)
-                        .setSmallIcon(iconResourceId)
-                        .setContentTitle(title)
-                        .setContentText(subtitle)
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                        .setAutoCancel(true)
+        val builder = NotificationCompat.Builder(applicationContext, channelDetails.id)
+                .setSmallIcon(iconResourceId)
+                .setContentTitle(title)
+                .setContentText(subtitle)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setAutoCancel(true)
 
         if (bigText != null) {
             builder.setStyle(NotificationCompat.BigTextStyle().bigText(bigText))
@@ -122,12 +126,10 @@ object NotificationUtils {
             builder.setContentIntent(intent)
         }
 
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O && soundFileUri != null) {
-            builder.setSound(soundFileUri)
+        if (/*AndroidUtils.getCurrentBuildApiVersion() < Build.VERSION_CODES.O && */soundFileUri != null) {
+            builder.setSound(soundFileUri, AudioManager.STREAM_NOTIFICATION)
         }
 
-        val manager: NotificationManagerCompat = NotificationManagerCompat.from(
-                BaseApplication.getBaseApplicationContext())
-        manager.notify(notificationId, builder.build())
+        NotificationManagerCompat.from(applicationContext).notify(notificationId, builder.build())
     }
 }
