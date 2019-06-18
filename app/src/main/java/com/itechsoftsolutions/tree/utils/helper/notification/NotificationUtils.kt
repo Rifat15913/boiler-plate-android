@@ -12,6 +12,7 @@ import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.itechsoftsolutions.tree.BaseApplication
+import com.itechsoftsolutions.tree.utils.helper.AndroidUtils
 import com.itechsoftsolutions.tree.utils.helper.DataUtils
 import java.util.*
 
@@ -126,7 +127,7 @@ object NotificationUtils {
             builder.setContentIntent(intent)
         }
 
-        if (/*AndroidUtils.getCurrentBuildApiVersion() < Build.VERSION_CODES.O && */soundFileUri != null) {
+        if (AndroidUtils.getCurrentBuildApiVersion() < Build.VERSION_CODES.O && soundFileUri != null) {
             builder.setSound(soundFileUri, AudioManager.STREAM_NOTIFICATION)
         }
 
