@@ -32,20 +32,19 @@ class Constants {
             const val ANDROID_HASH_KEY = "Hash Key"
             const val COMMON_TIME_ZONE = "UTC"
             const val APP_COMMON_DATE_FORMAT: String = "dd MMMM, yyyy"
-            const val APP_COMMON_TIME_FORMAT: String = "HH:mm"
+            const val APP_COMMON_TIME_FORMAT: String = "hh:mm a"
             const val ROLE = "Bearer "
             const val TELEPHONE_URI_STARTING = "tel:"
+            const val BASE_URL_APP_RESOURCES = "file:///android_res/"
             const val HTML_JUSTIFIED_STYLE = "<html>" +
                     "<style type='text/css'>" +
-                    "@font-face {" +
-                    "font-family: MyFont;" +
-                    "src: url('/font/regular.ttf')" +
-                    "}" +
+                    "@font-face {font-family: font; src: url('font/regular.ttf')}" +
                     "body {" +
                     "margin: 0;" +
                     "padding: 0;" +
-                    "font-family: MyFont;" +
+                    "font-family: font;" +
                     "font-size: 14px;" +
+                    "line-height:1.25;" +
                     "text-align: justify;" +
                     "color: #313131" +
                     "}" +

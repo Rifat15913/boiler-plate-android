@@ -1,6 +1,9 @@
 package com.itechsoftsolutions.tree.main.ui.base
 
 import android.app.Activity
+import android.content.res.ColorStateList
+import android.graphics.drawable.RippleDrawable
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.itechsoftsolutions.tree.main.ui.base.component.BasePresenter
 import com.itechsoftsolutions.tree.utils.helper.Constants
 import com.itechsoftsolutions.tree.utils.helper.DataUtils
+import com.itechsoftsolutions.tree.utils.helper.ViewUtils
 import com.itechsoftsolutions.tree.utils.helper.network.NetworkUtils
 import com.itechsoftsolutions.tree.utils.libs.GlideUtils
 
@@ -70,4 +74,11 @@ fun RecyclerView.Adapter<*>.isInternetAvailable(): Boolean {
 
 fun BasePresenter<*>.isInternetAvailable(): Boolean {
     return NetworkUtils.isOnline()
+}
+
+fun View.setRipple(colorResourceId: Int) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        background = RippleDrawable(ColorStateList.valueOf(ViewUtils.getColor(colorResourceId)),
+                if (this is ImageView) null else background, null)
+    }
 }
