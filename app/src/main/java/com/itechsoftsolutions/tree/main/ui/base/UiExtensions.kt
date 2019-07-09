@@ -82,3 +82,7 @@ fun View.setRipple(colorResourceId: Int) {
                 if (this is ImageView) null else background, null)
     }
 }
+
+fun String.toTitleCase(): String {
+    return DataUtils.toTitleCase(this)
+}
