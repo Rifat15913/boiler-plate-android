@@ -3,10 +3,12 @@ package com.itechsoftsolutions.tree.utils.helper
 import android.annotation.SuppressLint
 import android.app.ActivityManager
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.os.Build
 import com.itechsoftsolutions.tree.BaseApplication
+import kotlin.system.exitProcess
 
 /**
  * This is a class that contains utils to work with Android os level
@@ -87,6 +89,19 @@ class AndroidUtils private constructor() {
          * */
         fun getCurrentBuildApiVersion(): Int {
             return Build.VERSION.SDK_INT
+        }
+
+        /**
+         * This method restarts the application
+         *
+         * @param intent intent with target activity to be restarted
+         * @param context UI context
+         * */
+        fun restartApplication(intent: Intent, context: Context) {
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            context.startActivity(intent)
+            exitProcess(0)
         }
     }
 }

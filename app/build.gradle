@@ -185,7 +185,7 @@ dependencies {
     // debugImplementation "com.squareup.leakcanary:leakcanary-support-fragment:$rootProject.ext.leak_canary_version"
 
     // Google wallet
-    implementation 'com.google.android.gms:play-services-wallet:16.0.1'
+    implementation 'com.google.android.gms:play-services-wallet:17.0.0'
 
     // Braintree
     implementation 'com.braintreepayments.api:braintree:2.22.0'
@@ -195,7 +195,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 
     // JVM testing
-    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
 }
 
 // apply plugin: 'com.google.gms.google-services'

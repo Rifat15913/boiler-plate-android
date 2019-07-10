@@ -2,6 +2,7 @@ package com.itechsoftsolutions.tree.utils.helper
 
 import android.annotation.TargetApi
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.LocaleList
@@ -53,6 +54,21 @@ object LanguageUtils {
         } else {
             updateResourcesLegacy(context, language)
         }
+    }
+
+    /**
+     * This method stores new language code [SharedPreferences] and
+     * updates application default locale. Returns context having application default locale.
+     *
+     * @param intent intent with target activity to be restarted
+     * @param context application context
+     * @param language language code
+     * @return modified application context
+     * */
+    fun setLanguageAndRestartApplication(intent: Intent, context: Context, language: String): Context {
+        val modifiedContext = setLanguage(context, language)
+        AndroidUtils.restartApplication(intent, context)
+        return modifiedContext
     }
 
     /**
