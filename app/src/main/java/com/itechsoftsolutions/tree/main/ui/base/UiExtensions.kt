@@ -10,7 +10,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import com.itechsoftsolutions.tree.main.data.local.model.SelectionTrackerParameters
+import com.itechsoftsolutions.tree.main.ui.base.callback.ItemClickListener
+import com.itechsoftsolutions.tree.main.ui.base.callback.ItemLongClickListener
+import com.itechsoftsolutions.tree.main.ui.base.component.BaseAdapter
 import com.itechsoftsolutions.tree.main.ui.base.component.BasePresenter
+import com.itechsoftsolutions.tree.main.ui.base.helper.RecyclerViewPaginator
+import com.itechsoftsolutions.tree.main.ui.base.helper.SwipeItemHandler
 import com.itechsoftsolutions.tree.utils.helper.Constants
 import com.itechsoftsolutions.tree.utils.helper.DataUtils
 import com.itechsoftsolutions.tree.utils.helper.ViewUtils
@@ -48,6 +54,10 @@ fun BasePresenter<*>.getString(stringResourceId: Int): String {
     return DataUtils.getString(stringResourceId)
 }
 
+fun String.toTitleCase(): String {
+    return DataUtils.toTitleCase(this)
+}
+
 fun ImageView.loadImage(source: Any) {
     GlideUtils.normalWithCaching(this, source)
 }
@@ -78,11 +88,69 @@ fun BasePresenter<*>.isInternetAvailable(): Boolean {
 
 fun View.setRipple(colorResourceId: Int) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-        background = RippleDrawable(ColorStateList.valueOf(ViewUtils.getColor(colorResourceId)),
-                if (this is ImageView) null else background, null)
+        background = RippleDrawable(
+                ColorStateList.valueOf(ViewUtils.getColor(colorResourceId)),
+                if (this is ImageView) null else background, null
+        )
     }
 }
 
-fun String.toTitleCase(): String {
-    return DataUtils.toTitleCase(this)
+fun Activity.setLightStatusBar() {
+    ViewUtils.setLightStatusBar(this)
+}
+
+fun Activity.clearLightStatusBar() {
+    ViewUtils.clearLightStatusBar(this)
+}
+
+fun Fragment.setLightStatusBar() {
+    if (activity != null) {
+        ViewUtils.setLightStatusBar(activity!!)
+    }
+}
+
+fun Fragment.clearLightStatusBar() {
+    if (activity != null) {
+        ViewUtils.clearLightStatusBar(activity!!)
+    }
+}
+
+fun <T> Activity.initializeRecyclerView(
+        recyclerView: RecyclerView,
+        adapter: BaseAdapter<T>,
+        itemClickListener: ItemClickListener<T>?,
+        itemLongClickListener: ItemLongClickListener<T>?,
+        layoutManager: RecyclerView.LayoutManager,
+        itemDecoration: RecyclerView.ItemDecoration?,
+        swipeItemHandler: SwipeItemHandler?,
+        itemAnimator: RecyclerView.ItemAnimator?,
+        selectionTrackerParams: SelectionTrackerParameters? = null
+) {
+
+    ViewUtils.initializeRecyclerView(
+            recyclerView, adapter, itemClickListener, itemLongClickListener, layoutManager,
+            itemDecoration, swipeItemHandler, itemAnimator, selectionTrackerParams
+    )
+}
+
+fun <T> Fragment.initializeRecyclerView(
+        recyclerView: RecyclerView,
+        adapter: BaseAdapter<T>,
+        itemClickListener: ItemClickListener<T>?,
+        itemLongClickListener: ItemLongClickListener<T>?,
+        layoutManager: RecyclerView.LayoutManager,
+        itemDecoration: RecyclerView.ItemDecoration?,
+        swipeItemHandler: SwipeItemHandler?,
+        itemAnimator: RecyclerView.ItemAnimator?,
+        selectionTrackerParams: SelectionTrackerParameters? = null
+) {
+
+    ViewUtils.initializeRecyclerView(
+            recyclerView, adapter, itemClickListener, itemLongClickListener, layoutManager,
+            itemDecoration, swipeItemHandler, itemAnimator, selectionTrackerParams
+    )
+}
+
+fun RecyclerView.setPaginator(paginator: RecyclerViewPaginator) {
+    this.addOnScrollListener(paginator)
 }

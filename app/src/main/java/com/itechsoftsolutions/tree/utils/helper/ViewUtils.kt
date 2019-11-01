@@ -1,9 +1,11 @@
 package com.itechsoftsolutions.tree.utils.helper
 
+import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Typeface
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
@@ -33,6 +35,7 @@ import com.itechsoftsolutions.tree.main.ui.base.component.BaseItemDetailsLookup
 import com.itechsoftsolutions.tree.main.ui.base.component.BaseSelectableAdapter
 import com.itechsoftsolutions.tree.main.ui.base.helper.SwipeItemHandler
 import io.reactivex.Observable
+import timber.log.Timber
 
 /**
  * This is a class that contains utils for the view
@@ -74,8 +77,10 @@ class ViewUtils {
          * @return desired font
          * */
         fun getFont(resourceId: Int): Typeface? {
-            return ResourcesCompat.getFont(BaseApplication.getBaseApplicationContext(),
-                    resourceId)
+            return ResourcesCompat.getFont(
+                    BaseApplication.getBaseApplicationContext(),
+                    resourceId
+            )
         }
 
         /**
@@ -87,7 +92,8 @@ class ViewUtils {
         fun getDrawable(resourceId: Int): Drawable? {
             return ContextCompat.getDrawable(
                     BaseApplication.getBaseApplicationContext(),
-                    resourceId)
+                    resourceId
+            )
         }
 
         /**
@@ -99,7 +105,8 @@ class ViewUtils {
         fun getColor(colorResourceId: Int): Int {
             return ContextCompat.getColor(
                     BaseApplication.getBaseApplicationContext(),
-                    colorResourceId)
+                    colorResourceId
+            )
         }
 
         /**
@@ -150,8 +157,10 @@ class ViewUtils {
 
                 if (bitmap == null) {
                     Observable.error(
-                            Throwable(BaseApplication.getBaseApplicationContext()
-                                    .getString(R.string.error_could_not_create_bitmap))
+                            Throwable(
+                                    BaseApplication.getBaseApplicationContext()
+                                            .getString(R.string.error_could_not_create_bitmap)
+                            )
                     )
                 } else {
                     Observable.just(bitmap)
@@ -166,7 +175,10 @@ class ViewUtils {
          * @param handler swipe handler
          * @return [ItemTouchHelper] touch helper of the [RecyclerView]
          */
-        fun addSwipeHandler(recyclerView: RecyclerView, handler: SwipeItemHandler): ItemTouchHelper {
+        fun addSwipeHandler(
+                recyclerView: RecyclerView,
+                handler: SwipeItemHandler
+        ): ItemTouchHelper {
             val itemTouchHelper = ItemTouchHelper(handler)
             itemTouchHelper.attachToRecyclerView(recyclerView)
 
@@ -184,17 +196,18 @@ class ViewUtils {
          * @param itemDecoration item decoration for margin or separator
          * @param swipeItemHandler handler to work with item swipe
          * @param itemAnimator animator for RecyclerView items
-         * @param selectionTrackerParams parameters we do need, to initialize selection tracker
          * */
-        fun <T> initializeRecyclerView(recyclerView: RecyclerView,
-                                       adapter: BaseAdapter<T>,
-                                       itemClickListener: ItemClickListener<T>?,
-                                       itemLongClickListener: ItemLongClickListener<T>?,
-                                       layoutManager: RecyclerView.LayoutManager,
-                                       itemDecoration: RecyclerView.ItemDecoration?,
-                                       swipeItemHandler: SwipeItemHandler?,
-                                       itemAnimator: RecyclerView.ItemAnimator?,
-                                       selectionTrackerParams: SelectionTrackerParameters? = null) {
+        fun <T> initializeRecyclerView(
+                recyclerView: RecyclerView,
+                adapter: BaseAdapter<T>,
+                itemClickListener: ItemClickListener<T>?,
+                itemLongClickListener: ItemLongClickListener<T>?,
+                layoutManager: RecyclerView.LayoutManager,
+                itemDecoration: RecyclerView.ItemDecoration?,
+                swipeItemHandler: SwipeItemHandler?,
+                itemAnimator: RecyclerView.ItemAnimator?,
+                selectionTrackerParams: SelectionTrackerParameters? = null
+        ) {
 
             if (itemDecoration != null) {
                 recyclerView.addItemDecoration(itemDecoration)
@@ -210,24 +223,28 @@ class ViewUtils {
             swipeItemHandler?.attachToRecyclerView(recyclerView)
 
             if (selectionTrackerParams != null) {
-                val tracker = SelectionTracker.Builder<Long>(
-                        selectionTrackerParams.selectionId,
-                        recyclerView,
-                        StableIdKeyProvider(recyclerView),
-                        BaseItemDetailsLookup(recyclerView),
-                        StorageStrategy.createLongStorage())
-                        .withSelectionPredicate(
-                                if (selectionTrackerParams.willSelectSingleItem) {
-                                    SelectionPredicates.createSelectSingleAnything()
-                                } else {
-                                    SelectionPredicates.createSelectAnything()
-                                })
-                        .build()
+                selectionTrackerParams.trackerObjectFromActivityOrFragment =
+                        SelectionTracker.Builder<Long>(
+                                selectionTrackerParams.selectionId,
+                                recyclerView,
+                                StableIdKeyProvider(recyclerView),
+                                BaseItemDetailsLookup(recyclerView),
+                                StorageStrategy.createLongStorage()
+                        )
+                                .withSelectionPredicate(
+                                        if (selectionTrackerParams.willSelectSingleItem) {
+                                            SelectionPredicates.createSelectSingleAnything()
+                                        } else {
+                                            SelectionPredicates.createSelectAnything()
+                                        }
+                                )
+                                .build()
 
-                selectionTrackerParams.activity?.selectionTracker = tracker
-                selectionTrackerParams.fragment?.selectionTracker = tracker
-                (adapter as BaseSelectableAdapter).tracker = tracker
-                adapter.selectionListener = selectionTrackerParams.selectionListener
+                (adapter as BaseSelectableAdapter).tracker =
+                        selectionTrackerParams.trackerObjectFromActivityOrFragment
+
+                adapter.selectionListener =
+                        selectionTrackerParams.selectionListener
             }
         }
 
@@ -237,7 +254,7 @@ class ViewUtils {
          * @param activity current activity
          * @param colorResourceId color resource id
          * */
-        fun setStatusBarColor(activity: AppCompatActivity, colorResourceId: Int) {
+        fun setStatusBarColor(activity: Activity, colorResourceId: Int) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && colorResourceId > -1) {
                 val window = activity.window
                 window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
@@ -254,7 +271,8 @@ class ViewUtils {
         fun setToolbarColor(activity: AppCompatActivity, colorResourceId: Int) {
             if (colorResourceId > -1) {
                 activity.supportActionBar?.setBackgroundDrawable(
-                        ColorDrawable(getColor(colorResourceId)))
+                        ColorDrawable(getColor(colorResourceId))
+                )
             }
         }
 
@@ -312,6 +330,20 @@ class ViewUtils {
         }
 
         /**
+         * This method sets the color tint of the drawable
+         *
+         * @param drawable working drawable
+         * @param colorString string of the color
+         * */
+        fun setColorTint(drawable: Drawable, colorString: String) {
+            try {
+                DrawableCompat.setTint(drawable, Color.parseColor(colorString))
+            } catch (e: Exception) {
+                Timber.d(e)
+            }
+        }
+
+        /**
          * This method sets the color tint of the ImageView
          *
          * @param imageView working ImageView
@@ -319,6 +351,76 @@ class ViewUtils {
          * */
         fun setColorTint(imageView: ImageView, colorResourceId: Int) {
             setColorTint(imageView.drawable, colorResourceId)
+        }
+
+        /**
+         * This method clears the light state of status bar
+         *
+         * @param activity current activity
+         * */
+        fun clearLightStatusBar(activity: Activity) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                val window = activity.window
+                val flags = window.decorView.systemUiVisibility
+                val modifiedFlags = flags and (View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR.inv())
+                window.decorView.systemUiVisibility = modifiedFlags
+            }
+        }
+
+        /**
+         * This method sets the light state of status bar
+         *
+         * @param activity current activity
+         * */
+        fun setLightStatusBar(activity: Activity) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                val window = activity.window
+                val flags = window.decorView.systemUiVisibility
+                val modifiedFlags = flags or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                window.decorView.systemUiVisibility = modifiedFlags
+            }
+        }
+
+        /**
+         * This method clears the light state of system navigation bar
+         *
+         * @param activity current activity
+         * */
+        fun clearLightSystemNavigationBar(activity: Activity) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+                val window = activity.window
+                val flags = window.decorView.systemUiVisibility
+                val modifiedFlags = flags and (View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR.inv())
+                window.decorView.systemUiVisibility = modifiedFlags
+            }
+        }
+
+        /**
+         * This method sets the light state of system navigation bar
+         *
+         * @param activity current activity
+         * */
+        fun setLightSystemNavigationBar(activity: Activity) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
+                val window = activity.window
+                val flags = window.decorView.systemUiVisibility
+                val modifiedFlags = flags or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+                window.decorView.systemUiVisibility = modifiedFlags
+            }
+        }
+
+        /**
+         * This method sets system navigation bar color
+         *
+         * @param activity current activity
+         * @param colorResourceId color resource id
+         * */
+        fun setSystemNavigationBarColor(activity: AppCompatActivity, colorResourceId: Int) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && colorResourceId > -1) {
+                val window = activity.window
+                window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+                window.navigationBarColor = getColor(colorResourceId)
+            }
         }
     }
 }

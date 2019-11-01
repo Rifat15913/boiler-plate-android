@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.view.*
 import android.view.animation.AnimationUtils
 import androidx.annotation.CallSuper
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.ViewModelProviders
@@ -16,7 +14,6 @@ import com.itechsoftsolutions.tree.R
 import com.itechsoftsolutions.tree.main.ui.base.callback.MvpView
 import com.itechsoftsolutions.tree.utils.helper.imagepicker.ImagePickerUtils
 import com.itechsoftsolutions.tree.utils.libs.ImageCropperUtils
-import timber.log.Timber
 
 /**
  * This is base fragment class which will be extended for creating next fragments
@@ -30,9 +27,7 @@ abstract class BaseFragment<V : MvpView, P : BasePresenter<V>> : Fragment(),
      * */
     // Child class has to pass it's layout resource id via this field
     protected abstract val layoutId: Int
-    // Child class data binding object for views
-    protected var viewDataBinding: ViewDataBinding? = null
-        private set
+
     var currentChildFragment: BaseFragment<*, *>? = null
         private set
     protected lateinit var presenter: P
@@ -76,12 +71,9 @@ abstract class BaseFragment<V : MvpView, P : BasePresenter<V>> : Fragment(),
     private val isBaseActivityInstance: Boolean
         get() = BaseActivity::class.java.isInstance(activity)
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
-
-        if (context != null) {
-            mContext = context
-        }
+        mContext = context
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -101,9 +93,9 @@ abstract class BaseFragment<V : MvpView, P : BasePresenter<V>> : Fragment(),
         selectionTracker?.onSaveInstanceState(outState)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         if (getMenuId() > INVALID_ID) {
-            inflater!!.inflate(getMenuId(), menu)
+            inflater.inflate(getMenuId(), menu)
             super.onCreateOptionsMenu(menu, inflater)
         }
     }
@@ -126,20 +118,7 @@ abstract class BaseFragment<V : MvpView, P : BasePresenter<V>> : Fragment(),
      * @return [View] inflated layout view
      * */
     private fun initializeLayout(inflater: LayoutInflater, layoutId: Int, container: ViewGroup?): View? {
-        var view: View? = null
-
-        try {
-            viewDataBinding = DataBindingUtil.inflate(inflater, layoutId, container, false)
-            view = viewDataBinding?.root
-        } catch (e: Exception) {
-            Timber.e(e)
-        }
-
-        if (viewDataBinding == null) {
-            view = inflater.inflate(layoutId, container, false)
-        }
-
-        return view
+        return inflater.inflate(layoutId, container, false)
     }
 
     @CallSuper

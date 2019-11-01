@@ -1,7 +1,7 @@
 package com.itechsoftsolutions.tree.main.ui.base.component
 
 import android.view.MotionEvent
-import androidx.databinding.ViewDataBinding
+import android.view.View
 import androidx.recyclerview.selection.ItemDetailsLookup
 
 /**
@@ -9,7 +9,7 @@ import androidx.recyclerview.selection.ItemDetailsLookup
  * that are selectable
  * @author Mohd. Asfaq-E-Azam Rifat
  * */
-abstract class BaseSelectableViewHolder<T>(viewDataBinding: ViewDataBinding) : BaseViewHolder<T>(viewDataBinding) {
+abstract class BaseSelectableViewHolder<T>(view: View) : BaseViewHolder<T>(view) {
 
     /**
      * This method binds the item to item layout

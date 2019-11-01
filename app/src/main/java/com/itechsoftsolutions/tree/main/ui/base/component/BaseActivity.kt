@@ -9,8 +9,6 @@ import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.selection.SelectionTracker
@@ -20,7 +18,6 @@ import com.itechsoftsolutions.tree.utils.helper.LanguageUtils
 import com.itechsoftsolutions.tree.utils.helper.ViewUtils
 import com.itechsoftsolutions.tree.utils.helper.imagepicker.ImagePickerUtils
 import com.itechsoftsolutions.tree.utils.libs.ImageCropperUtils
-import timber.log.Timber
 
 /**
  * This is base activity class which will be extended for creating next activities
@@ -34,9 +31,6 @@ abstract class BaseActivity<V : MvpView, P : BasePresenter<V>>
      * */
     // Child class has to pass it's layout resource id via this field
     protected abstract val layoutResourceId: Int
-    // Child class data binding object for views
-    protected var viewDataBinding: ViewDataBinding? = null
-        private set
     protected var menu: Menu? = null
         private set
     protected var currentFragment: BaseFragment<*, *>? = null
@@ -110,12 +104,9 @@ abstract class BaseActivity<V : MvpView, P : BasePresenter<V>>
         this.startUI()
     }
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
-
-        if (outState != null) {
-            selectionTracker?.onSaveInstanceState(outState)
-        }
+        selectionTracker?.onSaveInstanceState(outState)
     }
 
     /**
@@ -148,15 +139,7 @@ abstract class BaseActivity<V : MvpView, P : BasePresenter<V>>
      * This method initializes the layout to the activity
      * */
     private fun initializeLayout() {
-        try {
-            viewDataBinding = DataBindingUtil.setContentView(this, layoutResourceId)
-        } catch (e: Exception) {
-            Timber.e(e)
-        }
-
-        if (viewDataBinding == null) {
-            setContentView(layoutResourceId)
-        }
+        setContentView(layoutResourceId)
     }
 
     /**

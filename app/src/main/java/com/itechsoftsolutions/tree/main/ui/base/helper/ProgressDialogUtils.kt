@@ -1,12 +1,11 @@
 package com.itechsoftsolutions.tree.main.ui.base.helper
 
-import android.app.Activity
 import android.content.Context
 import android.graphics.Typeface
 import android.view.LayoutInflater
 import androidx.appcompat.app.AlertDialog
-import com.itechsoftsolutions.tree.databinding.ProgresssDialogLayoutBinding
-import timber.log.Timber
+import com.itechsoftsolutions.tree.R
+import kotlinx.android.synthetic.main.progresss_dialog_layout.view.*
 
 /**
  * This is a class that contains utils for progress dialogs
@@ -21,15 +20,21 @@ class ProgressDialogUtils private constructor() {
      * @return created [AlertDialog]
      * */
     fun showProgressDialog(context: Context): AlertDialog? {
-        Timber.d((context as Activity).javaClass.simpleName)
         val builder = AlertDialog.Builder(context)
-        val binding = ProgresssDialogLayoutBinding.inflate(LayoutInflater.from(context), null, false)
-        binding.textViewMessage.setTypeface(null, Typeface.NORMAL)
-        builder.setCancelable(true)
-        builder.setView(binding.root)
 
-        mAlertDialog = builder.create()
-        mAlertDialog?.show()
+        LayoutInflater.from(context)
+                .inflate(
+                        R.layout.progresss_dialog_layout,
+                        null,
+                        false
+                )?.let {
+                    it.text_view_message?.setTypeface(null, Typeface.NORMAL)
+                    builder.setCancelable(true)
+                    builder.setView(it)
+
+                    mAlertDialog = builder.create()
+                    mAlertDialog?.show()
+                }
 
         return mAlertDialog
     }

@@ -1,24 +1,16 @@
 package com.itechsoftsolutions.tree.main.ui.base.component
 
 import android.view.View
-import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 
 /**
  * This is base view holder class which will be extended for creating next RecyclerView view holders
  * @author Mohd. Asfaq-E-Azam Rifat
  * */
-abstract class BaseViewHolder<T>(private val viewDataBinding: ViewDataBinding)
-    : RecyclerView.ViewHolder(viewDataBinding.root), View.OnClickListener {
+abstract class BaseViewHolder<T>(view: View)
+    : RecyclerView.ViewHolder(view), View.OnClickListener {
 
-    private val mContext = viewDataBinding.root.context
-
-    /**
-     * Initializer block
-     * */
-    init {
-        this.viewDataBinding.executePendingBindings()
-    }
+    private val mContext = view.context
 
     /**
      * This method binds the item to item layout

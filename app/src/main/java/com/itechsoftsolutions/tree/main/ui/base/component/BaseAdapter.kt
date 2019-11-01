@@ -1,9 +1,8 @@
 package com.itechsoftsolutions.tree.main.ui.base.component
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView
 import com.itechsoftsolutions.tree.R
 import com.itechsoftsolutions.tree.main.ui.base.callback.ItemClickListener
@@ -263,10 +262,9 @@ abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
      *
      * @param parent parent ViewGroup
      * @param itemLayout layout id of the item
-     * @return [ViewDataBinding] data binding object
+     * @return [View] desired view
      * */
-    fun inflate(parent: ViewGroup, itemLayout: Int): ViewDataBinding {
-        return DataBindingUtil.inflate(LayoutInflater.from(parent.context),
-                itemLayout, parent, false)
+    fun inflate(parent: ViewGroup, itemLayout: Int): View {
+        return LayoutInflater.from(parent.context).inflate(itemLayout, parent, false)
     }
 }
