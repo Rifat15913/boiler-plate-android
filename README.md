@@ -637,6 +637,7 @@ As a general rule you should try to group similar attributes together. A good wa
 2. Execute <code>Gradle > root > Tasks > android > signingReport</code>
 
 ## 5.2 Fetch android hash key
+0. You can get SHA-1 depending on build variant and put it [here](http://tomeko.net/online_tools/hex_to_base64.php) to get the key hash. Or follow the below,
 1. Uncomment at <code>BaseApplication.kt</code>
     * <code>import com.boilerplate.utils.helper.DataUtils</code>
     * <code>DataUtils.getAndroidHashKey()</code> at <code>onCreate()</code>
