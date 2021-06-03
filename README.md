@@ -25,7 +25,8 @@
 - [5. Extras](#5-extras)
     - [5.1 Fetch signing fingerprint](#51-fetch-signing-fingerprint)
         - [5.1.1 Release](#511-release)
-        - [5.1.2 Debug](#512-debug)
+        - [5.1.2 Debug (1)](#512-debug-1)
+        - [5.1.3 Debug (2)](#513-debug-2)
     - [5.2 Fetch android hash key](#52-fetch-android-hash-key)
     - [5.3 Show application local data](#53-show-application-local-data)
 - [6. Authors](#6-authors)
@@ -629,12 +630,19 @@ As a general rule you should try to group similar attributes together. A good wa
 1. Add the path of <code>keytool</code> from <code>JDK</code> to System Variable <code>PATH</code>
 2. Go to <code>keystore</code> folder
 3. Press <code>Shift + Right</code> Click
-4. Start command prompt
+4. Start command prompt / PowerShell
 5. Put command <code>keytool -exportcert -alias ALIAS_NAME -keystore KEYSTORE_NAME_WITH_EXTENSION -list -v</code>
 
-### 5.1.2 Debug
+### 5.1.2 Debug (1)
 1. Go to right side of Android Studio.
 2. Execute <code>Gradle > root > Tasks > android > signingReport</code>
+
+### 5.1.3 Debug (2)
+1. Add the path of <code>keytool</code> from <code>JDK</code> to System Variable <code>PATH</code>
+2. Go to <code>keystore</code> folder
+3. Press <code>Shift + Right</code> Click
+4. Start command prompt / PowerShell
+5. Put command <code> keytool -list -v -keystore "debug.keystore" -alias androiddebugkey -storepass android -keypass android</code>
 
 ## 5.2 Fetch android hash key
 0. You can get SHA-1 depending on build variant and put it [here](http://tomeko.net/online_tools/hex_to_base64.php) to get the key hash. Or follow the below,
