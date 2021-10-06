@@ -631,7 +631,7 @@ As a general rule you should try to group similar attributes together. A good wa
 2. Go to <code>keystore</code> folder
 3. Press <code>Shift + Right</code> Click
 4. Start command prompt / PowerShell
-5. Put command <code>keytool -exportcert -alias ALIAS_NAME -keystore KEYSTORE_NAME_WITH_EXTENSION -list -v</code>
+5. Put command <code>keytool -list -v -alias ALIAS_NAME -keystore KEYSTORE_NAME_WITH_EXTENSION</code>
 
 ### 5.1.2 Debug (1)
 1. Go to right side of Android Studio.
